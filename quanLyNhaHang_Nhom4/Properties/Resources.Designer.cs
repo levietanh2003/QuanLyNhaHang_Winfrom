@@ -63,9 +63,39 @@ namespace quanLyNhaHang_Nhom4.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap checkbox_minus_solid_24 {
+            get {
+                object obj = ResourceManager.GetObject("checkbox-minus-solid-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap exit_solid_24 {
+            get {
+                object obj = ResourceManager.GetObject("exit-solid-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo_quanAN {
             get {
                 object obj = ResourceManager.GetObject("logo_quanAN", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_regular_24 {
+            get {
+                object obj = ResourceManager.GetObject("user-regular-24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

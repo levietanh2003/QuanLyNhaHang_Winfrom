@@ -71,6 +71,7 @@
     <Compile Include="Manager\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="NumberToText.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Manager\frmLogin.resx">
@@ -107,6 +108,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo_quanAN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit-solid-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkbox-minus-solid-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-regular-24.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
