@@ -46,6 +46,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database\Account.cs" />
+    <Compile Include="Database\AttendanceList.cs" />
+    <Compile Include="Database\Bill.cs" />
+    <Compile Include="Database\BillInfo.cs" />
+    <Compile Include="Database\BillInfoOfWareHouse.cs" />
+    <Compile Include="Database\BillOfWareHouse.cs" />
+    <Compile Include="Database\Food.cs" />
+    <Compile Include="Database\FoodCategory.cs" />
+    <Compile Include="Database\Material.cs" />
+    <Compile Include="Database\Position.cs" />
+    <Compile Include="Database\Staff.cs" />
+    <Compile Include="Database\TableFood.cs" />
+    <Compile Include="Database\Unit.cs" />
+    <Compile Include="Manager\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manager\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +73,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Manager\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Manager\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -82,7 +104,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Admin\" />
-    <Folder Include="Database\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo_quanAN.png" />

@@ -6,9 +6,6 @@ using System.Threading.Tasks;
 
 namespace quanLyNhaHang_Nhom4.Database
 {
-    using System;
-    using System.Collections.Generic;
-
     public partial class BillInfoOfWareHouse
     {
         public int idBillInfoOfWareHouse { get; set; }
@@ -19,6 +16,5 @@ namespace quanLyNhaHang_Nhom4.Database
         public int totalPrice { get; set; }
 
         public virtual BillOfWareHouse BillOfWareHouse { get; set; }
-        public virtual Material Material { get; set; }
     }
 }

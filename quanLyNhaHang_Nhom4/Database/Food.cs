@@ -6,8 +6,6 @@ using System.Threading.Tasks;
 
 namespace quanLyNhaHang_Nhom4.Database
 {
-    using System;
-    using System.Collections.Generic;
 
     public partial class Food
     {

@@ -18,7 +18,7 @@ namespace quanLyNhaHang_Nhom4.Manager
             customizeDesing();
         }
 
-
+        #region Method
         private void customizeDesing()
         {
             pnlSubAdmin.Visible = false;
@@ -48,7 +48,8 @@ namespace quanLyNhaHang_Nhom4.Manager
                 subMenu.Visible = false;
             }
         }
-
+        #endregion
+        #region Event
         private void btnAdmin_Click(object sender, EventArgs e)
         {
             showSubMeNu(pnlSubAdmin);
@@ -58,5 +59,6 @@ namespace quanLyNhaHang_Nhom4.Manager
         {
             showSubMeNu(pnlSubWareHouse);
         }
+        #endregion
     }
 }
