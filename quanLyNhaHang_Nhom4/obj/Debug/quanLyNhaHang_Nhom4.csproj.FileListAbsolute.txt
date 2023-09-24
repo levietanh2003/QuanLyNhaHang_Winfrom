@@ -1,0 +1,11 @@
+C:\Users\levietanh0108\source\repos\quanLyNhaHang_Nhom4\quanLyNhaHang_Nhom4\bin\Debug\quanLyNhaHang_Nhom4.exe.config
+C:\Users\levietanh0108\source\repos\quanLyNhaHang_Nhom4\quanLyNhaHang_Nhom4\bin\Debug\quanLyNhaHang_Nhom4.exe
+C:\Users\levietanh0108\source\repos\quanLyNhaHang_Nhom4\quanLyNhaHang_Nhom4\bin\Debug\quanLyNhaHang_Nhom4.pdb
+C:\Users\levietanh0108\source\repos\quanLyNhaHang_Nhom4\quanLyNhaHang_Nhom4\obj\Debug\quanLyNhaHang_Nhom4.csproj.AssemblyReference.cache
+C:\Users\levietanh0108\source\repos\quanLyNhaHang_Nhom4\quanLyNhaHang_Nhom4\obj\Debug\quanLyNhaHang_Nhom4.csproj.SuggestedBindingRedirects.cache
+C:\Users\levietanh0108\source\repos\quanLyNhaHang_Nhom4\quanLyNhaHang_Nhom4\obj\Debug\quanLyNhaHang_Nhom4.Properties.Resources.resources
+C:\Users\levietanh0108\source\repos\quanLyNhaHang_Nhom4\quanLyNhaHang_Nhom4\obj\Debug\quanLyNhaHang_Nhom4.csproj.GenerateResource.cache
+C:\Users\levietanh0108\source\repos\quanLyNhaHang_Nhom4\quanLyNhaHang_Nhom4\obj\Debug\quanLyNhaHang_Nhom4.csproj.CoreCompileInputs.cache
+C:\Users\levietanh0108\source\repos\quanLyNhaHang_Nhom4\quanLyNhaHang_Nhom4\obj\Debug\quanLyNhaHang_Nhom4.exe
+C:\Users\levietanh0108\source\repos\quanLyNhaHang_Nhom4\quanLyNhaHang_Nhom4\obj\Debug\quanLyNhaHang_Nhom4.pdb
+C:\Users\levietanh0108\source\repos\quanLyNhaHang_Nhom4\quanLyNhaHang_Nhom4\obj\Debug\quanLyNhaHang_Nhom4.Manager.frmMain.resources
