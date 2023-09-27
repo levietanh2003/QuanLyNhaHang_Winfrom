@@ -109,5 +109,12 @@ namespace quanLyNhaHang_Nhom4.Manager
             hideSubMenu();
             lblTitle.Text = "Đặt món";
         }
+
+        private void btnOpenFromTable_Click(object sender, EventArgs e)
+        {
+            frmTable frmTable = new frmTable();
+            frmTable.ShowDialog();
+            lblTitle.Text = "Quản lí bàn ăn";
+        }
     }
 }
