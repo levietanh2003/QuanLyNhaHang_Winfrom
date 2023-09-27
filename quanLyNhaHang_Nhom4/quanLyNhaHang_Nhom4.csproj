@@ -71,6 +71,18 @@
     <Compile Include="Manager\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager\frmQLDanhMuc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\frmQLDanhMuc.Designer.cs">
+      <DependentUpon>frmQLDanhMuc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\frmTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\frmTable.Designer.cs">
+      <DependentUpon>frmTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="NumberToText.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,6 +91,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\frmQLDanhMuc.resx">
+      <DependentUpon>frmQLDanhMuc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\frmTable.resx">
+      <DependentUpon>frmTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -117,6 +135,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user-regular-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tatice-Cristal-Intense-Loupe.256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Awicons-Vista-Artistic-Add.256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hopstarter-Sleek-Xp-Basic-Close-2.256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hopstarter-Soft-Scraps-Text-Edit.256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bx-show-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Actions-list-add-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pencil-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close-2-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
