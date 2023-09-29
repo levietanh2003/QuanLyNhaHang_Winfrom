@@ -34,3 +34,5 @@ C:\Users\admin\OneDrive\Máy tính\QuanLyNhaHang_Nhom04\quanLyNhaHang_Nhom4\obj\
 C:\Users\admin\OneDrive\Máy tính\QuanLyNhaHang_Nhom04\quanLyNhaHang_Nhom4\obj\Debug\quanLyNhaHang_Nhom4.exe
 C:\Users\admin\OneDrive\Máy tính\QuanLyNhaHang_Nhom04\quanLyNhaHang_Nhom4\obj\Debug\quanLyNhaHang_Nhom4.pdb
 C:\Users\admin\OneDrive\Máy tính\QuanLyNhaHang_Nhom04\quanLyNhaHang_Nhom4\obj\Debug\quanLyNhaHang_Nhom4.Manager.frmTable.resources
+\\Mac\Home\Desktop\quanLyNhaHang_Nhom4\quanLyNhaHang_Nhom4\obj\Debug\quanLyNhaHang_Nhom4.Manager.frmQLDanhMuc.resources
+\\Mac\Home\Desktop\quanLyNhaHang_Nhom4\quanLyNhaHang_Nhom4\obj\Debug\quanLyNhaHang_Nhom4.Manager.frmTable.resources
