@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace quanLyNhaHang_Nhom4.Manager
 {
-    public partial class frmQLDanhMuc : Form
+    public partial class frmAttendanceList : Form
     {
-        public frmQLDanhMuc()
+        public frmAttendanceList()
         {
             InitializeComponent();
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

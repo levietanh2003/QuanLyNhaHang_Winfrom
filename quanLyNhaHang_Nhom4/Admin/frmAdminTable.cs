@@ -10,13 +10,14 @@ using System.Windows.Forms;
 
 namespace quanLyNhaHang_Nhom4.Manager
 {
-    public partial class frmTable : Form
+    public partial class frmAdminTable : Form
     {
-        public frmTable()
+        public frmAdminTable()
         {
             InitializeComponent();
+            columnRatio();
         }
-
+        #region Event
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
 
@@ -41,5 +42,20 @@ namespace quanLyNhaHang_Nhom4.Manager
         {
 
         }
+        #endregion
+
+        #region Method
+        public void columnRatio()
+        {
+            int totalWidth = dgvBanAn.Width;
+            int column1Width = (int)(totalWidth * 0.2);
+            int column2Width = (int)(totalWidth * 0.4);
+            int column3Width = (int)(totalWidth * 0.4);
+
+            dgvBanAn.Columns[0].Width = column1Width;
+            dgvBanAn.Columns[1].Width = column2Width;
+            dgvBanAn.Columns[2].Width = column3Width;
+        }
+        #endregion
     }
 }

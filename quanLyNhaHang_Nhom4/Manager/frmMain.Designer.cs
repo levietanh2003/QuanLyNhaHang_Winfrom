@@ -49,21 +49,17 @@
             this.btnFind = new System.Windows.Forms.Button();
             this.btnOrder = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ptbLogo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pnlDesktop = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.lblSoftWare = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.pnlMenu.SuspendLayout();
             this.pnlSubWareHouse.SuspendLayout();
             this.pnlSubAdmin.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbLogo)).BeginInit();
             this.panel1.SuspendLayout();
-            this.pnlDesktop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMenu
@@ -84,7 +80,7 @@
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(209, 911);
+            this.pnlMenu.Size = new System.Drawing.Size(209, 1282);
             this.pnlMenu.TabIndex = 0;
             // 
             // btnInfo
@@ -112,7 +108,7 @@
             this.btnLogOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.Font = new System.Drawing.Font("Cambria", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogOut.Location = new System.Drawing.Point(0, 823);
+            this.btnLogOut.Location = new System.Drawing.Point(0, 1194);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(209, 53);
             this.btnLogOut.TabIndex = 9;
@@ -122,7 +118,7 @@
             // panel2
             // 
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 876);
+            this.panel2.Location = new System.Drawing.Point(0, 1247);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(209, 35);
             this.panel2.TabIndex = 8;
@@ -266,6 +262,7 @@
             this.btnOpenFormCategory.TabIndex = 5;
             this.btnOpenFormCategory.Text = "Danh mục món";
             this.btnOpenFormCategory.UseVisualStyleBackColor = false;
+            this.btnOpenFormCategory.Click += new System.EventHandler(this.btnOpenFormCategory_Click);
             // 
             // btnOpenFormFood
             // 
@@ -331,6 +328,7 @@
             this.btnOpenFormAttendance.TabIndex = 3;
             this.btnOpenFormAttendance.Text = "Chấm công";
             this.btnOpenFormAttendance.UseVisualStyleBackColor = false;
+            this.btnOpenFormAttendance.Click += new System.EventHandler(this.btnOpenFormAttendance_Click);
             // 
             // btnFind
             // 
@@ -368,23 +366,23 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.pictureBox1);
+            this.flowLayoutPanel1.Controls.Add(this.ptbLogo);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(209, 131);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // pictureBox1
+            // ptbLogo
             // 
-            this.pictureBox1.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.logo_quanAN;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(206, 119);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.ptbLogo.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.logo_quanAN;
+            this.ptbLogo.Location = new System.Drawing.Point(3, 3);
+            this.ptbLogo.Name = "ptbLogo";
+            this.ptbLogo.Size = new System.Drawing.Size(206, 119);
+            this.ptbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbLogo.TabIndex = 0;
+            this.ptbLogo.TabStop = false;
+            this.ptbLogo.Click += new System.EventHandler(this.PtbLogo_Click);
             // 
             // panel1
             // 
@@ -393,12 +391,12 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(209, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1317, 125);
+            this.panel1.Size = new System.Drawing.Size(1945, 125);
             this.panel1.TabIndex = 1;
             // 
             // lblTitle
             // 
-            this.lblTitle.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Font = new System.Drawing.Font("Cambria", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(37, 28);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(703, 73);
@@ -407,35 +405,11 @@
             // 
             // pnlDesktop
             // 
-            this.pnlDesktop.Controls.Add(this.pictureBox2);
-            this.pnlDesktop.Controls.Add(this.lblSoftWare);
             this.pnlDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlDesktop.Location = new System.Drawing.Point(209, 125);
             this.pnlDesktop.Name = "pnlDesktop";
-            this.pnlDesktop.Size = new System.Drawing.Size(1317, 786);
+            this.pnlDesktop.Size = new System.Drawing.Size(1945, 1157);
             this.pnlDesktop.TabIndex = 2;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox2.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.logo_quanAN;
-            this.pictureBox2.Location = new System.Drawing.Point(490, 290);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(313, 253);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
-            // lblSoftWare
-            // 
-            this.lblSoftWare.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblSoftWare.Font = new System.Drawing.Font("Cambria", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSoftWare.Location = new System.Drawing.Point(5, 156);
-            this.lblSoftWare.Name = "lblSoftWare";
-            this.lblSoftWare.Size = new System.Drawing.Size(1305, 104);
-            this.lblSoftWare.TabIndex = 0;
-            this.lblSoftWare.Text = "PHẦN MỀM QUẢN LÝ NHÀ HÀNG";
-            this.lblSoftWare.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // contextMenuStrip1
             // 
@@ -447,23 +421,21 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1526, 911);
+            this.ClientSize = new System.Drawing.Size(2154, 1282);
             this.Controls.Add(this.pnlDesktop);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlMenu);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.MinimumSize = new System.Drawing.Size(1542, 953);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(2180, 1353);
             this.Name = "frmMain";
             this.Text = "Main";
             this.pnlMenu.ResumeLayout(false);
             this.pnlSubWareHouse.ResumeLayout(false);
             this.pnlSubAdmin.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbLogo)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.pnlDesktop.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -473,7 +445,7 @@
         private System.Windows.Forms.Panel pnlMenu;
         private System.Windows.Forms.Button btnOrder;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox ptbLogo;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pnlSubAdmin;
         private System.Windows.Forms.Button btnOpenFromTable;
@@ -493,8 +465,6 @@
         private System.Windows.Forms.Button btnInfoWareHouse;
         private System.Windows.Forms.Button btnWareHouse;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label lblSoftWare;
         private System.Windows.Forms.Button btnInfo;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }

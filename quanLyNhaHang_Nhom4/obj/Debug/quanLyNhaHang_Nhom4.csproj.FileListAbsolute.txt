@@ -34,5 +34,9 @@ C:\Users\admin\OneDrive\Máy tính\QuanLyNhaHang_Nhom04\quanLyNhaHang_Nhom4\obj\
 C:\Users\admin\OneDrive\Máy tính\QuanLyNhaHang_Nhom04\quanLyNhaHang_Nhom4\obj\Debug\quanLyNhaHang_Nhom4.exe
 C:\Users\admin\OneDrive\Máy tính\QuanLyNhaHang_Nhom04\quanLyNhaHang_Nhom4\obj\Debug\quanLyNhaHang_Nhom4.pdb
 C:\Users\admin\OneDrive\Máy tính\QuanLyNhaHang_Nhom04\quanLyNhaHang_Nhom4\obj\Debug\quanLyNhaHang_Nhom4.Manager.frmTable.resources
-\\Mac\Home\Desktop\quanLyNhaHang_Nhom4\quanLyNhaHang_Nhom4\obj\Debug\quanLyNhaHang_Nhom4.Manager.frmQLDanhMuc.resources
-\\Mac\Home\Desktop\quanLyNhaHang_Nhom4\quanLyNhaHang_Nhom4\obj\Debug\quanLyNhaHang_Nhom4.Manager.frmTable.resources
+\\Mac\Home\Desktop\quanLyNhaHang_Nhom4\quanLyNhaHang_Nhom4\bin\Debug\FontAwesome.Sharp.dll
+\\Mac\Home\Desktop\quanLyNhaHang_Nhom4\quanLyNhaHang_Nhom4\obj\Debug\quanLyNhaHang_Nhom4.Manager.frmAttendanceList.resources
+\\Mac\Home\Desktop\quanLyNhaHang_Nhom4\quanLyNhaHang_Nhom4\obj\Debug\quanLyNhaHang_Nhom4.csproj.CopyComplete
+\\Mac\Home\Desktop\quanLyNhaHang_Nhom4\quanLyNhaHang_Nhom4\obj\Debug\quanLyNhaHang_Nhom4.Manager.frmHome.resources
+\\Mac\Home\Desktop\quanLyNhaHang_Nhom4\quanLyNhaHang_Nhom4\obj\Debug\quanLyNhaHang_Nhom4.Manager.frmAdminCategory.resources
+\\Mac\Home\Desktop\quanLyNhaHang_Nhom4\quanLyNhaHang_Nhom4\obj\Debug\quanLyNhaHang_Nhom4.Manager.frmAdminTable.resources
