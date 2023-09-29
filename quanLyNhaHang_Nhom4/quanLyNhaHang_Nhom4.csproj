@@ -53,6 +53,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\Account.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Account.designer.cs">
+      <DependentUpon>Account.cs</DependentUpon>
+    </Compile>
     <Compile Include="Database\Account.cs" />
     <Compile Include="Database\AttendanceList.cs" />
     <Compile Include="Database\Bill.cs" />
@@ -102,9 +108,24 @@
     <Compile Include="Admin\frmAdminTable.Designer.cs">
       <DependentUpon>frmAdminTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager\frmManagerFood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\frmManagerFood.Designer.cs">
+      <DependentUpon>frmManagerFood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\frmWareHouse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\frmWareHouse.Designer.cs">
+      <DependentUpon>frmWareHouse.cs</DependentUpon>
+    </Compile>
     <Compile Include="NumberToText.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Admin\Account.resx">
+      <DependentUpon>Account.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Manager\frmAttendanceList.resx">
       <DependentUpon>frmAttendanceList.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,6 +143,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\frmAdminTable.resx">
       <DependentUpon>frmAdminTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\frmManagerFood.resx">
+      <DependentUpon>frmManagerFood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\frmWareHouse.resx">
+      <DependentUpon>frmWareHouse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -147,7 +174,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\icons8-eye-30.png" />
+    <Content Include="Resources\icons8-lock-50.png" />
+    <Content Include="Resources\icons8-minus-30.png" />
+    <Content Include="Resources\icons8-pencil-30.png" />
+    <Content Include="Resources\icons8-plus-30.png" />
+    <Content Include="Resources\icons8-research-30.png" />
+    <Content Include="Resources\pngtree-unlock-glyph-icon-vector-png-image_1859166.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo_quanAN.png" />
   </ItemGroup>

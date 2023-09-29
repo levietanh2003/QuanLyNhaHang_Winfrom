@@ -179,8 +179,22 @@ namespace quanLyNhaHang_Nhom4.Manager
             frmAdminCategory.Show();
 
         }
+
         #endregion
 
-
+        private void btnOpenFormAccount_Click(object sender, EventArgs e)
+        {
+            //hideSubMenu();
+            //lblTitle.Text = "Quản lý tài khoản";
+            //this.pnlDesktop.Controls.Clear();
+            //Account frmAccount = new Account()
+            //{
+            //    Dock = DockStyle.Fill,
+            //    TopLevel = false,
+            //    TopMost = true,
+            //};
+            //this.pnlDesktop.Controls.Add(frmHome);
+            //frmHome.Show();
+        }
     }
 }
