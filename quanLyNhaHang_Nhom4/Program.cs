@@ -1,5 +1,4 @@
-﻿using quanLyNhaHang_Nhom4.Database;
-using quanLyNhaHang_Nhom4.Manager;
+﻿using quanLyNhaHang_Nhom4.Manager;
 using System;
 using System.Collections.Generic;
 using System.Linq;

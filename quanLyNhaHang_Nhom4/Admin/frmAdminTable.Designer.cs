@@ -33,6 +33,9 @@
             this.toolstripTim = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSobanan = new System.Windows.Forms.ToolStripTextBox();
             this.dgvBanAn = new System.Windows.Forms.DataGridView();
+            this.colMaBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -49,9 +52,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblTongdanhmuc = new System.Windows.Forms.Label();
             this.lblTongDM = new System.Windows.Forms.Label();
-            this.colMaBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBanAn)).BeginInit();
             this.panel3.SuspendLayout();
@@ -70,7 +70,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.toolStrip1.Size = new System.Drawing.Size(802, 50);
+            this.toolStrip1.Size = new System.Drawing.Size(864, 43);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -113,6 +113,27 @@
             this.dgvBanAn.Size = new System.Drawing.Size(984, 545);
             this.dgvBanAn.TabIndex = 4;
             this.dgvBanAn.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellContentClick);
+            // 
+            // colMaBan
+            // 
+            this.colMaBan.HeaderText = "Mã bàn ăn";
+            this.colMaBan.MinimumWidth = 6;
+            this.colMaBan.Name = "colMaBan";
+            this.colMaBan.Width = 200;
+            // 
+            // colTenBan
+            // 
+            this.colTenBan.HeaderText = "Tên bàn ăn";
+            this.colTenBan.MinimumWidth = 6;
+            this.colTenBan.Name = "colTenBan";
+            this.colTenBan.Width = 300;
+            // 
+            // colTrangThai
+            // 
+            this.colTrangThai.HeaderText = "Trạng thái";
+            this.colTrangThai.MinimumWidth = 6;
+            this.colTrangThai.Name = "colTrangThai";
+            this.colTrangThai.Width = 300;
             // 
             // panel3
             // 
@@ -310,27 +331,6 @@
             this.lblTongDM.Size = new System.Drawing.Size(210, 32);
             this.lblTongDM.TabIndex = 3;
             this.lblTongDM.Text = "Tổng danh mục:";
-            // 
-            // colMaBan
-            // 
-            this.colMaBan.HeaderText = "Mã bàn ăn";
-            this.colMaBan.MinimumWidth = 6;
-            this.colMaBan.Name = "colMaBan";
-            this.colMaBan.Width = 200;
-            // 
-            // colTenBan
-            // 
-            this.colTenBan.HeaderText = "Tên bàn ăn";
-            this.colTenBan.MinimumWidth = 6;
-            this.colTenBan.Name = "colTenBan";
-            this.colTenBan.Width = 300;
-            // 
-            // colTrangThai
-            // 
-            this.colTrangThai.HeaderText = "Trạng thái";
-            this.colTrangThai.MinimumWidth = 6;
-            this.colTrangThai.Name = "colTrangThai";
-            this.colTrangThai.Width = 300;
             // 
             // frmAdminTable
             // 

@@ -34,7 +34,6 @@ C:\Users\admin\OneDrive\Máy tính\QuanLyNhaHang_Nhom04\quanLyNhaHang_Nhom4\obj\
 C:\Users\admin\OneDrive\Máy tính\QuanLyNhaHang_Nhom04\quanLyNhaHang_Nhom4\obj\Debug\quanLyNhaHang_Nhom4.exe
 C:\Users\admin\OneDrive\Máy tính\QuanLyNhaHang_Nhom04\quanLyNhaHang_Nhom4\obj\Debug\quanLyNhaHang_Nhom4.pdb
 \\Mac\Home\Desktop\quanLyNhaHang_Nhom4\quanLyNhaHang_Nhom4\bin\Debug\FontAwesome.Sharp.dll
-\\Mac\Home\Desktop\quanLyNhaHang_Nhom4\quanLyNhaHang_Nhom4\obj\Debug\quanLyNhaHang_Nhom4.Manager.frmAttendanceList.resources
 \\Mac\Home\Desktop\quanLyNhaHang_Nhom4\quanLyNhaHang_Nhom4\obj\Debug\quanLyNhaHang_Nhom4.csproj.CopyComplete
 \\Mac\Home\Desktop\quanLyNhaHang_Nhom4\quanLyNhaHang_Nhom4\obj\Debug\quanLyNhaHang_Nhom4.Manager.frmHome.resources
 \\Mac\Home\Desktop\quanLyNhaHang_Nhom4\quanLyNhaHang_Nhom4\obj\Debug\quanLyNhaHang_Nhom4.Manager.frmAdminCategory.resources
@@ -48,3 +47,8 @@ C:\Users\admin\OneDrive\Máy tính\QuanLyNhaHang_Nhom04\quanLyNhaHang_Nhom4\obj\
 C:\Users\admin\OneDrive\Máy tính\QuanLyNhaHang_Nhom04\quanLyNhaHang_Nhom4\obj\Debug\quanLyNhaHang_Nhom4.Manager.frmWareHouse.resources
 C:\Users\admin\OneDrive\Máy tính\QuanLyNhaHang_Nhom04\quanLyNhaHang_Nhom4\obj\Debug\quanLyNhaHang_Nhom4.Manager.frmManagerFood.resources
 C:\Users\admin\OneDrive\Máy tính\QuanLyNhaHang_Nhom04\quanLyNhaHang_Nhom4\obj\Debug\quanLyNhaHang_Nhom4.Manager.Quản_lí_tài_khoản.resources
+\\Mac\Home\Desktop\quanLyNhaHang_Nhom4\quanLyNhaHang_Nhom4\obj\Debug\quanLyNhaHang_Nhom4.Manager.frmManagerFood.resources
+\\Mac\Home\Desktop\quanLyNhaHang_Nhom4\quanLyNhaHang_Nhom4\obj\Debug\quanLyNhaHang_Nhom4.Manager.frmWareHouse.resources
+\\Mac\Home\Desktop\quanLyNhaHang_Nhom4\quanLyNhaHang_Nhom4\obj\Debug\quanLyNhaHang_Nhom4.Admin.frmAdminAccount.resources
+\\Mac\Home\Desktop\quanLyNhaHang_Nhom4\quanLyNhaHang_Nhom4\obj\Debug\quanLyNhaHang_Nhom4.Manager.frmInfomation.resources
+\\Mac\Home\Desktop\quanLyNhaHang_Nhom4\quanLyNhaHang_Nhom4\obj\Debug\quanLyNhaHang_Nhom4.Manager.frmAttendanceList.resources

@@ -1,5 +1,4 @@
-﻿using quanLyNhaHang_Nhom4.Database;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,18 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using quanLyNhaHang_Nhom4.Admin;
 
 namespace quanLyNhaHang_Nhom4.Manager
 {
     public partial class frmMain : Form
     {
-        private Form currentchildform;
-        private Account loginAccount;
-        public Account LoginAccount
-        {
-            get { return loginAccount; }
-            set { loginAccount = value; changeAccount(loginAccount.typeAccount); }
-        }
+        //private Account loginAccount;
+        //public Account LoginAccount
+        //{
+        //    get { return loginAccount; }
+        //    set { loginAccount = value; changeAccount(loginAccount.typeAccount); }
+        //}
 
         public frmMain()
         {
@@ -147,26 +146,23 @@ namespace quanLyNhaHang_Nhom4.Manager
         {
             hideSubMenu();
             //load giao dien cham cong len giao dien chinh
-            //lblTitle.Text = "Chấm công";
-            //this.pnlDesktop.Controls.Clear();
+            lblTitle.Text = "Chấm công";
+            this.pnlDesktop.Controls.Clear();
 
-            //frmAttendanceList frmAttendance = new frmAttendanceList()
-            //{
-            //    Dock = DockStyle.Fill,
-            //    TopLevel = false,
-            //    TopMost = true
-            //};
-            //this.pnlDesktop.Controls.Add((frmAttendanceList)frmAttendance);
-
-            //frmAttendance.Show();
-
-            // fix loi sai font cua vy
+            frmAttendanceList frmAttendanceList = new frmAttendanceList()
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false,
+                TopMost = true,
+            };
+            this.pnlDesktop.Controls.Add((frmAttendanceList)frmAttendanceList);
+            frmAttendanceList.Show();
         }
 
         private void btnOpenFormCategory_Click(object sender, EventArgs e)
         {
             hideSubMenu();
-            lblTitle.Text = "Danh mục";
+            lblTitle.Text = "Quản lý danh mục";
             this.pnlDesktop.Controls.Clear();
 
             frmAdminCategory frmAdminCategory = new frmAdminCategory()
@@ -180,21 +176,69 @@ namespace quanLyNhaHang_Nhom4.Manager
 
         }
 
-        #endregion
-
         private void btnOpenFormAccount_Click(object sender, EventArgs e)
         {
-            //hideSubMenu();
-            //lblTitle.Text = "Quản lý tài khoản";
-            //this.pnlDesktop.Controls.Clear();
-            //Account frmAccount = new Account()
-            //{
-            //    Dock = DockStyle.Fill,
-            //    TopLevel = false,
-            //    TopMost = true,
-            //};
-            //this.pnlDesktop.Controls.Add(frmHome);
-            //frmHome.Show();
+            hideSubMenu();
+            lblTitle.Text = "Quản lý tài khoản";
+            this.pnlDesktop.Controls.Clear();
+
+            frmAdminAccount frmAdminAccount = new frmAdminAccount()
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false,
+                TopMost = true,
+            };
+            this.pnlDesktop.Controls.Add((frmAdminAccount)frmAdminAccount);
+            frmAdminAccount.Show();
+
         }
+        private void btnInfo_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            lblTitle.Text = "Thông tin";
+            this.pnlDesktop.Controls.Clear();
+
+            frmInfomation frmInfomation = new frmInfomation()
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false,
+                TopMost = true,
+            };
+            this.pnlDesktop.Controls.Add((frmInfomation)frmInfomation);
+            frmInfomation.Show();
+        }
+        private void btnOpenFormFood_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            lblTitle.Text = "Quản lý món ăn";
+            this.pnlDesktop.Controls.Clear();
+
+            frmManagerFood frmManagerFood = new frmManagerFood() 
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false,
+                TopMost = true,
+            };
+            this.pnlDesktop.Controls.Add((frmManagerFood)frmManagerFood);
+            frmManagerFood.Show();
+        }
+        private void btnInfoWareHouse_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            lblTitle.Text = "Quản lý thông tin đơn hàng";
+            this.pnlDesktop.Controls.Clear();
+            frmWareHouse frmWareHouse = new frmWareHouse() 
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false,
+                TopMost = true,
+            };
+            this.pnlDesktop.Controls.Add((frmWareHouse)frmWareHouse);
+            frmWareHouse.Show();
+        }
+
+        #endregion
+
+
     }
 }

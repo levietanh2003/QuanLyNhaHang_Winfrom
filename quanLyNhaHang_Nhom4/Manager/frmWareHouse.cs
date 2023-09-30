@@ -16,5 +16,10 @@ namespace quanLyNhaHang_Nhom4.Manager
         {
             InitializeComponent();
         }
+
+        private void lsvBillInfoOfWH_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
