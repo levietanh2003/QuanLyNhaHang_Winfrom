@@ -213,6 +213,7 @@
             this.btnOpenFormAccount.TabIndex = 8;
             this.btnOpenFormAccount.Text = "Tài khoản";
             this.btnOpenFormAccount.UseVisualStyleBackColor = false;
+            this.btnOpenFormAccount.Click += new System.EventHandler(this.btnOpenFormAccount_Click);
             // 
             // btnOpenFormStaff
             // 
@@ -419,7 +420,7 @@
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2154, 1282);
             this.Controls.Add(this.pnlDesktop);
@@ -427,7 +428,7 @@
             this.Controls.Add(this.pnlMenu);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.MinimumSize = new System.Drawing.Size(2180, 1353);
+            this.MinimumSize = new System.Drawing.Size(1918, 1018);
             this.Name = "frmMain";
             this.Text = "Main";
             this.pnlMenu.ResumeLayout(false);
