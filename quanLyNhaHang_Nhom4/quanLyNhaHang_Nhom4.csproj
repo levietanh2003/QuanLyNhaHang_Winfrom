@@ -33,13 +33,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="FontAwesome.Sharp, Version=6.3.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.6.3.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -58,6 +67,90 @@
     </Compile>
     <Compile Include="Admin\frmAdminAccount.Designer.cs">
       <DependentUpon>frmAdminAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Account.cs">
+      <DependentUpon>QuanLyNhaHangEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\AttendanceList.cs">
+      <DependentUpon>QuanLyNhaHangEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Bill.cs">
+      <DependentUpon>QuanLyNhaHangEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\BillInfo.cs">
+      <DependentUpon>QuanLyNhaHangEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\BillInfoOfWareHouse.cs">
+      <DependentUpon>QuanLyNhaHangEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\BillOfWareHouse.cs">
+      <DependentUpon>QuanLyNhaHangEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Food.cs">
+      <DependentUpon>QuanLyNhaHangEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\FoodCategory.cs">
+      <DependentUpon>QuanLyNhaHangEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Material.cs">
+      <DependentUpon>QuanLyNhaHangEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Position.cs">
+      <DependentUpon>QuanLyNhaHangEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\QuanLyNhaHangEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyNhaHangEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\QuanLyNhaHangEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyNhaHangEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\QuanLyNhaHangEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyNhaHangEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Database\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>QuanLyNhaHangEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\sp_helpdiagrams_Result.cs">
+      <DependentUpon>QuanLyNhaHangEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Staff.cs">
+      <DependentUpon>QuanLyNhaHangEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\TableFood.cs">
+      <DependentUpon>QuanLyNhaHangEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Unit.cs">
+      <DependentUpon>QuanLyNhaHangEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\USP_CheckExitsAttendanceList_Result.cs">
+      <DependentUpon>QuanLyNhaHangEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\USP_GetAccountByName_Result.cs">
+      <DependentUpon>QuanLyNhaHangEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\USP_GetListBillByDate_Result.cs">
+      <DependentUpon>QuanLyNhaHangEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\USP_GetTableList_Result.cs">
+      <DependentUpon>QuanLyNhaHangEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\USP_GetTopFood_Result.cs">
+      <DependentUpon>QuanLyNhaHangEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\USP_GetTotalAttendanceList_Result.cs">
+      <DependentUpon>QuanLyNhaHangEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\USP_GetTotalBillsInDay_Result.cs">
+      <DependentUpon>QuanLyNhaHangEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\USP_Login_Result.cs">
+      <DependentUpon>QuanLyNhaHangEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Manager\frmAttendanceList.cs">
       <SubType>Form</SubType>
@@ -156,6 +249,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EntityDeploy Include="Database\QuanLyNhaHangEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QuanLyNhaHangEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Database\QuanLyNhaHangEntities.edmx.diagram">
+      <DependentUpon>QuanLyNhaHangEntities.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -171,6 +271,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Database\QuanLyNhaHangEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>QuanLyNhaHangEntities.Context.cs</LastGenOutput>
+      <DependentUpon>QuanLyNhaHangEntities.edmx</DependentUpon>
+    </Content>
+    <Content Include="Database\QuanLyNhaHangEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QuanLyNhaHangEntities.edmx</DependentUpon>
+      <LastGenOutput>QuanLyNhaHangEntities.cs</LastGenOutput>
+    </Content>
     <Content Include="Resources\icons8-eye-30.png" />
     <Content Include="Resources\icons8-lock-50.png" />
     <Content Include="Resources\icons8-minus-30.png" />
@@ -216,8 +326,9 @@
   <ItemGroup>
     <None Include="Resources\Close-2-icon.png" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Database\" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

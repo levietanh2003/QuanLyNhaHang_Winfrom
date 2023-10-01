@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4a1e2cbfdbf04816aaaeecdc17aaacec" Name="Diagram1">
+        <EntityTypeShape EntityType="QuanLyQuanAnModel.Account" Width="1.5" PointX="5.25" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanAnModel.AttendanceList" Width="1.5" PointX="5.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanAnModel.Bill" Width="1.5" PointX="7.5" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanAnModel.BillInfo" Width="1.5" PointX="9.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanAnModel.BillInfoOfWareHouse" Width="1.5" PointX="9.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanAnModel.BillOfWareHouse" Width="1.5" PointX="7.5" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanAnModel.Food" Width="1.5" PointX="7.5" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanAnModel.FoodCategory" Width="1.5" PointX="5.25" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanAnModel.Material" Width="1.5" PointX="7.5" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanAnModel.Position" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanAnModel.Staff" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanAnModel.TableFood" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanAnModel.Unit" Width="1.5" PointX="5.25" PointY="16.5" IsExpanded="true" />
+        <AssociationConnector Association="QuanLyQuanAnModel.FK__Account__idStaff__46B27FE2" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanAnModel.FK__Account__idStaff__74AE54BC" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanAnModel.FK__Account__idStaff__76619304" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanAnModel.FK__Bill__payerId__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanAnModel.FK__BillOfWar__userN__4C6B5938" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanAnModel.FK__BillOfWar__userN__7B264821" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanAnModel.FK__BillOfWar__userN__7C4F7684" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanAnModel.FK__Attendanc__idSta__47A6A41B" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanAnModel.FK__Attendanc__idSta__75A278F5" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanAnModel.FK__Attendanc__idSta__7755B73D" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanAnModel.FK__Bill__idTable__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanAnModel.FK__BillInfo__idBill__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanAnModel.FK__BillInfo__idFood__498EEC8D" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanAnModel.FK__BillInfo__idFood__7849DB76" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanAnModel.FK__BillInfo__idFood__797309D9" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanAnModel.FK__BillInfoO__idBil__4A8310C6" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanAnModel.FK__BillInfoO__idBil__793DFFAF" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanAnModel.FK__BillInfoO__idBil__7A672E12" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanAnModel.FK__BillInfoO__idMat__4B7734FF" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanAnModel.FK__BillInfoO__idMat__7A3223E8" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanAnModel.FK__BillInfoO__idMat__7B5B524B" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanAnModel.FK__Food__idFC__4D5F7D71" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanAnModel.FK__Food__idFC__7C1A6C5A" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanAnModel.FK__Food__idFC__7D439ABD" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanAnModel.FK__Material__idUnit__4E53A1AA" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanAnModel.FK__Material__idUnit__7D0E9093" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanAnModel.FK__Material__idUnit__7E37BEF6" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanAnModel.FK__Staff__idPositio__4F47C5E3" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanAnModel.FK__Staff__idPositio__7E02B4CC" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanAnModel.FK__Staff__idPositio__7F2BE32F" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

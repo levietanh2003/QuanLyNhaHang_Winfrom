@@ -54,6 +54,7 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.pnlDesktop = new System.Windows.Forms.Panel();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnDisplayName = new System.Windows.Forms.Button();
             this.pnlMenu.SuspendLayout();
             this.pnlSubWareHouse.SuspendLayout();
             this.pnlSubAdmin.SuspendLayout();
@@ -115,6 +116,7 @@
             this.btnLogOut.TabIndex = 9;
             this.btnLogOut.Text = "Đăng xuất";
             this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // panel2
             // 
@@ -349,6 +351,7 @@
             this.btnFind.TabIndex = 2;
             this.btnFind.Text = "Tra cứu";
             this.btnFind.UseVisualStyleBackColor = false;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // btnOrder
             // 
@@ -391,6 +394,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DimGray;
+            this.panel1.Controls.Add(this.btnDisplayName);
             this.panel1.Controls.Add(this.lblTitle);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(164, 0);
@@ -420,6 +424,20 @@
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // btnDisplayName
+            // 
+            this.btnDisplayName.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnDisplayName.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnDisplayName.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnDisplayName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDisplayName.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDisplayName.ForeColor = System.Drawing.Color.White;
+            this.btnDisplayName.Location = new System.Drawing.Point(1071, 0);
+            this.btnDisplayName.Name = "btnDisplayName";
+            this.btnDisplayName.Size = new System.Drawing.Size(239, 57);
+            this.btnDisplayName.TabIndex = 1;
+            this.btnDisplayName.UseVisualStyleBackColor = true;
             // 
             // frmMain
             // 
@@ -470,5 +488,6 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Button btnInfo;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Button btnDisplayName;
     }
 }

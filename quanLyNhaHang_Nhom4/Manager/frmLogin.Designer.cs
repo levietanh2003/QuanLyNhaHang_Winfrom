@@ -33,7 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ptbUserName = new System.Windows.Forms.PictureBox();
             this.ptbPassWord = new System.Windows.Forms.PictureBox();
-            this.txtUserName = new System.Windows.Forms.TextBox();
+            this.txtUser = new System.Windows.Forms.TextBox();
             this.txtPassWord = new System.Windows.Forms.TextBox();
             this.btnLogIn = new System.Windows.Forms.Button();
             this.ptbExit = new System.Windows.Forms.PictureBox();
@@ -90,16 +90,16 @@
             this.ptbPassWord.TabIndex = 2;
             this.ptbPassWord.TabStop = false;
             // 
-            // txtUserName
+            // txtUser
             // 
-            this.txtUserName.BackColor = System.Drawing.Color.White;
-            this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserName.Location = new System.Drawing.Point(431, 232);
-            this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(280, 38);
-            this.txtUserName.TabIndex = 3;
-            this.txtUserName.Enter += new System.EventHandler(this.txtUserName_Enter);
-            this.txtUserName.Leave += new System.EventHandler(this.txtUserName_Leave);
+            this.txtUser.BackColor = System.Drawing.Color.White;
+            this.txtUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUser.Location = new System.Drawing.Point(431, 232);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Size = new System.Drawing.Size(280, 38);
+            this.txtUser.TabIndex = 3;
+            this.txtUser.Enter += new System.EventHandler(this.txtUserName_Enter);
+            this.txtUser.Leave += new System.EventHandler(this.txtUserName_Leave);
             // 
             // txtPassWord
             // 
@@ -123,7 +123,7 @@
             this.btnLogIn.Name = "btnLogIn";
             this.btnLogIn.Size = new System.Drawing.Size(210, 55);
             this.btnLogIn.TabIndex = 4;
-            this.btnLogIn.Text = "DANG NHAP";
+            this.btnLogIn.Text = "ĐĂNG NHẬP";
             this.btnLogIn.UseVisualStyleBackColor = false;
             this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
             // 
@@ -149,7 +149,7 @@
             this.Controls.Add(this.ptbExit);
             this.Controls.Add(this.btnLogIn);
             this.Controls.Add(this.txtPassWord);
-            this.Controls.Add(this.txtUserName);
+            this.Controls.Add(this.txtUser);
             this.Controls.Add(this.ptbPassWord);
             this.Controls.Add(this.ptbUserName);
             this.Controls.Add(this.label1);
@@ -173,7 +173,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox ptbUserName;
         private System.Windows.Forms.PictureBox ptbPassWord;
-        private System.Windows.Forms.TextBox txtUserName;
+        private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.TextBox txtPassWord;
         private System.Windows.Forms.Button btnLogIn;
         private System.Windows.Forms.PictureBox ptbExit;

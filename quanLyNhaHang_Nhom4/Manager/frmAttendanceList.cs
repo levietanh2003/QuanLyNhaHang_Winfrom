@@ -1,4 +1,5 @@
-﻿using System;
+﻿using quanLyNhaHang_Nhom4.Database;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,9 +17,8 @@ namespace quanLyNhaHang_Nhom4.Manager
         {
             InitializeComponent();
             columnRatio();
-            
+           
         }
-
 
         #region Method
         public void columnRatio()

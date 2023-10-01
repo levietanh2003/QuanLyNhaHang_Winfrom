@@ -4,26 +4,33 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using quanLyNhaHang_Nhom4.Admin;
+using quanLyNhaHang_Nhom4.Database;
 
 namespace quanLyNhaHang_Nhom4.Manager
 {
     public partial class frmMain : Form
     {
-        //private Account loginAccount;
-        //public Account LoginAccount
-        //{
-        //    get { return loginAccount; }
-        //    set { loginAccount = value; changeAccount(loginAccount.typeAccount); }
-        //}
+        private Account loginAccount;
+        public Account LoginAccount
+        {
+            get { return loginAccount; }
+            set { loginAccount = value; changeAccount(loginAccount.typeAccount); }
+        }
 
-        public frmMain()
+        public frmMain(Account acc)
         {
             InitializeComponent();
             customizeDesing();
+            LoginAccount = acc;
+            this.Text = string.Empty;
+            //this.ControlBox = false;
+            this.DoubleBuffered = true;
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             lblTitle.Text = "Giới thiệu";
             this.pnlDesktop.Controls.Clear();
             frmHome frmHome = new frmHome()
@@ -35,8 +42,20 @@ namespace quanLyNhaHang_Nhom4.Manager
             this.pnlDesktop.Controls.Add(frmHome);
             frmHome.Show();
         }
-
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
         #region Method
+        void changeAccount(int type)
+        {
+            btnAdmin.Enabled = type == 1;
+            btnWareHouse.Enabled = type == 1;
+            btnOpenFormAttendance.Enabled = type == 1;
+            //lblXinChao.Text = "Xin chào " + loginAccount.DisplayName + " !";
+            btnDisplayName.Text = "Xin chào " + loginAccount.displayName + " !";
+            //btnInfoAccount.Text += " (" + loginAccount.DisplayName + ")";
+        }
         private void customizeDesing()
         {
             pnlSubAdmin.Visible = false;
@@ -66,30 +85,6 @@ namespace quanLyNhaHang_Nhom4.Manager
                 subMenu.Visible = false;
             }
         }
-        void changeAccount(int type)
-        {
-            btnAdmin.Enabled = type == 1;
-            btnWareHouse.Enabled = type == 1;
-            btnOpenFormAttendance.Enabled = type == 1;
-            //lblXinChao.Text = "Xin chào " + loginAccount.DisplayName + " !";
-            //btnDisplayName.Text = "Xin chào " + loginAccount.displayName + " !";
-            //btnInfoAccount.Text += " (" + loginAccount.DisplayName + ")";
-        }
-        //private void openChildForm(Form childForm)
-        //{
-        //    if (currentchildform != null)
-        //    {
-        //        currentchildform.Close();
-        //    }
-        //    currentchildform = childForm;
-        //    childForm.TopLevel = false;
-        //    childForm.FormBorderStyle = FormBorderStyle.None;
-        //    childForm.Dock = DockStyle.Fill;
-        //    pnlDesktop.Controls.Add(childForm);
-        //    pnlDesktop.Tag = childForm;
-        //    childForm.Show();
-        //    lblTitle.Text = childForm.Text;
-        //}
         private void Reset()
         {
             hideSubMenu();
@@ -210,17 +205,6 @@ namespace quanLyNhaHang_Nhom4.Manager
         private void btnOpenFormFood_Click(object sender, EventArgs e)
         {
             hideSubMenu();
-            lblTitle.Text = "Quản lý món ăn";
-            this.pnlDesktop.Controls.Clear();
-
-            frmManagerFood frmManagerFood = new frmManagerFood() 
-            {
-                Dock = DockStyle.Fill,
-                TopLevel = false,
-                TopMost = true,
-            };
-            this.pnlDesktop.Controls.Add((frmManagerFood)frmManagerFood);
-            frmManagerFood.Show();
         }
         private void btnInfoWareHouse_Click(object sender, EventArgs e)
         {
@@ -237,8 +221,24 @@ namespace quanLyNhaHang_Nhom4.Manager
             frmWareHouse.Show();
         }
 
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            lblTitle.Text = "Tra cứu món ăn";
+            this.pnlDesktop.Controls.Clear();
+            frmManagerFood frmManagerFood = new frmManagerFood()
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false,
+                TopMost = true,
+            };
+            this.pnlDesktop.Controls.Add((frmManagerFood)frmManagerFood);
+            frmManagerFood.Show();
+        }
         #endregion
-
-
     }
 }

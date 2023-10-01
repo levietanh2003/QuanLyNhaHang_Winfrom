@@ -1,0 +1,1939 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="QuanLyQuanAnModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="userName" />
+          </Key>
+          <Property Name="userName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="passWord" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="displayName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="typeAccount" Type="int" Nullable="false" />
+          <Property Name="idStaff" Type="varchar" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AttendanceList">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idStaff" Type="varchar" MaxLength="5" />
+          <Property Name="dateCheckIn" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Bill">
+          <Key>
+            <PropertyRef Name="idBill" />
+          </Key>
+          <Property Name="idBill" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dateCheckIn" Type="datetime" Nullable="false" />
+          <Property Name="dateCheckOut" Type="datetime" />
+          <Property Name="idTable" Type="int" Nullable="false" />
+          <Property Name="statusBill" Type="int" Nullable="false" />
+          <Property Name="discount" Type="int" />
+          <Property Name="totalPrice" Type="float" />
+          <Property Name="payerId" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="BillInfo">
+          <Key>
+            <PropertyRef Name="idBillInfo" />
+          </Key>
+          <Property Name="idBillInfo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idBill" Type="int" Nullable="false" />
+          <Property Name="idFood" Type="int" Nullable="false" />
+          <Property Name="countFood" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BillInfoOfWareHouse">
+          <Key>
+            <PropertyRef Name="idBillInfoOfWareHouse" />
+          </Key>
+          <Property Name="idBillInfoOfWareHouse" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idBillOfWareHouse" Type="int" />
+          <Property Name="idMaterial" Type="int" />
+          <Property Name="number" Type="int" />
+          <Property Name="price" Type="int" Nullable="false" />
+          <Property Name="totalPrice" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BillOfWareHouse">
+          <Key>
+            <PropertyRef Name="idBillOfWareHouse" />
+          </Key>
+          <Property Name="idBillOfWareHouse" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dateAdded" Type="date" Nullable="false" />
+          <Property Name="supplier" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="note" Type="nvarchar" MaxLength="100" />
+          <Property Name="userName" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Food">
+          <Key>
+            <PropertyRef Name="idFood" />
+          </Key>
+          <Property Name="idFood" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nameFood" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="idFC" Type="int" Nullable="false" />
+          <Property Name="price" Type="float" Nullable="false" />
+          <Property Name="imageFood" Type="nvarchar" MaxLength="100" />
+          <Property Name="statusFood" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="FoodCategory">
+          <Key>
+            <PropertyRef Name="idFC" />
+          </Key>
+          <Property Name="idFC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nameFC" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Material">
+          <Key>
+            <PropertyRef Name="idMaterial" />
+          </Key>
+          <Property Name="idMaterial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nameMaterial" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="idUnit" Type="int" />
+        </EntityType>
+        <EntityType Name="Position">
+          <Key>
+            <PropertyRef Name="idPosition" />
+          </Key>
+          <Property Name="idPosition" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="namePosition" Type="nvarchar" MaxLength="100" />
+          <Property Name="coefficientSalary" Type="float" />
+        </EntityType>
+        <EntityType Name="Staff">
+          <Key>
+            <PropertyRef Name="idStaff" />
+          </Key>
+          <Property Name="idStaff" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="nameStaff" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="sex" Type="nvarchar" MaxLength="10" />
+          <Property Name="idPosition" Type="int" Nullable="false" />
+          <Property Name="dateOfBirth" Type="date" Nullable="false" />
+          <Property Name="identityCard" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="phoneNumber" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="address" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TableFood">
+          <Key>
+            <PropertyRef Name="idTable" />
+          </Key>
+          <Property Name="idTable" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nameTable" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="statusTable" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Unit">
+          <Key>
+            <PropertyRef Name="idUnit" />
+          </Key>
+          <Property Name="idUnit" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nameUnit" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Account__idStaff__46B27FE2">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+          <End Role="Account" Type="Self.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="idStaff" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="idStaff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Account__idStaff__74AE54BC">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+          <End Role="Account" Type="Self.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="idStaff" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="idStaff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Account__idStaff__76619304">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+          <End Role="Account" Type="Self.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="idStaff" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="idStaff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Attendanc__idSta__47A6A41B">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="AttendanceList" Type="Self.AttendanceList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="idStaff" />
+            </Principal>
+            <Dependent Role="AttendanceList">
+              <PropertyRef Name="idStaff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Attendanc__idSta__75A278F5">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="AttendanceList" Type="Self.AttendanceList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="idStaff" />
+            </Principal>
+            <Dependent Role="AttendanceList">
+              <PropertyRef Name="idStaff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Attendanc__idSta__7755B73D">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="AttendanceList" Type="Self.AttendanceList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="idStaff" />
+            </Principal>
+            <Dependent Role="AttendanceList">
+              <PropertyRef Name="idStaff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Bill__idTable__4222D4EF">
+          <End Role="TableFood" Type="Self.TableFood" Multiplicity="1" />
+          <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TableFood">
+              <PropertyRef Name="idTable" />
+            </Principal>
+            <Dependent Role="Bill">
+              <PropertyRef Name="idTable" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Bill__payerId__4316F928">
+          <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+          <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="userName" />
+            </Principal>
+            <Dependent Role="Bill">
+              <PropertyRef Name="payerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BillInfo__idBill__46E78A0C">
+          <End Role="Bill" Type="Self.Bill" Multiplicity="1" />
+          <End Role="BillInfo" Type="Self.BillInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bill">
+              <PropertyRef Name="idBill" />
+            </Principal>
+            <Dependent Role="BillInfo">
+              <PropertyRef Name="idBill" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BillInfo__idFood__498EEC8D">
+          <End Role="Food" Type="Self.Food" Multiplicity="1" />
+          <End Role="BillInfo" Type="Self.BillInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Food">
+              <PropertyRef Name="idFood" />
+            </Principal>
+            <Dependent Role="BillInfo">
+              <PropertyRef Name="idFood" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BillInfo__idFood__7849DB76">
+          <End Role="Food" Type="Self.Food" Multiplicity="1" />
+          <End Role="BillInfo" Type="Self.BillInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Food">
+              <PropertyRef Name="idFood" />
+            </Principal>
+            <Dependent Role="BillInfo">
+              <PropertyRef Name="idFood" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BillInfo__idFood__797309D9">
+          <End Role="Food" Type="Self.Food" Multiplicity="1" />
+          <End Role="BillInfo" Type="Self.BillInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Food">
+              <PropertyRef Name="idFood" />
+            </Principal>
+            <Dependent Role="BillInfo">
+              <PropertyRef Name="idFood" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BillInfoO__idBil__4A8310C6">
+          <End Role="BillOfWareHouse" Type="Self.BillOfWareHouse" Multiplicity="0..1" />
+          <End Role="BillInfoOfWareHouse" Type="Self.BillInfoOfWareHouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BillOfWareHouse">
+              <PropertyRef Name="idBillOfWareHouse" />
+            </Principal>
+            <Dependent Role="BillInfoOfWareHouse">
+              <PropertyRef Name="idBillOfWareHouse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BillInfoO__idBil__793DFFAF">
+          <End Role="BillOfWareHouse" Type="Self.BillOfWareHouse" Multiplicity="0..1" />
+          <End Role="BillInfoOfWareHouse" Type="Self.BillInfoOfWareHouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BillOfWareHouse">
+              <PropertyRef Name="idBillOfWareHouse" />
+            </Principal>
+            <Dependent Role="BillInfoOfWareHouse">
+              <PropertyRef Name="idBillOfWareHouse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BillInfoO__idBil__7A672E12">
+          <End Role="BillOfWareHouse" Type="Self.BillOfWareHouse" Multiplicity="0..1" />
+          <End Role="BillInfoOfWareHouse" Type="Self.BillInfoOfWareHouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BillOfWareHouse">
+              <PropertyRef Name="idBillOfWareHouse" />
+            </Principal>
+            <Dependent Role="BillInfoOfWareHouse">
+              <PropertyRef Name="idBillOfWareHouse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BillInfoO__idMat__4B7734FF">
+          <End Role="Material" Type="Self.Material" Multiplicity="0..1" />
+          <End Role="BillInfoOfWareHouse" Type="Self.BillInfoOfWareHouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Material">
+              <PropertyRef Name="idMaterial" />
+            </Principal>
+            <Dependent Role="BillInfoOfWareHouse">
+              <PropertyRef Name="idMaterial" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BillInfoO__idMat__7A3223E8">
+          <End Role="Material" Type="Self.Material" Multiplicity="0..1" />
+          <End Role="BillInfoOfWareHouse" Type="Self.BillInfoOfWareHouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Material">
+              <PropertyRef Name="idMaterial" />
+            </Principal>
+            <Dependent Role="BillInfoOfWareHouse">
+              <PropertyRef Name="idMaterial" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BillInfoO__idMat__7B5B524B">
+          <End Role="Material" Type="Self.Material" Multiplicity="0..1" />
+          <End Role="BillInfoOfWareHouse" Type="Self.BillInfoOfWareHouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Material">
+              <PropertyRef Name="idMaterial" />
+            </Principal>
+            <Dependent Role="BillInfoOfWareHouse">
+              <PropertyRef Name="idMaterial" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BillOfWar__userN__4C6B5938">
+          <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+          <End Role="BillOfWareHouse" Type="Self.BillOfWareHouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="userName" />
+            </Principal>
+            <Dependent Role="BillOfWareHouse">
+              <PropertyRef Name="userName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BillOfWar__userN__7B264821">
+          <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+          <End Role="BillOfWareHouse" Type="Self.BillOfWareHouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="userName" />
+            </Principal>
+            <Dependent Role="BillOfWareHouse">
+              <PropertyRef Name="userName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BillOfWar__userN__7C4F7684">
+          <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+          <End Role="BillOfWareHouse" Type="Self.BillOfWareHouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="userName" />
+            </Principal>
+            <Dependent Role="BillOfWareHouse">
+              <PropertyRef Name="userName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Food__idFC__4D5F7D71">
+          <End Role="FoodCategory" Type="Self.FoodCategory" Multiplicity="1" />
+          <End Role="Food" Type="Self.Food" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FoodCategory">
+              <PropertyRef Name="idFC" />
+            </Principal>
+            <Dependent Role="Food">
+              <PropertyRef Name="idFC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Food__idFC__7C1A6C5A">
+          <End Role="FoodCategory" Type="Self.FoodCategory" Multiplicity="1" />
+          <End Role="Food" Type="Self.Food" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FoodCategory">
+              <PropertyRef Name="idFC" />
+            </Principal>
+            <Dependent Role="Food">
+              <PropertyRef Name="idFC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Food__idFC__7D439ABD">
+          <End Role="FoodCategory" Type="Self.FoodCategory" Multiplicity="1" />
+          <End Role="Food" Type="Self.Food" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FoodCategory">
+              <PropertyRef Name="idFC" />
+            </Principal>
+            <Dependent Role="Food">
+              <PropertyRef Name="idFC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Material__idUnit__4E53A1AA">
+          <End Role="Unit" Type="Self.Unit" Multiplicity="0..1" />
+          <End Role="Material" Type="Self.Material" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Unit">
+              <PropertyRef Name="idUnit" />
+            </Principal>
+            <Dependent Role="Material">
+              <PropertyRef Name="idUnit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Material__idUnit__7D0E9093">
+          <End Role="Unit" Type="Self.Unit" Multiplicity="0..1" />
+          <End Role="Material" Type="Self.Material" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Unit">
+              <PropertyRef Name="idUnit" />
+            </Principal>
+            <Dependent Role="Material">
+              <PropertyRef Name="idUnit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Material__idUnit__7E37BEF6">
+          <End Role="Unit" Type="Self.Unit" Multiplicity="0..1" />
+          <End Role="Material" Type="Self.Material" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Unit">
+              <PropertyRef Name="idUnit" />
+            </Principal>
+            <Dependent Role="Material">
+              <PropertyRef Name="idUnit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Staff__idPositio__4F47C5E3">
+          <End Role="Position" Type="Self.Position" Multiplicity="1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Position">
+              <PropertyRef Name="idPosition" />
+            </Principal>
+            <Dependent Role="Staff">
+              <PropertyRef Name="idPosition" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Staff__idPositio__7E02B4CC">
+          <End Role="Position" Type="Self.Position" Multiplicity="1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Position">
+              <PropertyRef Name="idPosition" />
+            </Principal>
+            <Dependent Role="Staff">
+              <PropertyRef Name="idPosition" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Staff__idPositio__7F2BE32F">
+          <End Role="Position" Type="Self.Position" Multiplicity="1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Position">
+              <PropertyRef Name="idPosition" />
+            </Principal>
+            <Dependent Role="Staff">
+              <PropertyRef Name="idPosition" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="UpdateAccount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userName" Type="nvarchar" Mode="In" />
+          <Parameter Name="displayName" Type="nvarchar" Mode="In" />
+          <Parameter Name="passWord" Type="nvarchar" Mode="In" />
+          <Parameter Name="newpass" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="UpdateFood" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idFood" Type="int" Mode="In" />
+          <Parameter Name="nameFood" Type="nvarchar" Mode="In" />
+          <Parameter Name="idFC" Type="int" Mode="In" />
+          <Parameter Name="price" Type="float" Mode="In" />
+          <Parameter Name="imageFood" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="UpdateFoodCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idFoodCategory" Type="int" Mode="In" />
+          <Parameter Name="nameFoodCategory" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="UpdateTableFood" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idTable" Type="int" Mode="In" />
+          <Parameter Name="nameTable" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="USP_CheckExitsAttendanceList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idStaff" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="USP_CheckOut" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="discount" Type="int" Mode="In" />
+          <Parameter Name="totalPrice" Type="float" Mode="In" />
+          <Parameter Name="payerId" Type="nvarchar" Mode="In" />
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="USP_DeleteMaterial" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idMaterial" Type="int" Mode="In" />
+        </Function>
+        <Function Name="USP_GetAccountByName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userName" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="USP_GetListBillByDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="checkIn" Type="date" Mode="In" />
+          <Parameter Name="checkOut" Type="date" Mode="In" />
+        </Function>
+        <Function Name="USP_GetMaxBill" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="USP_GetTableList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="USP_GetTopFood" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="checkIn" Type="date" Mode="In" />
+          <Parameter Name="checkOut" Type="date" Mode="In" />
+        </Function>
+        <Function Name="USP_GetTotalAttendanceList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="USP_GetTotalBillsInDay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="USP_InsertAccount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userName" Type="nvarchar" Mode="In" />
+          <Parameter Name="passWord" Type="nvarchar" Mode="In" />
+          <Parameter Name="displayName" Type="nvarchar" Mode="In" />
+          <Parameter Name="typeAccount" Type="int" Mode="In" />
+          <Parameter Name="idStaff" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="USP_InsertAttendanceList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idStaff" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="USP_InsertBill" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idTable" Type="int" Mode="In" />
+        </Function>
+        <Function Name="USP_InsertBillInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idBill" Type="int" Mode="In" />
+          <Parameter Name="idFood" Type="int" Mode="In" />
+          <Parameter Name="countFood" Type="int" Mode="In" />
+        </Function>
+        <Function Name="USP_InsertBillInfoOfWareHouse" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idBillOfWareHouse" Type="int" Mode="In" />
+          <Parameter Name="idMaterial" Type="int" Mode="In" />
+          <Parameter Name="number" Type="int" Mode="In" />
+          <Parameter Name="price" Type="int" Mode="In" />
+          <Parameter Name="totalPrice" Type="int" Mode="In" />
+        </Function>
+        <Function Name="USP_InsertBillOfWareHouse" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="supplier" Type="nvarchar" Mode="In" />
+          <Parameter Name="note" Type="nvarchar" Mode="In" />
+          <Parameter Name="userName" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="USP_InsertFood" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nameFood" Type="nvarchar" Mode="In" />
+          <Parameter Name="idFC" Type="int" Mode="In" />
+          <Parameter Name="price" Type="float" Mode="In" />
+          <Parameter Name="imageFood" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="USP_InsertMaterial" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="name" Type="nvarchar" Mode="In" />
+          <Parameter Name="idUnit" Type="int" Mode="In" />
+        </Function>
+        <Function Name="USP_InsertStaff" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idStaff" Type="nvarchar" Mode="In" />
+          <Parameter Name="nameStaff" Type="nvarchar" Mode="In" />
+          <Parameter Name="sex" Type="nvarchar" Mode="In" />
+          <Parameter Name="idPosition" Type="int" Mode="In" />
+          <Parameter Name="dateOfBirth" Type="date" Mode="In" />
+          <Parameter Name="identityCard" Type="nvarchar" Mode="In" />
+          <Parameter Name="phoneNumber" Type="nvarchar" Mode="In" />
+          <Parameter Name="address" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="USP_InsertUnit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="name" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="USP_Login" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userName" Type="nvarchar" Mode="In" />
+          <Parameter Name="passWord" Type="nvarchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="QuanLyQuanAnModelStoreContainer">
+          <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AttendanceList" EntityType="Self.AttendanceList" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bill" EntityType="Self.Bill" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BillInfo" EntityType="Self.BillInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BillInfoOfWareHouse" EntityType="Self.BillInfoOfWareHouse" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BillOfWareHouse" EntityType="Self.BillOfWareHouse" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Food" EntityType="Self.Food" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FoodCategory" EntityType="Self.FoodCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Material" EntityType="Self.Material" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Position" EntityType="Self.Position" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Staff" EntityType="Self.Staff" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TableFood" EntityType="Self.TableFood" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Unit" EntityType="Self.Unit" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Account__idStaff__46B27FE2" Association="Self.FK__Account__idStaff__46B27FE2">
+            <End Role="Staff" EntitySet="Staff" />
+            <End Role="Account" EntitySet="Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Account__idStaff__74AE54BC" Association="Self.FK__Account__idStaff__74AE54BC">
+            <End Role="Staff" EntitySet="Staff" />
+            <End Role="Account" EntitySet="Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Account__idStaff__76619304" Association="Self.FK__Account__idStaff__76619304">
+            <End Role="Staff" EntitySet="Staff" />
+            <End Role="Account" EntitySet="Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Attendanc__idSta__47A6A41B" Association="Self.FK__Attendanc__idSta__47A6A41B">
+            <End Role="Staff" EntitySet="Staff" />
+            <End Role="AttendanceList" EntitySet="AttendanceList" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Attendanc__idSta__75A278F5" Association="Self.FK__Attendanc__idSta__75A278F5">
+            <End Role="Staff" EntitySet="Staff" />
+            <End Role="AttendanceList" EntitySet="AttendanceList" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Attendanc__idSta__7755B73D" Association="Self.FK__Attendanc__idSta__7755B73D">
+            <End Role="Staff" EntitySet="Staff" />
+            <End Role="AttendanceList" EntitySet="AttendanceList" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Bill__idTable__4222D4EF" Association="Self.FK__Bill__idTable__4222D4EF">
+            <End Role="TableFood" EntitySet="TableFood" />
+            <End Role="Bill" EntitySet="Bill" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Bill__payerId__4316F928" Association="Self.FK__Bill__payerId__4316F928">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="Bill" EntitySet="Bill" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BillInfo__idBill__46E78A0C" Association="Self.FK__BillInfo__idBill__46E78A0C">
+            <End Role="Bill" EntitySet="Bill" />
+            <End Role="BillInfo" EntitySet="BillInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BillInfo__idFood__498EEC8D" Association="Self.FK__BillInfo__idFood__498EEC8D">
+            <End Role="Food" EntitySet="Food" />
+            <End Role="BillInfo" EntitySet="BillInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BillInfo__idFood__7849DB76" Association="Self.FK__BillInfo__idFood__7849DB76">
+            <End Role="Food" EntitySet="Food" />
+            <End Role="BillInfo" EntitySet="BillInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BillInfo__idFood__797309D9" Association="Self.FK__BillInfo__idFood__797309D9">
+            <End Role="Food" EntitySet="Food" />
+            <End Role="BillInfo" EntitySet="BillInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BillInfoO__idBil__4A8310C6" Association="Self.FK__BillInfoO__idBil__4A8310C6">
+            <End Role="BillOfWareHouse" EntitySet="BillOfWareHouse" />
+            <End Role="BillInfoOfWareHouse" EntitySet="BillInfoOfWareHouse" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BillInfoO__idBil__793DFFAF" Association="Self.FK__BillInfoO__idBil__793DFFAF">
+            <End Role="BillOfWareHouse" EntitySet="BillOfWareHouse" />
+            <End Role="BillInfoOfWareHouse" EntitySet="BillInfoOfWareHouse" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BillInfoO__idBil__7A672E12" Association="Self.FK__BillInfoO__idBil__7A672E12">
+            <End Role="BillOfWareHouse" EntitySet="BillOfWareHouse" />
+            <End Role="BillInfoOfWareHouse" EntitySet="BillInfoOfWareHouse" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BillInfoO__idMat__4B7734FF" Association="Self.FK__BillInfoO__idMat__4B7734FF">
+            <End Role="Material" EntitySet="Material" />
+            <End Role="BillInfoOfWareHouse" EntitySet="BillInfoOfWareHouse" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BillInfoO__idMat__7A3223E8" Association="Self.FK__BillInfoO__idMat__7A3223E8">
+            <End Role="Material" EntitySet="Material" />
+            <End Role="BillInfoOfWareHouse" EntitySet="BillInfoOfWareHouse" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BillInfoO__idMat__7B5B524B" Association="Self.FK__BillInfoO__idMat__7B5B524B">
+            <End Role="Material" EntitySet="Material" />
+            <End Role="BillInfoOfWareHouse" EntitySet="BillInfoOfWareHouse" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BillOfWar__userN__4C6B5938" Association="Self.FK__BillOfWar__userN__4C6B5938">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="BillOfWareHouse" EntitySet="BillOfWareHouse" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BillOfWar__userN__7B264821" Association="Self.FK__BillOfWar__userN__7B264821">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="BillOfWareHouse" EntitySet="BillOfWareHouse" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BillOfWar__userN__7C4F7684" Association="Self.FK__BillOfWar__userN__7C4F7684">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="BillOfWareHouse" EntitySet="BillOfWareHouse" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Food__idFC__4D5F7D71" Association="Self.FK__Food__idFC__4D5F7D71">
+            <End Role="FoodCategory" EntitySet="FoodCategory" />
+            <End Role="Food" EntitySet="Food" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Food__idFC__7C1A6C5A" Association="Self.FK__Food__idFC__7C1A6C5A">
+            <End Role="FoodCategory" EntitySet="FoodCategory" />
+            <End Role="Food" EntitySet="Food" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Food__idFC__7D439ABD" Association="Self.FK__Food__idFC__7D439ABD">
+            <End Role="FoodCategory" EntitySet="FoodCategory" />
+            <End Role="Food" EntitySet="Food" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Material__idUnit__4E53A1AA" Association="Self.FK__Material__idUnit__4E53A1AA">
+            <End Role="Unit" EntitySet="Unit" />
+            <End Role="Material" EntitySet="Material" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Material__idUnit__7D0E9093" Association="Self.FK__Material__idUnit__7D0E9093">
+            <End Role="Unit" EntitySet="Unit" />
+            <End Role="Material" EntitySet="Material" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Material__idUnit__7E37BEF6" Association="Self.FK__Material__idUnit__7E37BEF6">
+            <End Role="Unit" EntitySet="Unit" />
+            <End Role="Material" EntitySet="Material" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Staff__idPositio__4F47C5E3" Association="Self.FK__Staff__idPositio__4F47C5E3">
+            <End Role="Position" EntitySet="Position" />
+            <End Role="Staff" EntitySet="Staff" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Staff__idPositio__7E02B4CC" Association="Self.FK__Staff__idPositio__7E02B4CC">
+            <End Role="Position" EntitySet="Position" />
+            <End Role="Staff" EntitySet="Staff" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Staff__idPositio__7F2BE32F" Association="Self.FK__Staff__idPositio__7F2BE32F">
+            <End Role="Position" EntitySet="Position" />
+            <End Role="Staff" EntitySet="Staff" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="QuanLyQuanAnModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="userName" />
+          </Key>
+          <Property Name="userName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="passWord" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="displayName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="typeAccount" Type="Int32" Nullable="false" />
+          <Property Name="idStaff" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Staff" Relationship="Self.FK__Account__idStaff__46B27FE2" FromRole="Account" ToRole="Staff" />
+          <NavigationProperty Name="Staff1" Relationship="Self.FK__Account__idStaff__74AE54BC" FromRole="Account" ToRole="Staff" />
+          <NavigationProperty Name="Staff2" Relationship="Self.FK__Account__idStaff__76619304" FromRole="Account" ToRole="Staff" />
+          <NavigationProperty Name="Bills" Relationship="Self.FK__Bill__payerId__4316F928" FromRole="Account" ToRole="Bill" />
+          <NavigationProperty Name="BillOfWareHouses" Relationship="Self.FK__BillOfWar__userN__4C6B5938" FromRole="Account" ToRole="BillOfWareHouse" />
+          <NavigationProperty Name="BillOfWareHouses1" Relationship="Self.FK__BillOfWar__userN__7B264821" FromRole="Account" ToRole="BillOfWareHouse" />
+          <NavigationProperty Name="BillOfWareHouses2" Relationship="Self.FK__BillOfWar__userN__7C4F7684" FromRole="Account" ToRole="BillOfWareHouse" />
+        </EntityType>
+        <EntityType Name="AttendanceList">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idStaff" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="dateCheckIn" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Staff" Relationship="Self.FK__Attendanc__idSta__47A6A41B" FromRole="AttendanceList" ToRole="Staff" />
+          <NavigationProperty Name="Staff1" Relationship="Self.FK__Attendanc__idSta__75A278F5" FromRole="AttendanceList" ToRole="Staff" />
+          <NavigationProperty Name="Staff2" Relationship="Self.FK__Attendanc__idSta__7755B73D" FromRole="AttendanceList" ToRole="Staff" />
+        </EntityType>
+        <EntityType Name="Bill">
+          <Key>
+            <PropertyRef Name="idBill" />
+          </Key>
+          <Property Name="idBill" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dateCheckIn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dateCheckOut" Type="DateTime" Precision="3" />
+          <Property Name="idTable" Type="Int32" Nullable="false" />
+          <Property Name="statusBill" Type="Int32" Nullable="false" />
+          <Property Name="discount" Type="Int32" />
+          <Property Name="totalPrice" Type="Double" />
+          <Property Name="payerId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Account" Relationship="Self.FK__Bill__payerId__4316F928" FromRole="Bill" ToRole="Account" />
+          <NavigationProperty Name="TableFood" Relationship="Self.FK__Bill__idTable__4222D4EF" FromRole="Bill" ToRole="TableFood" />
+          <NavigationProperty Name="BillInfoes" Relationship="Self.FK__BillInfo__idBill__46E78A0C" FromRole="Bill" ToRole="BillInfo" />
+        </EntityType>
+        <EntityType Name="BillInfo">
+          <Key>
+            <PropertyRef Name="idBillInfo" />
+          </Key>
+          <Property Name="idBillInfo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idBill" Type="Int32" Nullable="false" />
+          <Property Name="idFood" Type="Int32" Nullable="false" />
+          <Property Name="countFood" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Bill" Relationship="Self.FK__BillInfo__idBill__46E78A0C" FromRole="BillInfo" ToRole="Bill" />
+          <NavigationProperty Name="Food" Relationship="Self.FK__BillInfo__idFood__498EEC8D" FromRole="BillInfo" ToRole="Food" />
+          <NavigationProperty Name="Food1" Relationship="Self.FK__BillInfo__idFood__7849DB76" FromRole="BillInfo" ToRole="Food" />
+          <NavigationProperty Name="Food2" Relationship="Self.FK__BillInfo__idFood__797309D9" FromRole="BillInfo" ToRole="Food" />
+        </EntityType>
+        <EntityType Name="BillInfoOfWareHouse">
+          <Key>
+            <PropertyRef Name="idBillInfoOfWareHouse" />
+          </Key>
+          <Property Name="idBillInfoOfWareHouse" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idBillOfWareHouse" Type="Int32" />
+          <Property Name="idMaterial" Type="Int32" />
+          <Property Name="number" Type="Int32" />
+          <Property Name="price" Type="Int32" Nullable="false" />
+          <Property Name="totalPrice" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="BillOfWareHouse" Relationship="Self.FK__BillInfoO__idBil__4A8310C6" FromRole="BillInfoOfWareHouse" ToRole="BillOfWareHouse" />
+          <NavigationProperty Name="BillOfWareHouse1" Relationship="Self.FK__BillInfoO__idBil__793DFFAF" FromRole="BillInfoOfWareHouse" ToRole="BillOfWareHouse" />
+          <NavigationProperty Name="BillOfWareHouse2" Relationship="Self.FK__BillInfoO__idBil__7A672E12" FromRole="BillInfoOfWareHouse" ToRole="BillOfWareHouse" />
+          <NavigationProperty Name="Material" Relationship="Self.FK__BillInfoO__idMat__4B7734FF" FromRole="BillInfoOfWareHouse" ToRole="Material" />
+          <NavigationProperty Name="Material1" Relationship="Self.FK__BillInfoO__idMat__7A3223E8" FromRole="BillInfoOfWareHouse" ToRole="Material" />
+          <NavigationProperty Name="Material2" Relationship="Self.FK__BillInfoO__idMat__7B5B524B" FromRole="BillInfoOfWareHouse" ToRole="Material" />
+        </EntityType>
+        <EntityType Name="BillOfWareHouse">
+          <Key>
+            <PropertyRef Name="idBillOfWareHouse" />
+          </Key>
+          <Property Name="idBillOfWareHouse" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dateAdded" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="supplier" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="note" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="userName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Account" Relationship="Self.FK__BillOfWar__userN__4C6B5938" FromRole="BillOfWareHouse" ToRole="Account" />
+          <NavigationProperty Name="Account1" Relationship="Self.FK__BillOfWar__userN__7B264821" FromRole="BillOfWareHouse" ToRole="Account" />
+          <NavigationProperty Name="Account2" Relationship="Self.FK__BillOfWar__userN__7C4F7684" FromRole="BillOfWareHouse" ToRole="Account" />
+          <NavigationProperty Name="BillInfoOfWareHouses" Relationship="Self.FK__BillInfoO__idBil__4A8310C6" FromRole="BillOfWareHouse" ToRole="BillInfoOfWareHouse" />
+          <NavigationProperty Name="BillInfoOfWareHouses1" Relationship="Self.FK__BillInfoO__idBil__793DFFAF" FromRole="BillOfWareHouse" ToRole="BillInfoOfWareHouse" />
+          <NavigationProperty Name="BillInfoOfWareHouses2" Relationship="Self.FK__BillInfoO__idBil__7A672E12" FromRole="BillOfWareHouse" ToRole="BillInfoOfWareHouse" />
+        </EntityType>
+        <EntityType Name="Food">
+          <Key>
+            <PropertyRef Name="idFood" />
+          </Key>
+          <Property Name="idFood" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nameFood" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="idFC" Type="Int32" Nullable="false" />
+          <Property Name="price" Type="Double" Nullable="false" />
+          <Property Name="imageFood" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="statusFood" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="BillInfoes" Relationship="Self.FK__BillInfo__idFood__498EEC8D" FromRole="Food" ToRole="BillInfo" />
+          <NavigationProperty Name="BillInfoes1" Relationship="Self.FK__BillInfo__idFood__7849DB76" FromRole="Food" ToRole="BillInfo" />
+          <NavigationProperty Name="BillInfoes2" Relationship="Self.FK__BillInfo__idFood__797309D9" FromRole="Food" ToRole="BillInfo" />
+          <NavigationProperty Name="FoodCategory" Relationship="Self.FK__Food__idFC__4D5F7D71" FromRole="Food" ToRole="FoodCategory" />
+          <NavigationProperty Name="FoodCategory1" Relationship="Self.FK__Food__idFC__7C1A6C5A" FromRole="Food" ToRole="FoodCategory" />
+          <NavigationProperty Name="FoodCategory2" Relationship="Self.FK__Food__idFC__7D439ABD" FromRole="Food" ToRole="FoodCategory" />
+        </EntityType>
+        <EntityType Name="FoodCategory">
+          <Key>
+            <PropertyRef Name="idFC" />
+          </Key>
+          <Property Name="idFC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nameFC" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Foods" Relationship="Self.FK__Food__idFC__4D5F7D71" FromRole="FoodCategory" ToRole="Food" />
+          <NavigationProperty Name="Foods1" Relationship="Self.FK__Food__idFC__7C1A6C5A" FromRole="FoodCategory" ToRole="Food" />
+          <NavigationProperty Name="Foods2" Relationship="Self.FK__Food__idFC__7D439ABD" FromRole="FoodCategory" ToRole="Food" />
+        </EntityType>
+        <EntityType Name="Material">
+          <Key>
+            <PropertyRef Name="idMaterial" />
+          </Key>
+          <Property Name="idMaterial" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nameMaterial" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="idUnit" Type="Int32" />
+          <NavigationProperty Name="BillInfoOfWareHouses" Relationship="Self.FK__BillInfoO__idMat__4B7734FF" FromRole="Material" ToRole="BillInfoOfWareHouse" />
+          <NavigationProperty Name="BillInfoOfWareHouses1" Relationship="Self.FK__BillInfoO__idMat__7A3223E8" FromRole="Material" ToRole="BillInfoOfWareHouse" />
+          <NavigationProperty Name="BillInfoOfWareHouses2" Relationship="Self.FK__BillInfoO__idMat__7B5B524B" FromRole="Material" ToRole="BillInfoOfWareHouse" />
+          <NavigationProperty Name="Unit" Relationship="Self.FK__Material__idUnit__4E53A1AA" FromRole="Material" ToRole="Unit" />
+          <NavigationProperty Name="Unit1" Relationship="Self.FK__Material__idUnit__7D0E9093" FromRole="Material" ToRole="Unit" />
+          <NavigationProperty Name="Unit2" Relationship="Self.FK__Material__idUnit__7E37BEF6" FromRole="Material" ToRole="Unit" />
+        </EntityType>
+        <EntityType Name="Position">
+          <Key>
+            <PropertyRef Name="idPosition" />
+          </Key>
+          <Property Name="idPosition" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="namePosition" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="coefficientSalary" Type="Double" />
+          <NavigationProperty Name="Staffs" Relationship="Self.FK__Staff__idPositio__4F47C5E3" FromRole="Position" ToRole="Staff" />
+          <NavigationProperty Name="Staffs1" Relationship="Self.FK__Staff__idPositio__7E02B4CC" FromRole="Position" ToRole="Staff" />
+          <NavigationProperty Name="Staffs2" Relationship="Self.FK__Staff__idPositio__7F2BE32F" FromRole="Position" ToRole="Staff" />
+        </EntityType>
+        <EntityType Name="Staff">
+          <Key>
+            <PropertyRef Name="idStaff" />
+          </Key>
+          <Property Name="idStaff" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nameStaff" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="sex" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="idPosition" Type="Int32" Nullable="false" />
+          <Property Name="dateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="identityCard" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="phoneNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Accounts" Relationship="Self.FK__Account__idStaff__46B27FE2" FromRole="Staff" ToRole="Account" />
+          <NavigationProperty Name="Accounts1" Relationship="Self.FK__Account__idStaff__74AE54BC" FromRole="Staff" ToRole="Account" />
+          <NavigationProperty Name="Accounts2" Relationship="Self.FK__Account__idStaff__76619304" FromRole="Staff" ToRole="Account" />
+          <NavigationProperty Name="AttendanceLists" Relationship="Self.FK__Attendanc__idSta__47A6A41B" FromRole="Staff" ToRole="AttendanceList" />
+          <NavigationProperty Name="AttendanceLists1" Relationship="Self.FK__Attendanc__idSta__75A278F5" FromRole="Staff" ToRole="AttendanceList" />
+          <NavigationProperty Name="AttendanceLists2" Relationship="Self.FK__Attendanc__idSta__7755B73D" FromRole="Staff" ToRole="AttendanceList" />
+          <NavigationProperty Name="Position" Relationship="Self.FK__Staff__idPositio__4F47C5E3" FromRole="Staff" ToRole="Position" />
+          <NavigationProperty Name="Position1" Relationship="Self.FK__Staff__idPositio__7E02B4CC" FromRole="Staff" ToRole="Position" />
+          <NavigationProperty Name="Position2" Relationship="Self.FK__Staff__idPositio__7F2BE32F" FromRole="Staff" ToRole="Position" />
+        </EntityType>
+        <EntityType Name="TableFood">
+          <Key>
+            <PropertyRef Name="idTable" />
+          </Key>
+          <Property Name="idTable" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nameTable" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="statusTable" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Bills" Relationship="Self.FK__Bill__idTable__4222D4EF" FromRole="TableFood" ToRole="Bill" />
+        </EntityType>
+        <EntityType Name="Unit">
+          <Key>
+            <PropertyRef Name="idUnit" />
+          </Key>
+          <Property Name="idUnit" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nameUnit" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Materials" Relationship="Self.FK__Material__idUnit__4E53A1AA" FromRole="Unit" ToRole="Material" />
+          <NavigationProperty Name="Materials1" Relationship="Self.FK__Material__idUnit__7D0E9093" FromRole="Unit" ToRole="Material" />
+          <NavigationProperty Name="Materials2" Relationship="Self.FK__Material__idUnit__7E37BEF6" FromRole="Unit" ToRole="Material" />
+        </EntityType>
+        <Association Name="FK__Account__idStaff__46B27FE2">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+          <End Role="Account" Type="Self.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="idStaff" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="idStaff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Account__idStaff__74AE54BC">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+          <End Role="Account" Type="Self.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="idStaff" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="idStaff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Account__idStaff__76619304">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+          <End Role="Account" Type="Self.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="idStaff" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="idStaff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Bill__payerId__4316F928">
+          <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+          <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="userName" />
+            </Principal>
+            <Dependent Role="Bill">
+              <PropertyRef Name="payerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BillOfWar__userN__4C6B5938">
+          <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+          <End Role="BillOfWareHouse" Type="Self.BillOfWareHouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="userName" />
+            </Principal>
+            <Dependent Role="BillOfWareHouse">
+              <PropertyRef Name="userName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BillOfWar__userN__7B264821">
+          <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+          <End Role="BillOfWareHouse" Type="Self.BillOfWareHouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="userName" />
+            </Principal>
+            <Dependent Role="BillOfWareHouse">
+              <PropertyRef Name="userName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BillOfWar__userN__7C4F7684">
+          <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+          <End Role="BillOfWareHouse" Type="Self.BillOfWareHouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="userName" />
+            </Principal>
+            <Dependent Role="BillOfWareHouse">
+              <PropertyRef Name="userName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Attendanc__idSta__47A6A41B">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="AttendanceList" Type="Self.AttendanceList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="idStaff" />
+            </Principal>
+            <Dependent Role="AttendanceList">
+              <PropertyRef Name="idStaff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Attendanc__idSta__75A278F5">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="AttendanceList" Type="Self.AttendanceList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="idStaff" />
+            </Principal>
+            <Dependent Role="AttendanceList">
+              <PropertyRef Name="idStaff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Attendanc__idSta__7755B73D">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="AttendanceList" Type="Self.AttendanceList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="idStaff" />
+            </Principal>
+            <Dependent Role="AttendanceList">
+              <PropertyRef Name="idStaff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Bill__idTable__4222D4EF">
+          <End Role="TableFood" Type="Self.TableFood" Multiplicity="1" />
+          <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TableFood">
+              <PropertyRef Name="idTable" />
+            </Principal>
+            <Dependent Role="Bill">
+              <PropertyRef Name="idTable" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BillInfo__idBill__46E78A0C">
+          <End Role="Bill" Type="Self.Bill" Multiplicity="1" />
+          <End Role="BillInfo" Type="Self.BillInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bill">
+              <PropertyRef Name="idBill" />
+            </Principal>
+            <Dependent Role="BillInfo">
+              <PropertyRef Name="idBill" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BillInfo__idFood__498EEC8D">
+          <End Role="Food" Type="Self.Food" Multiplicity="1" />
+          <End Role="BillInfo" Type="Self.BillInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Food">
+              <PropertyRef Name="idFood" />
+            </Principal>
+            <Dependent Role="BillInfo">
+              <PropertyRef Name="idFood" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BillInfo__idFood__7849DB76">
+          <End Role="Food" Type="Self.Food" Multiplicity="1" />
+          <End Role="BillInfo" Type="Self.BillInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Food">
+              <PropertyRef Name="idFood" />
+            </Principal>
+            <Dependent Role="BillInfo">
+              <PropertyRef Name="idFood" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BillInfo__idFood__797309D9">
+          <End Role="Food" Type="Self.Food" Multiplicity="1" />
+          <End Role="BillInfo" Type="Self.BillInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Food">
+              <PropertyRef Name="idFood" />
+            </Principal>
+            <Dependent Role="BillInfo">
+              <PropertyRef Name="idFood" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BillInfoO__idBil__4A8310C6">
+          <End Role="BillOfWareHouse" Type="Self.BillOfWareHouse" Multiplicity="0..1" />
+          <End Role="BillInfoOfWareHouse" Type="Self.BillInfoOfWareHouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BillOfWareHouse">
+              <PropertyRef Name="idBillOfWareHouse" />
+            </Principal>
+            <Dependent Role="BillInfoOfWareHouse">
+              <PropertyRef Name="idBillOfWareHouse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BillInfoO__idBil__793DFFAF">
+          <End Role="BillOfWareHouse" Type="Self.BillOfWareHouse" Multiplicity="0..1" />
+          <End Role="BillInfoOfWareHouse" Type="Self.BillInfoOfWareHouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BillOfWareHouse">
+              <PropertyRef Name="idBillOfWareHouse" />
+            </Principal>
+            <Dependent Role="BillInfoOfWareHouse">
+              <PropertyRef Name="idBillOfWareHouse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BillInfoO__idBil__7A672E12">
+          <End Role="BillOfWareHouse" Type="Self.BillOfWareHouse" Multiplicity="0..1" />
+          <End Role="BillInfoOfWareHouse" Type="Self.BillInfoOfWareHouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BillOfWareHouse">
+              <PropertyRef Name="idBillOfWareHouse" />
+            </Principal>
+            <Dependent Role="BillInfoOfWareHouse">
+              <PropertyRef Name="idBillOfWareHouse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BillInfoO__idMat__4B7734FF">
+          <End Role="Material" Type="Self.Material" Multiplicity="0..1" />
+          <End Role="BillInfoOfWareHouse" Type="Self.BillInfoOfWareHouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Material">
+              <PropertyRef Name="idMaterial" />
+            </Principal>
+            <Dependent Role="BillInfoOfWareHouse">
+              <PropertyRef Name="idMaterial" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BillInfoO__idMat__7A3223E8">
+          <End Role="Material" Type="Self.Material" Multiplicity="0..1" />
+          <End Role="BillInfoOfWareHouse" Type="Self.BillInfoOfWareHouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Material">
+              <PropertyRef Name="idMaterial" />
+            </Principal>
+            <Dependent Role="BillInfoOfWareHouse">
+              <PropertyRef Name="idMaterial" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BillInfoO__idMat__7B5B524B">
+          <End Role="Material" Type="Self.Material" Multiplicity="0..1" />
+          <End Role="BillInfoOfWareHouse" Type="Self.BillInfoOfWareHouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Material">
+              <PropertyRef Name="idMaterial" />
+            </Principal>
+            <Dependent Role="BillInfoOfWareHouse">
+              <PropertyRef Name="idMaterial" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Food__idFC__4D5F7D71">
+          <End Role="FoodCategory" Type="Self.FoodCategory" Multiplicity="1" />
+          <End Role="Food" Type="Self.Food" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FoodCategory">
+              <PropertyRef Name="idFC" />
+            </Principal>
+            <Dependent Role="Food">
+              <PropertyRef Name="idFC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Food__idFC__7C1A6C5A">
+          <End Role="FoodCategory" Type="Self.FoodCategory" Multiplicity="1" />
+          <End Role="Food" Type="Self.Food" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FoodCategory">
+              <PropertyRef Name="idFC" />
+            </Principal>
+            <Dependent Role="Food">
+              <PropertyRef Name="idFC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Food__idFC__7D439ABD">
+          <End Role="FoodCategory" Type="Self.FoodCategory" Multiplicity="1" />
+          <End Role="Food" Type="Self.Food" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FoodCategory">
+              <PropertyRef Name="idFC" />
+            </Principal>
+            <Dependent Role="Food">
+              <PropertyRef Name="idFC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Material__idUnit__4E53A1AA">
+          <End Role="Unit" Type="Self.Unit" Multiplicity="0..1" />
+          <End Role="Material" Type="Self.Material" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Unit">
+              <PropertyRef Name="idUnit" />
+            </Principal>
+            <Dependent Role="Material">
+              <PropertyRef Name="idUnit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Material__idUnit__7D0E9093">
+          <End Role="Unit" Type="Self.Unit" Multiplicity="0..1" />
+          <End Role="Material" Type="Self.Material" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Unit">
+              <PropertyRef Name="idUnit" />
+            </Principal>
+            <Dependent Role="Material">
+              <PropertyRef Name="idUnit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Material__idUnit__7E37BEF6">
+          <End Role="Unit" Type="Self.Unit" Multiplicity="0..1" />
+          <End Role="Material" Type="Self.Material" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Unit">
+              <PropertyRef Name="idUnit" />
+            </Principal>
+            <Dependent Role="Material">
+              <PropertyRef Name="idUnit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Staff__idPositio__4F47C5E3">
+          <End Role="Position" Type="Self.Position" Multiplicity="1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Position">
+              <PropertyRef Name="idPosition" />
+            </Principal>
+            <Dependent Role="Staff">
+              <PropertyRef Name="idPosition" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Staff__idPositio__7E02B4CC">
+          <End Role="Position" Type="Self.Position" Multiplicity="1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Position">
+              <PropertyRef Name="idPosition" />
+            </Principal>
+            <Dependent Role="Staff">
+              <PropertyRef Name="idPosition" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Staff__idPositio__7F2BE32F">
+          <End Role="Position" Type="Self.Position" Multiplicity="1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Position">
+              <PropertyRef Name="idPosition" />
+            </Principal>
+            <Dependent Role="Staff">
+              <PropertyRef Name="idPosition" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="QuanLyQuanAnEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Accounts" EntityType="Self.Account" />
+          <EntitySet Name="AttendanceLists" EntityType="Self.AttendanceList" />
+          <EntitySet Name="Bills" EntityType="Self.Bill" />
+          <EntitySet Name="BillInfoes" EntityType="Self.BillInfo" />
+          <EntitySet Name="BillInfoOfWareHouses" EntityType="Self.BillInfoOfWareHouse" />
+          <EntitySet Name="BillOfWareHouses" EntityType="Self.BillOfWareHouse" />
+          <EntitySet Name="Foods" EntityType="Self.Food" />
+          <EntitySet Name="FoodCategories" EntityType="Self.FoodCategory" />
+          <EntitySet Name="Materials" EntityType="Self.Material" />
+          <EntitySet Name="Positions" EntityType="Self.Position" />
+          <EntitySet Name="Staffs" EntityType="Self.Staff" />
+          <EntitySet Name="TableFoods" EntityType="Self.TableFood" />
+          <EntitySet Name="Units" EntityType="Self.Unit" />
+          <AssociationSet Name="FK__Account__idStaff__46B27FE2" Association="Self.FK__Account__idStaff__46B27FE2">
+            <End Role="Staff" EntitySet="Staffs" />
+            <End Role="Account" EntitySet="Accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Account__idStaff__74AE54BC" Association="Self.FK__Account__idStaff__74AE54BC">
+            <End Role="Staff" EntitySet="Staffs" />
+            <End Role="Account" EntitySet="Accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Account__idStaff__76619304" Association="Self.FK__Account__idStaff__76619304">
+            <End Role="Staff" EntitySet="Staffs" />
+            <End Role="Account" EntitySet="Accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Bill__payerId__4316F928" Association="Self.FK__Bill__payerId__4316F928">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="Bill" EntitySet="Bills" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BillOfWar__userN__4C6B5938" Association="Self.FK__BillOfWar__userN__4C6B5938">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="BillOfWareHouse" EntitySet="BillOfWareHouses" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BillOfWar__userN__7B264821" Association="Self.FK__BillOfWar__userN__7B264821">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="BillOfWareHouse" EntitySet="BillOfWareHouses" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BillOfWar__userN__7C4F7684" Association="Self.FK__BillOfWar__userN__7C4F7684">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="BillOfWareHouse" EntitySet="BillOfWareHouses" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Attendanc__idSta__47A6A41B" Association="Self.FK__Attendanc__idSta__47A6A41B">
+            <End Role="Staff" EntitySet="Staffs" />
+            <End Role="AttendanceList" EntitySet="AttendanceLists" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Attendanc__idSta__75A278F5" Association="Self.FK__Attendanc__idSta__75A278F5">
+            <End Role="Staff" EntitySet="Staffs" />
+            <End Role="AttendanceList" EntitySet="AttendanceLists" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Attendanc__idSta__7755B73D" Association="Self.FK__Attendanc__idSta__7755B73D">
+            <End Role="Staff" EntitySet="Staffs" />
+            <End Role="AttendanceList" EntitySet="AttendanceLists" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Bill__idTable__4222D4EF" Association="Self.FK__Bill__idTable__4222D4EF">
+            <End Role="TableFood" EntitySet="TableFoods" />
+            <End Role="Bill" EntitySet="Bills" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BillInfo__idBill__46E78A0C" Association="Self.FK__BillInfo__idBill__46E78A0C">
+            <End Role="Bill" EntitySet="Bills" />
+            <End Role="BillInfo" EntitySet="BillInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BillInfo__idFood__498EEC8D" Association="Self.FK__BillInfo__idFood__498EEC8D">
+            <End Role="Food" EntitySet="Foods" />
+            <End Role="BillInfo" EntitySet="BillInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BillInfo__idFood__7849DB76" Association="Self.FK__BillInfo__idFood__7849DB76">
+            <End Role="Food" EntitySet="Foods" />
+            <End Role="BillInfo" EntitySet="BillInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BillInfo__idFood__797309D9" Association="Self.FK__BillInfo__idFood__797309D9">
+            <End Role="Food" EntitySet="Foods" />
+            <End Role="BillInfo" EntitySet="BillInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BillInfoO__idBil__4A8310C6" Association="Self.FK__BillInfoO__idBil__4A8310C6">
+            <End Role="BillOfWareHouse" EntitySet="BillOfWareHouses" />
+            <End Role="BillInfoOfWareHouse" EntitySet="BillInfoOfWareHouses" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BillInfoO__idBil__793DFFAF" Association="Self.FK__BillInfoO__idBil__793DFFAF">
+            <End Role="BillOfWareHouse" EntitySet="BillOfWareHouses" />
+            <End Role="BillInfoOfWareHouse" EntitySet="BillInfoOfWareHouses" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BillInfoO__idBil__7A672E12" Association="Self.FK__BillInfoO__idBil__7A672E12">
+            <End Role="BillOfWareHouse" EntitySet="BillOfWareHouses" />
+            <End Role="BillInfoOfWareHouse" EntitySet="BillInfoOfWareHouses" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BillInfoO__idMat__4B7734FF" Association="Self.FK__BillInfoO__idMat__4B7734FF">
+            <End Role="Material" EntitySet="Materials" />
+            <End Role="BillInfoOfWareHouse" EntitySet="BillInfoOfWareHouses" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BillInfoO__idMat__7A3223E8" Association="Self.FK__BillInfoO__idMat__7A3223E8">
+            <End Role="Material" EntitySet="Materials" />
+            <End Role="BillInfoOfWareHouse" EntitySet="BillInfoOfWareHouses" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BillInfoO__idMat__7B5B524B" Association="Self.FK__BillInfoO__idMat__7B5B524B">
+            <End Role="Material" EntitySet="Materials" />
+            <End Role="BillInfoOfWareHouse" EntitySet="BillInfoOfWareHouses" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Food__idFC__4D5F7D71" Association="Self.FK__Food__idFC__4D5F7D71">
+            <End Role="FoodCategory" EntitySet="FoodCategories" />
+            <End Role="Food" EntitySet="Foods" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Food__idFC__7C1A6C5A" Association="Self.FK__Food__idFC__7C1A6C5A">
+            <End Role="FoodCategory" EntitySet="FoodCategories" />
+            <End Role="Food" EntitySet="Foods" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Food__idFC__7D439ABD" Association="Self.FK__Food__idFC__7D439ABD">
+            <End Role="FoodCategory" EntitySet="FoodCategories" />
+            <End Role="Food" EntitySet="Foods" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Material__idUnit__4E53A1AA" Association="Self.FK__Material__idUnit__4E53A1AA">
+            <End Role="Unit" EntitySet="Units" />
+            <End Role="Material" EntitySet="Materials" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Material__idUnit__7D0E9093" Association="Self.FK__Material__idUnit__7D0E9093">
+            <End Role="Unit" EntitySet="Units" />
+            <End Role="Material" EntitySet="Materials" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Material__idUnit__7E37BEF6" Association="Self.FK__Material__idUnit__7E37BEF6">
+            <End Role="Unit" EntitySet="Units" />
+            <End Role="Material" EntitySet="Materials" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Staff__idPositio__4F47C5E3" Association="Self.FK__Staff__idPositio__4F47C5E3">
+            <End Role="Position" EntitySet="Positions" />
+            <End Role="Staff" EntitySet="Staffs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Staff__idPositio__7E02B4CC" Association="Self.FK__Staff__idPositio__7E02B4CC">
+            <End Role="Position" EntitySet="Positions" />
+            <End Role="Staff" EntitySet="Staffs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Staff__idPositio__7F2BE32F" Association="Self.FK__Staff__idPositio__7F2BE32F">
+            <End Role="Position" EntitySet="Positions" />
+            <End Role="Staff" EntitySet="Staffs" />
+          </AssociationSet>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(QuanLyQuanAnModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(QuanLyQuanAnModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+          <FunctionImport Name="UpdateAccount">
+            <Parameter Name="userName" Mode="In" Type="String" />
+            <Parameter Name="displayName" Mode="In" Type="String" />
+            <Parameter Name="passWord" Mode="In" Type="String" />
+            <Parameter Name="newpass" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateFood">
+            <Parameter Name="idFood" Mode="In" Type="Int32" />
+            <Parameter Name="nameFood" Mode="In" Type="String" />
+            <Parameter Name="idFC" Mode="In" Type="Int32" />
+            <Parameter Name="price" Mode="In" Type="Double" />
+            <Parameter Name="imageFood" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateFoodCategory">
+            <Parameter Name="idFoodCategory" Mode="In" Type="Int32" />
+            <Parameter Name="nameFoodCategory" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateTableFood">
+            <Parameter Name="idTable" Mode="In" Type="Int32" />
+            <Parameter Name="nameTable" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="USP_CheckExitsAttendanceList" ReturnType="Collection(QuanLyQuanAnModel.USP_CheckExitsAttendanceList_Result)">
+            <Parameter Name="idStaff" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="USP_CheckOut">
+            <Parameter Name="discount" Mode="In" Type="Int32" />
+            <Parameter Name="totalPrice" Mode="In" Type="Double" />
+            <Parameter Name="payerId" Mode="In" Type="String" />
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="USP_DeleteMaterial">
+            <Parameter Name="idMaterial" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="USP_GetAccountByName" ReturnType="Collection(QuanLyQuanAnModel.USP_GetAccountByName_Result)">
+            <Parameter Name="userName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="USP_GetListBillByDate" ReturnType="Collection(QuanLyQuanAnModel.USP_GetListBillByDate_Result)">
+            <Parameter Name="checkIn" Mode="In" Type="DateTime" />
+            <Parameter Name="checkOut" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="USP_GetMaxBill" ReturnType="Collection(Int32)" />
+          <FunctionImport Name="USP_GetTableList" ReturnType="Collection(QuanLyQuanAnModel.USP_GetTableList_Result)" />
+          <FunctionImport Name="USP_GetTopFood" ReturnType="Collection(QuanLyQuanAnModel.USP_GetTopFood_Result)">
+            <Parameter Name="checkIn" Mode="In" Type="DateTime" />
+            <Parameter Name="checkOut" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="USP_GetTotalAttendanceList" ReturnType="Collection(QuanLyQuanAnModel.USP_GetTotalAttendanceList_Result)" />
+          <FunctionImport Name="USP_GetTotalBillsInDay" ReturnType="Collection(QuanLyQuanAnModel.USP_GetTotalBillsInDay_Result)" />
+          <FunctionImport Name="USP_InsertAccount">
+            <Parameter Name="userName" Mode="In" Type="String" />
+            <Parameter Name="passWord" Mode="In" Type="String" />
+            <Parameter Name="displayName" Mode="In" Type="String" />
+            <Parameter Name="typeAccount" Mode="In" Type="Int32" />
+            <Parameter Name="idStaff" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="USP_InsertAttendanceList">
+            <Parameter Name="idStaff" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="USP_InsertBill">
+            <Parameter Name="idTable" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="USP_InsertBillInfo">
+            <Parameter Name="idBill" Mode="In" Type="Int32" />
+            <Parameter Name="idFood" Mode="In" Type="Int32" />
+            <Parameter Name="countFood" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="USP_InsertBillInfoOfWareHouse">
+            <Parameter Name="idBillOfWareHouse" Mode="In" Type="Int32" />
+            <Parameter Name="idMaterial" Mode="In" Type="Int32" />
+            <Parameter Name="number" Mode="In" Type="Int32" />
+            <Parameter Name="price" Mode="In" Type="Int32" />
+            <Parameter Name="totalPrice" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="USP_InsertBillOfWareHouse">
+            <Parameter Name="supplier" Mode="In" Type="String" />
+            <Parameter Name="note" Mode="In" Type="String" />
+            <Parameter Name="userName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="USP_InsertFood">
+            <Parameter Name="nameFood" Mode="In" Type="String" />
+            <Parameter Name="idFC" Mode="In" Type="Int32" />
+            <Parameter Name="price" Mode="In" Type="Double" />
+            <Parameter Name="imageFood" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="USP_InsertMaterial">
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="idUnit" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="USP_InsertStaff">
+            <Parameter Name="idStaff" Mode="In" Type="String" />
+            <Parameter Name="nameStaff" Mode="In" Type="String" />
+            <Parameter Name="sex" Mode="In" Type="String" />
+            <Parameter Name="idPosition" Mode="In" Type="Int32" />
+            <Parameter Name="dateOfBirth" Mode="In" Type="DateTime" />
+            <Parameter Name="identityCard" Mode="In" Type="String" />
+            <Parameter Name="phoneNumber" Mode="In" Type="String" />
+            <Parameter Name="address" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="USP_InsertUnit">
+            <Parameter Name="name" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="USP_Login" ReturnType="Collection(QuanLyQuanAnModel.USP_Login_Result)">
+            <Parameter Name="userName" Mode="In" Type="String" />
+            <Parameter Name="passWord" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="USP_CheckExitsAttendanceList_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="idStaff" Nullable="true" MaxLength="5" />
+          <Property Type="DateTime" Name="dateCheckIn" Nullable="false" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="USP_GetAccountByName_Result">
+          <Property Type="String" Name="userName" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="passWord" Nullable="false" MaxLength="1000" />
+          <Property Type="String" Name="displayName" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="typeAccount" Nullable="false" />
+          <Property Type="String" Name="idStaff" Nullable="false" MaxLength="5" />
+        </ComplexType>
+        <ComplexType Name="USP_GetListBillByDate_Result">
+          <Property Type="Int32" Name="idBill" Nullable="false" />
+          <Property Type="DateTime" Name="dateCheckIn" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="dateCheckOut" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="idTable" Nullable="false" />
+          <Property Type="Int32" Name="statusBill" Nullable="false" />
+          <Property Type="Int32" Name="discount" Nullable="true" />
+          <Property Type="Double" Name="totalPrice" Nullable="true" />
+          <Property Type="String" Name="payerId" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="USP_GetTableList_Result">
+          <Property Type="Int32" Name="idTable" Nullable="false" />
+          <Property Type="String" Name="nameTable" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="statusTable" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="USP_GetTopFood_Result">
+          <Property Type="String" Name="nameFood" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="countFood" Nullable="true" />
+          <Property Type="Double" Name="price" Nullable="false" />
+          <Property Type="Double" Name="totalPrice" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="USP_GetTotalAttendanceList_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="idStaff" Nullable="true" MaxLength="5" />
+          <Property Type="DateTime" Name="dateCheckIn" Nullable="false" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="USP_GetTotalBillsInDay_Result">
+          <Property Type="Int32" Name="idBill" Nullable="false" />
+          <Property Type="DateTime" Name="dateCheckIn" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="dateCheckOut" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="idTable" Nullable="false" />
+          <Property Type="Int32" Name="statusBill" Nullable="false" />
+          <Property Type="Int32" Name="discount" Nullable="true" />
+          <Property Type="Double" Name="totalPrice" Nullable="true" />
+          <Property Type="String" Name="payerId" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="USP_Login_Result">
+          <Property Type="String" Name="userName" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="passWord" Nullable="false" MaxLength="1000" />
+          <Property Type="String" Name="displayName" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="typeAccount" Nullable="false" />
+          <Property Type="String" Name="idStaff" Nullable="false" MaxLength="5" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="QuanLyQuanAnModelStoreContainer" CdmEntityContainer="QuanLyQuanAnEntities">
+          <EntitySetMapping Name="Accounts">
+            <EntityTypeMapping TypeName="QuanLyQuanAnModel.Account">
+              <MappingFragment StoreEntitySet="Account">
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="passWord" ColumnName="passWord" />
+                <ScalarProperty Name="displayName" ColumnName="displayName" />
+                <ScalarProperty Name="typeAccount" ColumnName="typeAccount" />
+                <ScalarProperty Name="idStaff" ColumnName="idStaff" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AttendanceLists">
+            <EntityTypeMapping TypeName="QuanLyQuanAnModel.AttendanceList">
+              <MappingFragment StoreEntitySet="AttendanceList">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idStaff" ColumnName="idStaff" />
+                <ScalarProperty Name="dateCheckIn" ColumnName="dateCheckIn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bills">
+            <EntityTypeMapping TypeName="QuanLyQuanAnModel.Bill">
+              <MappingFragment StoreEntitySet="Bill">
+                <ScalarProperty Name="idBill" ColumnName="idBill" />
+                <ScalarProperty Name="dateCheckIn" ColumnName="dateCheckIn" />
+                <ScalarProperty Name="dateCheckOut" ColumnName="dateCheckOut" />
+                <ScalarProperty Name="idTable" ColumnName="idTable" />
+                <ScalarProperty Name="statusBill" ColumnName="statusBill" />
+                <ScalarProperty Name="discount" ColumnName="discount" />
+                <ScalarProperty Name="totalPrice" ColumnName="totalPrice" />
+                <ScalarProperty Name="payerId" ColumnName="payerId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BillInfoes">
+            <EntityTypeMapping TypeName="QuanLyQuanAnModel.BillInfo">
+              <MappingFragment StoreEntitySet="BillInfo">
+                <ScalarProperty Name="idBillInfo" ColumnName="idBillInfo" />
+                <ScalarProperty Name="idBill" ColumnName="idBill" />
+                <ScalarProperty Name="idFood" ColumnName="idFood" />
+                <ScalarProperty Name="countFood" ColumnName="countFood" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BillInfoOfWareHouses">
+            <EntityTypeMapping TypeName="QuanLyQuanAnModel.BillInfoOfWareHouse">
+              <MappingFragment StoreEntitySet="BillInfoOfWareHouse">
+                <ScalarProperty Name="idBillInfoOfWareHouse" ColumnName="idBillInfoOfWareHouse" />
+                <ScalarProperty Name="idBillOfWareHouse" ColumnName="idBillOfWareHouse" />
+                <ScalarProperty Name="idMaterial" ColumnName="idMaterial" />
+                <ScalarProperty Name="number" ColumnName="number" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="totalPrice" ColumnName="totalPrice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BillOfWareHouses">
+            <EntityTypeMapping TypeName="QuanLyQuanAnModel.BillOfWareHouse">
+              <MappingFragment StoreEntitySet="BillOfWareHouse">
+                <ScalarProperty Name="idBillOfWareHouse" ColumnName="idBillOfWareHouse" />
+                <ScalarProperty Name="dateAdded" ColumnName="dateAdded" />
+                <ScalarProperty Name="supplier" ColumnName="supplier" />
+                <ScalarProperty Name="note" ColumnName="note" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Foods">
+            <EntityTypeMapping TypeName="QuanLyQuanAnModel.Food">
+              <MappingFragment StoreEntitySet="Food">
+                <ScalarProperty Name="idFood" ColumnName="idFood" />
+                <ScalarProperty Name="nameFood" ColumnName="nameFood" />
+                <ScalarProperty Name="idFC" ColumnName="idFC" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="imageFood" ColumnName="imageFood" />
+                <ScalarProperty Name="statusFood" ColumnName="statusFood" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FoodCategories">
+            <EntityTypeMapping TypeName="QuanLyQuanAnModel.FoodCategory">
+              <MappingFragment StoreEntitySet="FoodCategory">
+                <ScalarProperty Name="idFC" ColumnName="idFC" />
+                <ScalarProperty Name="nameFC" ColumnName="nameFC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Materials">
+            <EntityTypeMapping TypeName="QuanLyQuanAnModel.Material">
+              <MappingFragment StoreEntitySet="Material">
+                <ScalarProperty Name="idMaterial" ColumnName="idMaterial" />
+                <ScalarProperty Name="nameMaterial" ColumnName="nameMaterial" />
+                <ScalarProperty Name="idUnit" ColumnName="idUnit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Positions">
+            <EntityTypeMapping TypeName="QuanLyQuanAnModel.Position">
+              <MappingFragment StoreEntitySet="Position">
+                <ScalarProperty Name="idPosition" ColumnName="idPosition" />
+                <ScalarProperty Name="namePosition" ColumnName="namePosition" />
+                <ScalarProperty Name="coefficientSalary" ColumnName="coefficientSalary" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Staffs">
+            <EntityTypeMapping TypeName="QuanLyQuanAnModel.Staff">
+              <MappingFragment StoreEntitySet="Staff">
+                <ScalarProperty Name="idStaff" ColumnName="idStaff" />
+                <ScalarProperty Name="nameStaff" ColumnName="nameStaff" />
+                <ScalarProperty Name="sex" ColumnName="sex" />
+                <ScalarProperty Name="idPosition" ColumnName="idPosition" />
+                <ScalarProperty Name="dateOfBirth" ColumnName="dateOfBirth" />
+                <ScalarProperty Name="identityCard" ColumnName="identityCard" />
+                <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+                <ScalarProperty Name="address" ColumnName="address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TableFoods">
+            <EntityTypeMapping TypeName="QuanLyQuanAnModel.TableFood">
+              <MappingFragment StoreEntitySet="TableFood">
+                <ScalarProperty Name="idTable" ColumnName="idTable" />
+                <ScalarProperty Name="nameTable" ColumnName="nameTable" />
+                <ScalarProperty Name="statusTable" ColumnName="statusTable" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Units">
+            <EntityTypeMapping TypeName="QuanLyQuanAnModel.Unit">
+              <MappingFragment StoreEntitySet="Unit">
+                <ScalarProperty Name="idUnit" ColumnName="idUnit" />
+                <ScalarProperty Name="nameUnit" ColumnName="nameUnit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="QuanLyQuanAnModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="QuanLyQuanAnModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="QuanLyQuanAnModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="QuanLyQuanAnModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyQuanAnModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="QuanLyQuanAnModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyQuanAnModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="QuanLyQuanAnModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="QuanLyQuanAnModel.Store.sp_upgraddiagrams" />
+          <FunctionImportMapping FunctionImportName="UpdateAccount" FunctionName="QuanLyQuanAnModel.Store.UpdateAccount" />
+          <FunctionImportMapping FunctionImportName="UpdateFood" FunctionName="QuanLyQuanAnModel.Store.UpdateFood" />
+          <FunctionImportMapping FunctionImportName="UpdateFoodCategory" FunctionName="QuanLyQuanAnModel.Store.UpdateFoodCategory" />
+          <FunctionImportMapping FunctionImportName="UpdateTableFood" FunctionName="QuanLyQuanAnModel.Store.UpdateTableFood" />
+          <FunctionImportMapping FunctionImportName="USP_CheckExitsAttendanceList" FunctionName="QuanLyQuanAnModel.Store.USP_CheckExitsAttendanceList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyQuanAnModel.USP_CheckExitsAttendanceList_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idStaff" ColumnName="idStaff" />
+                <ScalarProperty Name="dateCheckIn" ColumnName="dateCheckIn" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_CheckOut" FunctionName="QuanLyQuanAnModel.Store.USP_CheckOut" />
+          <FunctionImportMapping FunctionImportName="USP_DeleteMaterial" FunctionName="QuanLyQuanAnModel.Store.USP_DeleteMaterial" />
+          <FunctionImportMapping FunctionImportName="USP_GetAccountByName" FunctionName="QuanLyQuanAnModel.Store.USP_GetAccountByName">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyQuanAnModel.USP_GetAccountByName_Result">
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="passWord" ColumnName="passWord" />
+                <ScalarProperty Name="displayName" ColumnName="displayName" />
+                <ScalarProperty Name="typeAccount" ColumnName="typeAccount" />
+                <ScalarProperty Name="idStaff" ColumnName="idStaff" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_GetListBillByDate" FunctionName="QuanLyQuanAnModel.Store.USP_GetListBillByDate">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyQuanAnModel.USP_GetListBillByDate_Result">
+                <ScalarProperty Name="idBill" ColumnName="idBill" />
+                <ScalarProperty Name="dateCheckIn" ColumnName="dateCheckIn" />
+                <ScalarProperty Name="dateCheckOut" ColumnName="dateCheckOut" />
+                <ScalarProperty Name="idTable" ColumnName="idTable" />
+                <ScalarProperty Name="statusBill" ColumnName="statusBill" />
+                <ScalarProperty Name="discount" ColumnName="discount" />
+                <ScalarProperty Name="totalPrice" ColumnName="totalPrice" />
+                <ScalarProperty Name="payerId" ColumnName="payerId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_GetMaxBill" FunctionName="QuanLyQuanAnModel.Store.USP_GetMaxBill" />
+          <FunctionImportMapping FunctionImportName="USP_GetTableList" FunctionName="QuanLyQuanAnModel.Store.USP_GetTableList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyQuanAnModel.USP_GetTableList_Result">
+                <ScalarProperty Name="idTable" ColumnName="idTable" />
+                <ScalarProperty Name="nameTable" ColumnName="nameTable" />
+                <ScalarProperty Name="statusTable" ColumnName="statusTable" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_GetTopFood" FunctionName="QuanLyQuanAnModel.Store.USP_GetTopFood">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyQuanAnModel.USP_GetTopFood_Result">
+                <ScalarProperty Name="nameFood" ColumnName="nameFood" />
+                <ScalarProperty Name="countFood" ColumnName="countFood" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="totalPrice" ColumnName="totalPrice" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_GetTotalAttendanceList" FunctionName="QuanLyQuanAnModel.Store.USP_GetTotalAttendanceList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyQuanAnModel.USP_GetTotalAttendanceList_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idStaff" ColumnName="idStaff" />
+                <ScalarProperty Name="dateCheckIn" ColumnName="dateCheckIn" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_GetTotalBillsInDay" FunctionName="QuanLyQuanAnModel.Store.USP_GetTotalBillsInDay">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyQuanAnModel.USP_GetTotalBillsInDay_Result">
+                <ScalarProperty Name="idBill" ColumnName="idBill" />
+                <ScalarProperty Name="dateCheckIn" ColumnName="dateCheckIn" />
+                <ScalarProperty Name="dateCheckOut" ColumnName="dateCheckOut" />
+                <ScalarProperty Name="idTable" ColumnName="idTable" />
+                <ScalarProperty Name="statusBill" ColumnName="statusBill" />
+                <ScalarProperty Name="discount" ColumnName="discount" />
+                <ScalarProperty Name="totalPrice" ColumnName="totalPrice" />
+                <ScalarProperty Name="payerId" ColumnName="payerId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_InsertAccount" FunctionName="QuanLyQuanAnModel.Store.USP_InsertAccount" />
+          <FunctionImportMapping FunctionImportName="USP_InsertAttendanceList" FunctionName="QuanLyQuanAnModel.Store.USP_InsertAttendanceList" />
+          <FunctionImportMapping FunctionImportName="USP_InsertBill" FunctionName="QuanLyQuanAnModel.Store.USP_InsertBill" />
+          <FunctionImportMapping FunctionImportName="USP_InsertBillInfo" FunctionName="QuanLyQuanAnModel.Store.USP_InsertBillInfo" />
+          <FunctionImportMapping FunctionImportName="USP_InsertBillInfoOfWareHouse" FunctionName="QuanLyQuanAnModel.Store.USP_InsertBillInfoOfWareHouse" />
+          <FunctionImportMapping FunctionImportName="USP_InsertBillOfWareHouse" FunctionName="QuanLyQuanAnModel.Store.USP_InsertBillOfWareHouse" />
+          <FunctionImportMapping FunctionImportName="USP_InsertFood" FunctionName="QuanLyQuanAnModel.Store.USP_InsertFood" />
+          <FunctionImportMapping FunctionImportName="USP_InsertMaterial" FunctionName="QuanLyQuanAnModel.Store.USP_InsertMaterial" />
+          <FunctionImportMapping FunctionImportName="USP_InsertStaff" FunctionName="QuanLyQuanAnModel.Store.USP_InsertStaff" />
+          <FunctionImportMapping FunctionImportName="USP_InsertUnit" FunctionName="QuanLyQuanAnModel.Store.USP_InsertUnit" />
+          <FunctionImportMapping FunctionImportName="USP_Login" FunctionName="QuanLyQuanAnModel.Store.USP_Login">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyQuanAnModel.USP_Login_Result">
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="passWord" ColumnName="passWord" />
+                <ScalarProperty Name="displayName" ColumnName="displayName" />
+                <ScalarProperty Name="typeAccount" ColumnName="typeAccount" />
+                <ScalarProperty Name="idStaff" ColumnName="idStaff" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
