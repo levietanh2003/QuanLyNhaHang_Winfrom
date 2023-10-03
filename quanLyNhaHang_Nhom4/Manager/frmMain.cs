@@ -223,7 +223,10 @@ namespace quanLyNhaHang_Nhom4.Manager
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("Ban con muon dang xuat khong", "THONG BAO", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
         private void btnFind_Click(object sender, EventArgs e)
         {
