@@ -39,14 +39,14 @@
             this.lblMaDM = new System.Windows.Forms.Label();
             this.lblThongtin = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblTongdanhmuc = new System.Windows.Forms.Label();
+            this.lblTotalCategory = new System.Windows.Forms.Label();
             this.lblTongDM = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnHienthi = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.dgvDanhMuc = new System.Windows.Forms.DataGridView();
+            this.dgvFoodCategory = new System.Windows.Forms.DataGridView();
             this.colMaDM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTenDM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSomon = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,7 +54,7 @@
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDanhMuc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFoodCategory)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -93,7 +93,7 @@
             // 
             this.toolStripTxtTracuu.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTxtTracuu.Name = "toolStripTxtTracuu";
-            this.toolStripTxtTracuu.Size = new System.Drawing.Size(350, 50);
+            this.toolStripTxtTracuu.Size = new System.Drawing.Size(350, 40);
             // 
             // panel1
             // 
@@ -167,7 +167,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Silver;
-            this.panel2.Controls.Add(this.lblTongdanhmuc);
+            this.panel2.Controls.Add(this.lblTotalCategory);
             this.panel2.Controls.Add(this.lblTongDM);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(0, 75);
@@ -176,16 +176,16 @@
             this.panel2.Size = new System.Drawing.Size(984, 53);
             this.panel2.TabIndex = 2;
             // 
-            // lblTongdanhmuc
+            // lblTotalCategory
             // 
-            this.lblTongdanhmuc.AutoSize = true;
-            this.lblTongdanhmuc.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTongdanhmuc.Location = new System.Drawing.Point(237, 13);
-            this.lblTongdanhmuc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTongdanhmuc.Name = "lblTongdanhmuc";
-            this.lblTongdanhmuc.Size = new System.Drawing.Size(46, 32);
-            this.lblTongdanhmuc.TabIndex = 5;
-            this.lblTongdanhmuc.Text = "10";
+            this.lblTotalCategory.AutoSize = true;
+            this.lblTotalCategory.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalCategory.Location = new System.Drawing.Point(237, 13);
+            this.lblTotalCategory.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTotalCategory.Name = "lblTotalCategory";
+            this.lblTotalCategory.Size = new System.Drawing.Size(30, 32);
+            this.lblTotalCategory.TabIndex = 5;
+            this.lblTotalCategory.Text = "0";
             // 
             // lblTongDM
             // 
@@ -266,23 +266,23 @@
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
             // 
-            // dgvDanhMuc
+            // dgvFoodCategory
             // 
-            this.dgvDanhMuc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDanhMuc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvFoodCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFoodCategory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colMaDM,
             this.colTenDM,
             this.colSomon});
-            this.dgvDanhMuc.Location = new System.Drawing.Point(0, 159);
-            this.dgvDanhMuc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dgvDanhMuc.Name = "dgvDanhMuc";
-            this.dgvDanhMuc.ReadOnly = true;
-            this.dgvDanhMuc.RowHeadersWidth = 51;
-            this.dgvDanhMuc.RowTemplate.Height = 24;
-            this.dgvDanhMuc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDanhMuc.Size = new System.Drawing.Size(984, 545);
-            this.dgvDanhMuc.TabIndex = 4;
-            this.dgvDanhMuc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgvFoodCategory.Location = new System.Drawing.Point(0, 159);
+            this.dgvFoodCategory.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvFoodCategory.Name = "dgvFoodCategory";
+            this.dgvFoodCategory.ReadOnly = true;
+            this.dgvFoodCategory.RowHeadersWidth = 51;
+            this.dgvFoodCategory.RowTemplate.Height = 24;
+            this.dgvFoodCategory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvFoodCategory.Size = new System.Drawing.Size(984, 545);
+            this.dgvFoodCategory.TabIndex = 4;
+            this.dgvFoodCategory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // colMaDM
             // 
@@ -313,7 +313,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1528, 957);
-            this.Controls.Add(this.dgvDanhMuc);
+            this.Controls.Add(this.dgvFoodCategory);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -331,7 +331,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDanhMuc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFoodCategory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -350,14 +350,14 @@
         private System.Windows.Forms.TextBox txtTenDM;
         private System.Windows.Forms.TextBox txtMaDM;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lblTongdanhmuc;
+        private System.Windows.Forms.Label lblTotalCategory;
         private System.Windows.Forms.Label lblTongDM;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnHienthi;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.DataGridView dgvDanhMuc;
+        private System.Windows.Forms.DataGridView dgvFoodCategory;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaDM;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenDM;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSomon;

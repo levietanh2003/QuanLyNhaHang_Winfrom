@@ -45,7 +45,7 @@ namespace quanLyNhaHang_Nhom4.Manager
             this.lblFoodID = new System.Windows.Forms.Label();
             this.txtSearchFood = new System.Windows.Forms.TextBox();
             this.txtTotalFood = new System.Windows.Forms.TextBox();
-            this.dgvFoodInfo = new System.Windows.Forms.DataGridView();
+            this.dgvFoodList = new System.Windows.Forms.DataGridView();
             this.dgvFoodName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvImage = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,7 +53,7 @@ namespace quanLyNhaHang_Nhom4.Manager
             this.btnSearchFood = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptrFoodImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFoodInfo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFoodList)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -74,7 +74,7 @@ namespace quanLyNhaHang_Nhom4.Manager
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Font = new System.Drawing.Font("Cambria", 10.875F, System.Drawing.FontStyle.Bold);
             this.panel2.Location = new System.Drawing.Point(888, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel2.Margin = new System.Windows.Forms.Padding(6);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(640, 957);
             this.panel2.TabIndex = 1;
@@ -82,7 +82,7 @@ namespace quanLyNhaHang_Nhom4.Manager
             // ptrFoodImage
             // 
             this.ptrFoodImage.Location = new System.Drawing.Point(120, 470);
-            this.ptrFoodImage.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ptrFoodImage.Margin = new System.Windows.Forms.Padding(6);
             this.ptrFoodImage.Name = "ptrFoodImage";
             this.ptrFoodImage.Size = new System.Drawing.Size(380, 329);
             this.ptrFoodImage.TabIndex = 6;
@@ -93,7 +93,7 @@ namespace quanLyNhaHang_Nhom4.Manager
             this.rdbFoodStatus.AutoSize = true;
             this.rdbFoodStatus.ForeColor = System.Drawing.Color.White;
             this.rdbFoodStatus.Location = new System.Drawing.Point(316, 369);
-            this.rdbFoodStatus.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.rdbFoodStatus.Margin = new System.Windows.Forms.Padding(6);
             this.rdbFoodStatus.Name = "rdbFoodStatus";
             this.rdbFoodStatus.Size = new System.Drawing.Size(173, 38);
             this.rdbFoodStatus.TabIndex = 5;
@@ -106,7 +106,7 @@ namespace quanLyNhaHang_Nhom4.Manager
             this.cmbNameFC.Enabled = false;
             this.cmbNameFC.FormattingEnabled = true;
             this.cmbNameFC.Location = new System.Drawing.Point(238, 217);
-            this.cmbNameFC.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cmbNameFC.Margin = new System.Windows.Forms.Padding(6);
             this.cmbNameFC.Name = "cmbNameFC";
             this.cmbNameFC.Size = new System.Drawing.Size(319, 42);
             this.cmbNameFC.TabIndex = 4;
@@ -114,7 +114,7 @@ namespace quanLyNhaHang_Nhom4.Manager
             // txtPrice
             // 
             this.txtPrice.Location = new System.Drawing.Point(238, 293);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(6);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.ReadOnly = true;
             this.txtPrice.Size = new System.Drawing.Size(319, 41);
@@ -123,7 +123,7 @@ namespace quanLyNhaHang_Nhom4.Manager
             // txtNameFood
             // 
             this.txtNameFood.Location = new System.Drawing.Point(238, 141);
-            this.txtNameFood.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtNameFood.Margin = new System.Windows.Forms.Padding(6);
             this.txtNameFood.Name = "txtNameFood";
             this.txtNameFood.ReadOnly = true;
             this.txtNameFood.Size = new System.Drawing.Size(319, 41);
@@ -132,7 +132,7 @@ namespace quanLyNhaHang_Nhom4.Manager
             // txtFoodID
             // 
             this.txtFoodID.Location = new System.Drawing.Point(238, 65);
-            this.txtFoodID.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtFoodID.Margin = new System.Windows.Forms.Padding(6);
             this.txtFoodID.Name = "txtFoodID";
             this.txtFoodID.ReadOnly = true;
             this.txtFoodID.Size = new System.Drawing.Size(319, 41);
@@ -140,13 +140,14 @@ namespace quanLyNhaHang_Nhom4.Manager
             // 
             // lblFoodImage
             // 
-            this.lblFoodImage.AutoSize = true;
-            this.lblFoodImage.Location = new System.Drawing.Point(282, 831);
+            this.lblFoodImage.ForeColor = System.Drawing.Color.White;
+            this.lblFoodImage.Location = new System.Drawing.Point(120, 831);
             this.lblFoodImage.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblFoodImage.Name = "lblFoodImage";
-            this.lblFoodImage.Size = new System.Drawing.Size(57, 34);
+            this.lblFoodImage.Size = new System.Drawing.Size(380, 34);
             this.lblFoodImage.TabIndex = 2;
             this.lblFoodImage.Text = "......";
+            this.lblFoodImage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblFoodImage.Click += new System.EventHandler(this.lblImage_Click);
             // 
             // lblFoodStatus
@@ -208,7 +209,7 @@ namespace quanLyNhaHang_Nhom4.Manager
             // 
             this.txtSearchFood.Font = new System.Drawing.Font("Cambria", 10.875F, System.Drawing.FontStyle.Bold);
             this.txtSearchFood.Location = new System.Drawing.Point(243, 30);
-            this.txtSearchFood.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtSearchFood.Margin = new System.Windows.Forms.Padding(6);
             this.txtSearchFood.Name = "txtSearchFood";
             this.txtSearchFood.Size = new System.Drawing.Size(609, 41);
             this.txtSearchFood.TabIndex = 3;
@@ -218,31 +219,34 @@ namespace quanLyNhaHang_Nhom4.Manager
             // 
             this.txtTotalFood.Enabled = false;
             this.txtTotalFood.Font = new System.Drawing.Font("Cambria", 10.875F, System.Drawing.FontStyle.Bold);
-            this.txtTotalFood.Location = new System.Drawing.Point(1, 85);
-            this.txtTotalFood.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtTotalFood.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtTotalFood.Location = new System.Drawing.Point(1, 86);
+            this.txtTotalFood.Margin = new System.Windows.Forms.Padding(6);
             this.txtTotalFood.Name = "txtTotalFood";
             this.txtTotalFood.ReadOnly = true;
             this.txtTotalFood.Size = new System.Drawing.Size(851, 41);
             this.txtTotalFood.TabIndex = 3;
+            this.txtTotalFood.TextChanged += new System.EventHandler(this.txtTotalFood_TextChanged);
             // 
-            // dgvFoodInfo
+            // dgvFoodList
             // 
-            this.dgvFoodInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFoodInfo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvFoodList.AllowUserToAddRows = false;
+            this.dgvFoodList.AllowUserToDeleteRows = false;
+            this.dgvFoodList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFoodList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvFoodName,
             this.dgvPrice,
             this.dgvImage,
             this.dgvFoodStatus});
-            this.dgvFoodInfo.Enabled = false;
-            this.dgvFoodInfo.Location = new System.Drawing.Point(1, 140);
-            this.dgvFoodInfo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.dgvFoodInfo.Name = "dgvFoodInfo";
-            this.dgvFoodInfo.ReadOnly = true;
-            this.dgvFoodInfo.RowHeadersWidth = 82;
-            this.dgvFoodInfo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFoodInfo.Size = new System.Drawing.Size(851, 790);
-            this.dgvFoodInfo.TabIndex = 4;
-            this.dgvFoodInfo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFoodInfo_CellContentClick);
+            this.dgvFoodList.Enabled = false;
+            this.dgvFoodList.Location = new System.Drawing.Point(1, 140);
+            this.dgvFoodList.Margin = new System.Windows.Forms.Padding(6);
+            this.dgvFoodList.Name = "dgvFoodList";
+            this.dgvFoodList.ReadOnly = true;
+            this.dgvFoodList.RowHeadersWidth = 82;
+            this.dgvFoodList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvFoodList.Size = new System.Drawing.Size(851, 790);
+            this.dgvFoodList.TabIndex = 4;
             // 
             // dgvFoodName
             // 
@@ -282,7 +286,7 @@ namespace quanLyNhaHang_Nhom4.Manager
             this.btnSearchFood.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchFood.Image")));
             this.btnSearchFood.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSearchFood.Location = new System.Drawing.Point(14, 22);
-            this.btnSearchFood.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnSearchFood.Margin = new System.Windows.Forms.Padding(6);
             this.btnSearchFood.Name = "btnSearchFood";
             this.btnSearchFood.Size = new System.Drawing.Size(218, 52);
             this.btnSearchFood.TabIndex = 5;
@@ -297,20 +301,21 @@ namespace quanLyNhaHang_Nhom4.Manager
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1528, 957);
             this.Controls.Add(this.btnSearchFood);
-            this.Controls.Add(this.dgvFoodInfo);
-            this.Controls.Add(this.txtTotalFood);
+            this.Controls.Add(this.dgvFoodList);
             this.Controls.Add(this.txtSearchFood);
+            this.Controls.Add(this.txtTotalFood);
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmManagerFood";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmManagerFood";
             this.Load += new System.EventHandler(this.frmManagerFood_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptrFoodImage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFoodInfo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFoodList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -332,7 +337,7 @@ namespace quanLyNhaHang_Nhom4.Manager
         private System.Windows.Forms.Label lblFoodID;
         private System.Windows.Forms.TextBox txtSearchFood;
         private System.Windows.Forms.TextBox txtTotalFood;
-        private System.Windows.Forms.DataGridView dgvFoodInfo;
+        private System.Windows.Forms.DataGridView dgvFoodList;
         private System.Windows.Forms.Button btnSearchFood;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvFoodName;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvPrice;

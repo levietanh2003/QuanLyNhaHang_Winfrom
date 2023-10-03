@@ -37,6 +37,7 @@
             this.txtPassWord = new System.Windows.Forms.TextBox();
             this.btnLogIn = new System.Windows.Forms.Button();
             this.ptbExit = new System.Windows.Forms.PictureBox();
+            this.cbkCheckPassWord = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbUserName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPassWord)).BeginInit();
@@ -119,7 +120,7 @@
             this.btnLogIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogIn.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogIn.ForeColor = System.Drawing.Color.White;
-            this.btnLogIn.Location = new System.Drawing.Point(501, 458);
+            this.btnLogIn.Location = new System.Drawing.Point(501, 471);
             this.btnLogIn.Name = "btnLogIn";
             this.btnLogIn.Size = new System.Drawing.Size(210, 55);
             this.btnLogIn.TabIndex = 4;
@@ -139,6 +140,20 @@
             this.ptbExit.TabStop = false;
             this.ptbExit.Click += new System.EventHandler(this.ptbExit_Click);
             // 
+            // cbkCheckPassWord
+            // 
+            this.cbkCheckPassWord.AutoSize = true;
+            this.cbkCheckPassWord.BackColor = System.Drawing.Color.Transparent;
+            this.cbkCheckPassWord.Font = new System.Drawing.Font("Cambria", 7.875F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbkCheckPassWord.ForeColor = System.Drawing.Color.White;
+            this.cbkCheckPassWord.Location = new System.Drawing.Point(431, 418);
+            this.cbkCheckPassWord.Name = "cbkCheckPassWord";
+            this.cbkCheckPassWord.Size = new System.Drawing.Size(202, 29);
+            this.cbkCheckPassWord.TabIndex = 6;
+            this.cbkCheckPassWord.Text = "Hiển thị mật khẩu";
+            this.cbkCheckPassWord.UseVisualStyleBackColor = false;
+            this.cbkCheckPassWord.CheckedChanged += new System.EventHandler(this.cbkCheckPassWord_CheckedChanged);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -146,6 +161,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1201, 575);
+            this.Controls.Add(this.cbkCheckPassWord);
             this.Controls.Add(this.ptbExit);
             this.Controls.Add(this.btnLogIn);
             this.Controls.Add(this.txtPassWord);
@@ -158,6 +174,7 @@
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin";
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbUserName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPassWord)).EndInit();
@@ -177,5 +194,6 @@
         private System.Windows.Forms.TextBox txtPassWord;
         private System.Windows.Forms.Button btnLogIn;
         private System.Windows.Forms.PictureBox ptbExit;
+        private System.Windows.Forms.CheckBox cbkCheckPassWord;
     }
 }

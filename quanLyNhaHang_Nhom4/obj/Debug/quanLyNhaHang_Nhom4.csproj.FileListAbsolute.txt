@@ -56,3 +56,4 @@ C:\Users\admin\OneDrive\Máy tính\QuanLyNhaHang_Nhom04\quanLyNhaHang_Nhom4\obj\
 \\Mac\Home\Desktop\quanLyNhaHang_Nhom4\quanLyNhaHang_Nhom4\bin\Debug\EntityFramework.SqlServer.dll
 \\Mac\Home\Desktop\quanLyNhaHang_Nhom4\quanLyNhaHang_Nhom4\bin\Debug\EntityFramework.xml
 \\Mac\Home\Desktop\quanLyNhaHang_Nhom4\quanLyNhaHang_Nhom4\bin\Debug\EntityFramework.SqlServer.xml
+\\Mac\Home\Desktop\quanLyNhaHang_Nhom4\quanLyNhaHang_Nhom4\obj\Debug\quanLyNhaHang_Nhom4.Manager.msg.resources

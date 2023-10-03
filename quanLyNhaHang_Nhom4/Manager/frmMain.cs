@@ -239,6 +239,21 @@ namespace quanLyNhaHang_Nhom4.Manager
             this.pnlDesktop.Controls.Add((frmManagerFood)frmManagerFood);
             frmManagerFood.Show();
         }
+        private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
+
         #endregion
+
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
+
+        private void pnlMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

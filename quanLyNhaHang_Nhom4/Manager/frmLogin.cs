@@ -20,6 +20,7 @@ namespace quanLyNhaHang_Nhom4.Manager
         public frmLogin()
         {
             InitializeComponent();
+            
         }
         #region Method
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -77,7 +78,7 @@ namespace quanLyNhaHang_Nhom4.Manager
         }
         private void ptbExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void btnLogIn_Click(object sender, EventArgs e)
@@ -94,13 +95,30 @@ namespace quanLyNhaHang_Nhom4.Manager
                 this.Hide();
                 frm.ShowDialog();
                 this.Show();
-                frm.StartPosition = FormStartPosition.CenterScreen;
+                frm.StartPosition = FormStartPosition.CenterScreen;  
             }
             else
             {
-                MessageBox.Show("Thông tin tài khoản không hợp lệ !", "THÔNG BÁO", MessageBoxButtons.OKCancel, MessageBoxIcon.Error); 
+                MessageBox.Show("Thông tin tài khoản không hợp lệ !", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         #endregion
+
+        private void cbkCheckPassWord_CheckedChanged(object sender, EventArgs e)
+        {
+            if(cbkCheckPassWord.Checked)
+            {
+                txtPassWord.UseSystemPasswordChar = false;
+            }
+            if(!cbkCheckPassWord.Checked)
+            {
+                txtPassWord.UseSystemPasswordChar= true;
+            }
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            txtPassWord.UseSystemPasswordChar = true;
+        }
     }
 }
