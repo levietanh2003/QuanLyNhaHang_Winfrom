@@ -143,6 +143,16 @@ namespace quanLyNhaHang_Nhom4.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap image_add_regular_24 {
+            get {
+                object obj = ResourceManager.GetObject("image-add-regular-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo_quanAN {
             get {
                 object obj = ResourceManager.GetObject("logo_quanAN", resourceCulture);
@@ -176,6 +186,16 @@ namespace quanLyNhaHang_Nhom4.Properties {
         internal static System.Drawing.Bitmap Tatice_Cristal_Intense_Loupe_256 {
             get {
                 object obj = ResourceManager.GetObject("Tatice-Cristal-Intense-Loupe.256", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_circle_solid_24 {
+            get {
+                object obj = ResourceManager.GetObject("user-circle-solid-24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

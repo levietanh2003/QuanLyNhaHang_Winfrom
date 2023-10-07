@@ -162,33 +162,32 @@ namespace quanLyNhaHang_Nhom4.Manager
             {
                 case msg.Icon.Success:
 
-                    _msgBox._picIcon.BackgroundImage = Image.FromFile(@"./Image/check.png");
+                    _msgBox._picIcon.BackgroundImage = Image.FromFile(@"..\..\Image\Icon\checked.png");
                     _msgBox._picIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
                     break;
 
                 case msg.Icon.Error:
-                    _msgBox._picIcon.BackgroundImage = Image.FromFile(@"./Image/error1.png");
-                    //_msgBox._picIcon.BackgroundImage = Image.FromFile(@".\\\\Mac\\Home\\Desktop\\quanLyNhaHang_Nhom4\\quanLyNhaHang_Nhom4\\Resources\\Close-2-icon.png");
+                    _msgBox._picIcon.BackgroundImage = Image.FromFile(@"..\..\Image\Icon\error.png");
                     _msgBox._picIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
                     break;
 
                 case msg.Icon.Info:
-                    _msgBox._picIcon.BackgroundImage = Image.FromFile(@"./Image/info.png");
+                    _msgBox._picIcon.BackgroundImage = Image.FromFile(@"..\..\Image\Icon\info.png");
                     _msgBox._picIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
                     break;
 
                 case msg.Icon.Question:
-                    _msgBox._picIcon.BackgroundImage = Image.FromFile(@"./Image/question1.png");
+                    _msgBox._picIcon.BackgroundImage = Image.FromFile(@"..\..\Image\Icon\question.png");
                     _msgBox._picIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
                     break;
 
                 case msg.Icon.Shield:
-                    _msgBox._picIcon.BackgroundImage = Image.FromFile(@"D:\sercurity.png");
+                    _msgBox._picIcon.BackgroundImage = Image.FromFile(@"..\..\Image\Icon\security.png");
                     _msgBox._picIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
                     break;
 
                 case msg.Icon.Warning:
-                    _msgBox._picIcon.BackgroundImage = Image.FromFile(@"./Image/warning.png");
+                    _msgBox._picIcon.BackgroundImage = Image.FromFile(@"..\..\Image\Icon\warning.png");
                     _msgBox._picIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
                     break;
             }

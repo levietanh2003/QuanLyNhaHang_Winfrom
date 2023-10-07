@@ -416,6 +416,7 @@
             this.btnDisplayName.Size = new System.Drawing.Size(239, 57);
             this.btnDisplayName.TabIndex = 1;
             this.btnDisplayName.UseVisualStyleBackColor = true;
+            this.btnDisplayName.Click += new System.EventHandler(this.btnDisplayName_Click);
             // 
             // lblTitle
             // 

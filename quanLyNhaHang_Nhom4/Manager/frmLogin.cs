@@ -99,7 +99,8 @@ namespace quanLyNhaHang_Nhom4.Manager
             }
             else
             {
-                MessageBox.Show("Thông tin tài khoản không hợp lệ !", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Thông tin tài khoản không hợp lệ !", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                msg.Show("Thông tin tài khoản không hợp lệ !", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Error);
             }
         }
         #endregion

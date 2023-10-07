@@ -99,7 +99,7 @@ namespace quanLyNhaHang_Nhom4.Manager
             }
             else
             {
-                MessageBox.Show("Mã nhân viên không tồn tại", "THÔNG BÁO",MessageBoxButtons.OKCancel,MessageBoxIcon.Warning);
+                msg.Show("Mã nhân viên không tồn tại", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Error);
             }
         }
         void resetText()
@@ -125,31 +125,33 @@ namespace quanLyNhaHang_Nhom4.Manager
         // diem danh 
         private void btnCheckIn_Click(object sender, EventArgs e)
         {
-            string staffID = txtStaffID.Text;
-            string staffName = txtStaffName.Text;
+            string idStaff = txtStaffID.Text;
+            string nameStaff = txtStaffName.Text;
 
-            if(staffName == "")
+            if (nameStaff == "")
             {
-                MessageBox.Show("Vui lòng kiểm tra thông tin nhân viên trước khi chấm công!", "THÔNG BÁO",MessageBoxButtons.OK,MessageBoxIcon.Error);
-            }else
+                msg.Show("Vui lòng kiểm tra thông tin nhân viên trước khi chấm công!", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Error);
+            }
+            else
             {
-                if(contextDB.USP_CheckExitsAttendanceList(staffID).Count() > 0)
+                if (contextDB.USP_CheckExitsAttendanceList(idStaff).Count() > 0)
                 {
-                    MessageBox.Show("Nhân viên đã điểm danh", "THÔNG BÁO", MessageBoxButtons.YesNo,MessageBoxIcon.Error);
-                    resetText();
-                }else
+                    msg.Show("Nhân viên đã điểm danh", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Error);
+                    ResetText();
+                }
+                else
                 {
                     try
                     {
-                        if(contextDB.USP_InsertAttendanceList(staffID) > 0)
+                        if (contextDB.USP_InsertAttendanceList(idStaff) > 0)
                         {
-                            MessageBox.Show("Điểm danh thành công", "THÔNG BÁO",MessageBoxButtons.OK);
+                            msg.Show("Điểm danh thành công", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Success);
                             loadListAttendance();
                         }
                     }
                     catch
                     {
-                        MessageBox.Show("Đã có lỗi xảy ra khi điểm danh", "THÔNG BÁO", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        msg.Show("Đã có lỗi xảy ra khi điểm danh", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Warning);
                     }
                 }
             }

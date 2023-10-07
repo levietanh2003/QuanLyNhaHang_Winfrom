@@ -63,8 +63,8 @@
             this.label1.Location = new System.Drawing.Point(408, 120);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(303, 54);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "DANG NHAP";
+            this.label1.TabIndex = 0;
+            this.label1.Text = "ĐĂNG NHẬP";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ptbUserName
@@ -98,7 +98,7 @@
             this.txtUser.Location = new System.Drawing.Point(431, 232);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(280, 38);
-            this.txtUser.TabIndex = 3;
+            this.txtUser.TabIndex = 1;
             this.txtUser.Enter += new System.EventHandler(this.txtUserName_Enter);
             this.txtUser.Leave += new System.EventHandler(this.txtUserName_Leave);
             // 
@@ -108,7 +108,7 @@
             this.txtPassWord.Location = new System.Drawing.Point(431, 373);
             this.txtPassWord.Name = "txtPassWord";
             this.txtPassWord.Size = new System.Drawing.Size(280, 38);
-            this.txtPassWord.TabIndex = 3;
+            this.txtPassWord.TabIndex = 2;
             this.txtPassWord.Enter += new System.EventHandler(this.txtPassWord_Enter);
             this.txtPassWord.Leave += new System.EventHandler(this.txtPassWord_Leave);
             // 
@@ -149,7 +149,7 @@
             this.cbkCheckPassWord.Location = new System.Drawing.Point(431, 418);
             this.cbkCheckPassWord.Name = "cbkCheckPassWord";
             this.cbkCheckPassWord.Size = new System.Drawing.Size(202, 29);
-            this.cbkCheckPassWord.TabIndex = 6;
+            this.cbkCheckPassWord.TabIndex = 3;
             this.cbkCheckPassWord.Text = "Hiển thị mật khẩu";
             this.cbkCheckPassWord.UseVisualStyleBackColor = false;
             this.cbkCheckPassWord.CheckedChanged += new System.EventHandler(this.cbkCheckPassWord_CheckedChanged);

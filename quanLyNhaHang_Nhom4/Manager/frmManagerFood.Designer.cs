@@ -31,13 +31,13 @@ namespace quanLyNhaHang_Nhom4.Manager
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManagerFood));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.ptrFoodImage = new System.Windows.Forms.PictureBox();
-            this.rdbFoodStatus = new System.Windows.Forms.RadioButton();
+            this.cbStatus = new System.Windows.Forms.CheckBox();
+            this.ptbImageOfFood = new System.Windows.Forms.PictureBox();
             this.cmbNameFC = new System.Windows.Forms.ComboBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
-            this.txtNameFood = new System.Windows.Forms.TextBox();
+            this.txtFoodName = new System.Windows.Forms.TextBox();
             this.txtFoodID = new System.Windows.Forms.TextBox();
-            this.lblFoodImage = new System.Windows.Forms.Label();
+            this.lblLinkImage = new System.Windows.Forms.Label();
             this.lblFoodStatus = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
             this.lblNameFc = new System.Windows.Forms.Label();
@@ -45,27 +45,29 @@ namespace quanLyNhaHang_Nhom4.Manager
             this.lblFoodID = new System.Windows.Forms.Label();
             this.txtSearchFood = new System.Windows.Forms.TextBox();
             this.txtTotalFood = new System.Windows.Forms.TextBox();
-            this.dgvFoodList = new System.Windows.Forms.DataGridView();
-            this.dgvFoodName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvImage = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvFoodStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSearchFood = new System.Windows.Forms.Button();
+            this.dgvFoodList = new System.Windows.Forms.DataGridView();
+            this.maMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.danhMuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.giaMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.danAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.trangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptrFoodImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbImageOfFood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFoodList)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DimGray;
-            this.panel2.Controls.Add(this.ptrFoodImage);
-            this.panel2.Controls.Add(this.rdbFoodStatus);
+            this.panel2.Controls.Add(this.cbStatus);
+            this.panel2.Controls.Add(this.ptbImageOfFood);
             this.panel2.Controls.Add(this.cmbNameFC);
             this.panel2.Controls.Add(this.txtPrice);
-            this.panel2.Controls.Add(this.txtNameFood);
+            this.panel2.Controls.Add(this.txtFoodName);
             this.panel2.Controls.Add(this.txtFoodID);
-            this.panel2.Controls.Add(this.lblFoodImage);
+            this.panel2.Controls.Add(this.lblLinkImage);
             this.panel2.Controls.Add(this.lblFoodStatus);
             this.panel2.Controls.Add(this.lblPrice);
             this.panel2.Controls.Add(this.lblNameFc);
@@ -79,27 +81,26 @@ namespace quanLyNhaHang_Nhom4.Manager
             this.panel2.Size = new System.Drawing.Size(640, 957);
             this.panel2.TabIndex = 1;
             // 
-            // ptrFoodImage
+            // cbStatus
             // 
-            this.ptrFoodImage.Location = new System.Drawing.Point(120, 470);
-            this.ptrFoodImage.Margin = new System.Windows.Forms.Padding(6);
-            this.ptrFoodImage.Name = "ptrFoodImage";
-            this.ptrFoodImage.Size = new System.Drawing.Size(380, 329);
-            this.ptrFoodImage.TabIndex = 6;
-            this.ptrFoodImage.TabStop = false;
+            this.cbStatus.AutoSize = true;
+            this.cbStatus.ForeColor = System.Drawing.Color.White;
+            this.cbStatus.Location = new System.Drawing.Point(294, 370);
+            this.cbStatus.Name = "cbStatus";
+            this.cbStatus.Size = new System.Drawing.Size(174, 38);
+            this.cbStatus.TabIndex = 7;
+            this.cbStatus.Text = "Đang bán";
+            this.cbStatus.UseVisualStyleBackColor = true;
+            this.cbStatus.CheckedChanged += new System.EventHandler(this.cbStatus_CheckedChanged);
             // 
-            // rdbFoodStatus
+            // ptbImageOfFood
             // 
-            this.rdbFoodStatus.AutoSize = true;
-            this.rdbFoodStatus.ForeColor = System.Drawing.Color.White;
-            this.rdbFoodStatus.Location = new System.Drawing.Point(316, 369);
-            this.rdbFoodStatus.Margin = new System.Windows.Forms.Padding(6);
-            this.rdbFoodStatus.Name = "rdbFoodStatus";
-            this.rdbFoodStatus.Size = new System.Drawing.Size(173, 38);
-            this.rdbFoodStatus.TabIndex = 5;
-            this.rdbFoodStatus.TabStop = true;
-            this.rdbFoodStatus.Text = "Đang bán";
-            this.rdbFoodStatus.UseVisualStyleBackColor = true;
+            this.ptbImageOfFood.Location = new System.Drawing.Point(120, 470);
+            this.ptbImageOfFood.Margin = new System.Windows.Forms.Padding(6);
+            this.ptbImageOfFood.Name = "ptbImageOfFood";
+            this.ptbImageOfFood.Size = new System.Drawing.Size(380, 329);
+            this.ptbImageOfFood.TabIndex = 6;
+            this.ptbImageOfFood.TabStop = false;
             // 
             // cmbNameFC
             // 
@@ -120,14 +121,14 @@ namespace quanLyNhaHang_Nhom4.Manager
             this.txtPrice.Size = new System.Drawing.Size(319, 41);
             this.txtPrice.TabIndex = 3;
             // 
-            // txtNameFood
+            // txtFoodName
             // 
-            this.txtNameFood.Location = new System.Drawing.Point(238, 141);
-            this.txtNameFood.Margin = new System.Windows.Forms.Padding(6);
-            this.txtNameFood.Name = "txtNameFood";
-            this.txtNameFood.ReadOnly = true;
-            this.txtNameFood.Size = new System.Drawing.Size(319, 41);
-            this.txtNameFood.TabIndex = 3;
+            this.txtFoodName.Location = new System.Drawing.Point(238, 141);
+            this.txtFoodName.Margin = new System.Windows.Forms.Padding(6);
+            this.txtFoodName.Name = "txtFoodName";
+            this.txtFoodName.ReadOnly = true;
+            this.txtFoodName.Size = new System.Drawing.Size(319, 41);
+            this.txtFoodName.TabIndex = 3;
             // 
             // txtFoodID
             // 
@@ -138,17 +139,17 @@ namespace quanLyNhaHang_Nhom4.Manager
             this.txtFoodID.Size = new System.Drawing.Size(319, 41);
             this.txtFoodID.TabIndex = 3;
             // 
-            // lblFoodImage
+            // lblLinkImage
             // 
-            this.lblFoodImage.ForeColor = System.Drawing.Color.White;
-            this.lblFoodImage.Location = new System.Drawing.Point(120, 831);
-            this.lblFoodImage.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.lblFoodImage.Name = "lblFoodImage";
-            this.lblFoodImage.Size = new System.Drawing.Size(380, 34);
-            this.lblFoodImage.TabIndex = 2;
-            this.lblFoodImage.Text = "......";
-            this.lblFoodImage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblFoodImage.Click += new System.EventHandler(this.lblImage_Click);
+            this.lblLinkImage.ForeColor = System.Drawing.Color.White;
+            this.lblLinkImage.Location = new System.Drawing.Point(120, 831);
+            this.lblLinkImage.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblLinkImage.Name = "lblLinkImage";
+            this.lblLinkImage.Size = new System.Drawing.Size(380, 34);
+            this.lblLinkImage.TabIndex = 2;
+            this.lblLinkImage.Text = "......";
+            this.lblLinkImage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblLinkImage.Click += new System.EventHandler(this.lblLinkImage_Click);
             // 
             // lblFoodStatus
             // 
@@ -213,6 +214,7 @@ namespace quanLyNhaHang_Nhom4.Manager
             this.txtSearchFood.Name = "txtSearchFood";
             this.txtSearchFood.Size = new System.Drawing.Size(609, 41);
             this.txtSearchFood.TabIndex = 3;
+            this.txtSearchFood.TextChanged += new System.EventHandler(this.txtSearchFood_TextChanged);
             this.txtSearchFood.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchFood_KeyPress);
             // 
             // txtTotalFood
@@ -228,80 +230,99 @@ namespace quanLyNhaHang_Nhom4.Manager
             this.txtTotalFood.TabIndex = 3;
             this.txtTotalFood.TextChanged += new System.EventHandler(this.txtTotalFood_TextChanged);
             // 
-            // dgvFoodList
-            // 
-            this.dgvFoodList.AllowUserToAddRows = false;
-            this.dgvFoodList.AllowUserToDeleteRows = false;
-            this.dgvFoodList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFoodList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dgvFoodName,
-            this.dgvPrice,
-            this.dgvImage,
-            this.dgvFoodStatus});
-            this.dgvFoodList.Enabled = false;
-            this.dgvFoodList.Location = new System.Drawing.Point(1, 140);
-            this.dgvFoodList.Margin = new System.Windows.Forms.Padding(6);
-            this.dgvFoodList.Name = "dgvFoodList";
-            this.dgvFoodList.ReadOnly = true;
-            this.dgvFoodList.RowHeadersWidth = 82;
-            this.dgvFoodList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFoodList.Size = new System.Drawing.Size(851, 790);
-            this.dgvFoodList.TabIndex = 4;
-            // 
-            // dgvFoodName
-            // 
-            this.dgvFoodName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvFoodName.HeaderText = "Tên món ăn";
-            this.dgvFoodName.MinimumWidth = 10;
-            this.dgvFoodName.Name = "dgvFoodName";
-            this.dgvFoodName.ReadOnly = true;
-            // 
-            // dgvPrice
-            // 
-            this.dgvPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvPrice.HeaderText = "Giá món ăn";
-            this.dgvPrice.MinimumWidth = 10;
-            this.dgvPrice.Name = "dgvPrice";
-            this.dgvPrice.ReadOnly = true;
-            // 
-            // dgvImage
-            // 
-            this.dgvImage.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvImage.HeaderText = "Đường dẫn ảnh";
-            this.dgvImage.MinimumWidth = 10;
-            this.dgvImage.Name = "dgvImage";
-            this.dgvImage.ReadOnly = true;
-            // 
-            // dgvFoodStatus
-            // 
-            this.dgvFoodStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvFoodStatus.HeaderText = "Trạng thái";
-            this.dgvFoodStatus.MinimumWidth = 10;
-            this.dgvFoodStatus.Name = "dgvFoodStatus";
-            this.dgvFoodStatus.ReadOnly = true;
-            // 
             // btnSearchFood
             // 
             this.btnSearchFood.Font = new System.Drawing.Font("Cambria", 10.875F, System.Drawing.FontStyle.Bold);
             this.btnSearchFood.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchFood.Image")));
             this.btnSearchFood.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearchFood.Location = new System.Drawing.Point(14, 22);
+            this.btnSearchFood.Location = new System.Drawing.Point(14, 30);
             this.btnSearchFood.Margin = new System.Windows.Forms.Padding(6);
             this.btnSearchFood.Name = "btnSearchFood";
-            this.btnSearchFood.Size = new System.Drawing.Size(218, 52);
+            this.btnSearchFood.Size = new System.Drawing.Size(218, 44);
             this.btnSearchFood.TabIndex = 5;
             this.btnSearchFood.Text = "Tìm món ăn";
             this.btnSearchFood.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSearchFood.UseVisualStyleBackColor = true;
             this.btnSearchFood.Click += new System.EventHandler(this.btnSearchFood_Click);
             // 
+            // dgvFoodList
+            // 
+            this.dgvFoodList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFoodList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.maMon,
+            this.tenMon,
+            this.danhMuc,
+            this.giaMon,
+            this.danAnh,
+            this.trangThai});
+            this.dgvFoodList.Location = new System.Drawing.Point(1, 136);
+            this.dgvFoodList.Name = "dgvFoodList";
+            this.dgvFoodList.ReadOnly = true;
+            this.dgvFoodList.RowHeadersWidth = 82;
+            this.dgvFoodList.RowTemplate.Height = 33;
+            this.dgvFoodList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvFoodList.Size = new System.Drawing.Size(851, 790);
+            this.dgvFoodList.TabIndex = 6;
+            this.dgvFoodList.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvFoodList_CellMouseClick);
+            // 
+            // maMon
+            // 
+            this.maMon.HeaderText = "Ma mon";
+            this.maMon.MinimumWidth = 10;
+            this.maMon.Name = "maMon";
+            this.maMon.ReadOnly = true;
+            this.maMon.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.maMon.Visible = false;
+            this.maMon.Width = 200;
+            // 
+            // tenMon
+            // 
+            this.tenMon.HeaderText = "Tên món ăn";
+            this.tenMon.MinimumWidth = 10;
+            this.tenMon.Name = "tenMon";
+            this.tenMon.ReadOnly = true;
+            this.tenMon.Width = 200;
+            // 
+            // danhMuc
+            // 
+            this.danhMuc.HeaderText = "Ma danh muc";
+            this.danhMuc.MinimumWidth = 10;
+            this.danhMuc.Name = "danhMuc";
+            this.danhMuc.ReadOnly = true;
+            this.danhMuc.Visible = false;
+            this.danhMuc.Width = 200;
+            // 
+            // giaMon
+            // 
+            this.giaMon.HeaderText = "Giá món ăn";
+            this.giaMon.MinimumWidth = 10;
+            this.giaMon.Name = "giaMon";
+            this.giaMon.ReadOnly = true;
+            this.giaMon.Width = 200;
+            // 
+            // danAnh
+            // 
+            this.danAnh.HeaderText = "Đường dẫn ảnh";
+            this.danAnh.MinimumWidth = 10;
+            this.danAnh.Name = "danAnh";
+            this.danAnh.ReadOnly = true;
+            this.danAnh.Width = 200;
+            // 
+            // trangThai
+            // 
+            this.trangThai.HeaderText = "Trạng thái";
+            this.trangThai.MinimumWidth = 10;
+            this.trangThai.Name = "trangThai";
+            this.trangThai.ReadOnly = true;
+            this.trangThai.Width = 200;
+            // 
             // frmManagerFood
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1528, 957);
-            this.Controls.Add(this.btnSearchFood);
             this.Controls.Add(this.dgvFoodList);
+            this.Controls.Add(this.btnSearchFood);
             this.Controls.Add(this.txtSearchFood);
             this.Controls.Add(this.txtTotalFood);
             this.Controls.Add(this.panel2);
@@ -314,7 +335,7 @@ namespace quanLyNhaHang_Nhom4.Manager
             this.Load += new System.EventHandler(this.frmManagerFood_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptrFoodImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbImageOfFood)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFoodList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -323,13 +344,12 @@ namespace quanLyNhaHang_Nhom4.Manager
 
         #endregion
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox ptrFoodImage;
-        private System.Windows.Forms.RadioButton rdbFoodStatus;
+        private System.Windows.Forms.PictureBox ptbImageOfFood;
         private System.Windows.Forms.ComboBox cmbNameFC;
         private System.Windows.Forms.TextBox txtPrice;
-        private System.Windows.Forms.TextBox txtNameFood;
+        private System.Windows.Forms.TextBox txtFoodName;
         private System.Windows.Forms.TextBox txtFoodID;
-        private System.Windows.Forms.Label lblFoodImage;
+        private System.Windows.Forms.Label lblLinkImage;
         private System.Windows.Forms.Label lblFoodStatus;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Label lblNameFc;
@@ -337,11 +357,14 @@ namespace quanLyNhaHang_Nhom4.Manager
         private System.Windows.Forms.Label lblFoodID;
         private System.Windows.Forms.TextBox txtSearchFood;
         private System.Windows.Forms.TextBox txtTotalFood;
-        private System.Windows.Forms.DataGridView dgvFoodList;
         private System.Windows.Forms.Button btnSearchFood;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvFoodName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvImage;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvFoodStatus;
+        private System.Windows.Forms.CheckBox cbStatus;
+        private System.Windows.Forms.DataGridView dgvFoodList;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maMon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenMon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn danhMuc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn giaMon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn danAnh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn trangThai;
     }
 }

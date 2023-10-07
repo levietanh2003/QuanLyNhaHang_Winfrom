@@ -62,6 +62,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\frmAdminFood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\frmAdminFood.Designer.cs">
+      <DependentUpon>frmAdminFood.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin\frmAdminAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,12 @@
     <Compile Include="Database\USP_Login_Result.cs">
       <DependentUpon>QuanLyNhaHangEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Manager\frmAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\frmAccount.Designer.cs">
+      <DependentUpon>frmAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manager\frmAttendanceList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,8 +227,14 @@
     <Compile Include="NumberToText.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Admin\frmAdminFood.resx">
+      <DependentUpon>frmAdminFood.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin\frmAdminAccount.resx">
       <DependentUpon>frmAdminAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\frmAccount.resx">
+      <DependentUpon>frmAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\frmAttendanceList.resx">
       <DependentUpon>frmAttendanceList.cs</DependentUpon>
@@ -290,13 +308,34 @@
       <DependentUpon>QuanLyNhaHangEntities.edmx</DependentUpon>
       <LastGenOutput>QuanLyNhaHangEntities.cs</LastGenOutput>
     </Content>
+    <Content Include="Image\food\bia-heineken.jpeg" />
+    <Content Include="Image\food\bia-huda.jpg" />
+    <Content Include="Image\food\bia-saigon.png" />
+    <Content Include="Image\food\bia-tiger-bac.png" />
+    <Content Include="Image\food\bia-tiger.png" />
+    <Content Include="Image\food\bo-xao-cu-hanh.png" />
+    <Content Include="Image\food\com-trang.png" />
+    <Content Include="Image\food\khan-lanh.png" />
+    <Content Include="Image\food\khoai-tay-chien.png" />
+    <Content Include="Image\food\mi-xao-bo.png" />
+    <Content Include="Image\food\nuoc-ngot-cocacola.png" />
+    <Content Include="Image\food\soup-cua.png" />
+    <Content Include="Image\food\trung-chien-thit-bam.png" />
+    <Content Include="Image\Icon\checked.png" />
+    <Content Include="Image\Icon\security.png" />
+    <Content Include="Image\Icon\error.png" />
+    <Content Include="Image\Icon\info.png" />
+    <Content Include="Image\Icon\question.png" />
+    <Content Include="Image\Icon\warning.png" />
     <Content Include="Resources\icons8-eye-30.png" />
     <Content Include="Resources\icons8-lock-50.png" />
     <Content Include="Resources\icons8-minus-30.png" />
     <Content Include="Resources\icons8-pencil-30.png" />
     <Content Include="Resources\icons8-plus-30.png" />
     <Content Include="Resources\icons8-research-30.png" />
+    <None Include="Resources\user-circle-solid-24.png" />
     <None Include="Resources\low-vision-solid-24.png" />
+    <None Include="Resources\image-add-regular-24.png" />
     <Content Include="Resources\pngtree-unlock-glyph-icon-vector-png-image_1859166.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -335,9 +374,7 @@
   <ItemGroup>
     <None Include="Resources\Close-2-icon.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Image\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
