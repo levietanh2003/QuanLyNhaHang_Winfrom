@@ -95,7 +95,7 @@ namespace quanLyNhaHang_Nhom4.Manager
             // 
             // ptbImageOfFood
             // 
-            this.ptbImageOfFood.Location = new System.Drawing.Point(120, 470);
+            this.ptbImageOfFood.Location = new System.Drawing.Point(120, 472);
             this.ptbImageOfFood.Margin = new System.Windows.Forms.Padding(6);
             this.ptbImageOfFood.Name = "ptbImageOfFood";
             this.ptbImageOfFood.Size = new System.Drawing.Size(380, 329);
@@ -142,7 +142,7 @@ namespace quanLyNhaHang_Nhom4.Manager
             // lblLinkImage
             // 
             this.lblLinkImage.ForeColor = System.Drawing.Color.White;
-            this.lblLinkImage.Location = new System.Drawing.Point(120, 831);
+            this.lblLinkImage.Location = new System.Drawing.Point(120, 833);
             this.lblLinkImage.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblLinkImage.Name = "lblLinkImage";
             this.lblLinkImage.Size = new System.Drawing.Size(380, 34);

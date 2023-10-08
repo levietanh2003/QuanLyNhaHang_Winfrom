@@ -111,8 +111,8 @@ namespace quanLyNhaHang_Nhom4.Manager
             {
                 image = "default.png";
             }
-            //String image = FoodDAO.Instance.GetLinkImageByFood(id);
-            Image img = GetCopyImage(@" @""..\..\Image\food\""" + image);
+           
+            Image img = GetCopyImage(@"..\..\Image\food\" + image);
             ptbImageOfFood.Image = img;
             ptbImageOfFood.SizeMode = PictureBoxSizeMode.StretchImage;
             //ptbImageOfFood.Image = new Bitmap(@"./Image/food/" + image);
@@ -164,9 +164,9 @@ namespace quanLyNhaHang_Nhom4.Manager
                 cmbNameFC.SelectedIndex = (int)row.Cells[2].Value - 1;
                 LoadImageFoodByIdFood((int)row.Cells[0].Value);
             }
-            catch
+            catch(Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -178,15 +178,14 @@ namespace quanLyNhaHang_Nhom4.Manager
                 QuanLyQuanAnEntities rm = new QuanLyQuanAnEntities();
                 Food food = (from f in rm.Foods where f.idFood == idFood select f).First();
                 food.statusFood = (cbStatus.Checked == true) ? "Đang bán" : "Tạm ngưng";
-                if (!(rm.SaveChanges() > 0))
+                if ((rm.SaveChanges() > 0))
                 {
-                    MessageBox.Show("Đã có lỗi xảy ra", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    msg.Show("Cập nhật trạng thái thành công.", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Success);
                 }
-                loadFoodList();
             }
             catch
             {
-                MessageBox.Show("Vui lòng chọn món trước khi điều chỉnh", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                msg.Show("Vui lòng chọn món trước khi điều chỉnh", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Warning);
             }
         }
 

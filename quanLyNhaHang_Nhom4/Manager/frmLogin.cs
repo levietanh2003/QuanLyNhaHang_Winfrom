@@ -28,7 +28,7 @@ namespace quanLyNhaHang_Nhom4.Manager
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
-        // kiem tra tai khoan ton tai hay khong
+        // luu tai khoan da dang nhap thanh cong
         bool Login(string userName, string passWord)
         {
             List<Account> login = (from acc in contextDB.Accounts
@@ -36,7 +36,6 @@ namespace quanLyNhaHang_Nhom4.Manager
                                    select acc).ToList();
             return login.Count() > 0;
         }
-
 
         #endregion
 
@@ -81,6 +80,7 @@ namespace quanLyNhaHang_Nhom4.Manager
             Application.Exit();
         }
 
+
         private void btnLogIn_Click(object sender, EventArgs e)
         {
             string userName = txtUser.Text;
@@ -88,18 +88,18 @@ namespace quanLyNhaHang_Nhom4.Manager
             if(Login(userName,password))
             {
                 Account loginAccount = (from acc in contextDB.Accounts
-                                        where acc.userName == userName
+                                        where acc.userName == userName 
                                         select acc).First();
-                frmMain frm = new frmMain(loginAccount);
-                
-                this.Hide();
-                frm.ShowDialog();
-                this.Show();
-                frm.StartPosition = FormStartPosition.CenterScreen;  
+               
+                    frmMain frm = new frmMain(loginAccount);
+
+                    this.Hide();
+                    frm.ShowDialog();
+                    this.Show();
+                    frm.StartPosition = FormStartPosition.CenterScreen;
             }
             else
             {
-                //MessageBox.Show("Thông tin tài khoản không hợp lệ !", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 msg.Show("Thông tin tài khoản không hợp lệ !", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Error);
             }
         }

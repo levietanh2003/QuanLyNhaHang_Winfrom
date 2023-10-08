@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Input;
 
 namespace quanLyNhaHang_Nhom4.Manager
 {
@@ -51,20 +52,20 @@ namespace quanLyNhaHang_Nhom4.Manager
 
             if (password == "")
             {
-                MessageBox.Show("Vui lòng nhập mật khẩu để cập nhật", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                msg.Show("Vui lòng nhập mật khẩu để cập nhật", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Warning);
             }
             else
             {   
                 // kiem tra mat khau cu co dung khong
                 if ((from x in rm.Accounts where x.userName == username && x.passWord == password select x).FirstOrDefault() == null)
                 {
-                    MessageBox.Show("Mat khau cu khong dung.", "THÔNG BÁO", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    msg.Show("Mật khẩu cũ không đúng.", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Warning);
                 }
                 else
                 {
                     if (!newpass.Equals(retypepass))
                     {
-                        MessageBox.Show("Mật khẩu nhập lại không trùng với mật khẩu mới", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        msg.Show("Mật khẩu nhập lại không trùng với mật khẩu mới", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Error);
                     }
                     else
                     {
@@ -74,7 +75,7 @@ namespace quanLyNhaHang_Nhom4.Manager
                         account.displayName = displayName;
                         if (rm.SaveChanges() > 0)
                         {
-                            MessageBox.Show("Cập nhật thành công !", "THÔNG BÁO", MessageBoxButtons.OK);
+                            msg.Show("Cập nhật thành công !", "THÔNG BÁO", msg.Buttons.Yes,msg.Icon.Success);
                         }
                     }
                 }
