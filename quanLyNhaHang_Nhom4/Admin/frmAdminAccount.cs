@@ -1,4 +1,5 @@
 ﻿using quanLyNhaHang_Nhom4.Database;
+using quanLyNhaHang_Nhom4.Manager;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -68,7 +69,7 @@ namespace quanLyNhaHang_Nhom4.Admin
             dgvAccount.Rows.Clear();
             foreach(var item in 
                 (from acc in contextDB.Accounts
-                 where acc.displayName == accountName
+                 where acc.displayName.Contains(accountName)
                  select acc).ToList()
                  )
             {
@@ -117,20 +118,20 @@ namespace quanLyNhaHang_Nhom4.Admin
 
             if(userName == "" || password == "" || retypePassword == "" || displayName == "" || idStaff == "" )
             {
-                MessageBox.Show("Vui long nhap day du thong tin","THONG BAO",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                msg.Show("Vui long nhap day du thong tin","THONG BAO",msg.Buttons.Yes,msg.Icon.Info);
             }
             else
             {
                 // kiem tra tai khoan da ton tai hay chua
                 if((from a in contextDB.Accounts where a.userName == userName select a).FirstOrDefault() != null)
                 {
-                    MessageBox.Show("Tai khoan da ton tai.","THONG BAO", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    msg.Show("Tai khoan da ton tai.","THONG BAO", msg.Buttons.Yes, msg.Icon.Error);
                 }
                 else
                 {
                     if((from x in contextDB.Staffs where x.idStaff == idStaff select x).FirstOrDefault() == null)
                     {
-                        MessageBox.Show("Ma nhan vien khong hop le.","THONG BAO", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        msg.Show("Ma nhan vien khong hop le.", "THONG BAO", msg.Buttons.Yes, msg.Icon.Error);
                     }
                     else
                     {
@@ -139,12 +140,12 @@ namespace quanLyNhaHang_Nhom4.Admin
                             if(contextDB.USP_InsertAccount(userName, password, displayName, typeAccount, idStaff) > 0)
                             {
                                 LoadAccount();
-                                MessageBox.Show("Them tai khoan thanh cong.", "THONG BAO", MessageBoxButtons.OK);
+                                msg.Show("Them tai khoan thanh cong.", "THONG BAO", msg.Buttons.Yes, msg.Icon.Success);
                                 resetText();
                             }
                         }catch
                         {
-                            MessageBox.Show("Da xay ra loi gi do.", "THONG BAO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            msg.Show("Da xay ra loi gi do.", "THONG BAO", msg.Buttons.Yes, msg.Icon.Error);
                         }
                     }
                 }
@@ -162,18 +163,18 @@ namespace quanLyNhaHang_Nhom4.Admin
             string idStaff = txtIdStaff.Text;
             if (userName == "" || displayName == "" || idStaff == "")
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin !!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                msg.Show("Vui lòng nhập đầy đủ thông tin !!", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Info);
             }
             else
             {
                 if ((from x in contextDB.Accounts where x.userName == userName select x).FirstOrDefault() == null)
                 {
-                    MessageBox.Show("Tài khoản không hợp lệ.\n Vui lòng chọn đúng tài khoản cần sửa", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    msg.Show("Tài khoản không hợp lệ.\n Vui lòng chọn đúng tài khoản cần sửa", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Info);
                 }else
                 {
                     if (password == "")
                     {
-                        MessageBox.Show("Bạn không thể thay đổi mật khẩu tại đây !", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        msg.Show("Bạn không thể thay đổi mật khẩu tại đây !", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Warning);
 
                     }
                     else
@@ -181,7 +182,7 @@ namespace quanLyNhaHang_Nhom4.Admin
                         // kiem tra ma nhan vien
                         if((from nv in contextDB.Staffs where nv.idStaff == idStaff select nv).FirstOrDefault() == null)
                         {
-                            MessageBox.Show("Sửa thông tin khoản thành công", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            msg.Show("Mã nhân viên không tồn tại", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Warning);
                         }else
                         {
                             try 
@@ -193,19 +194,19 @@ namespace quanLyNhaHang_Nhom4.Admin
                                 acc.userName = userName;
                                 if(contextDB.SaveChanges() > 0)
                                 {
-                                    MessageBox.Show("Sửa thông tin khoản thành công", "THÔNG BÁO",MessageBoxButtons.OK);
+                                    msg.Show("Sửa thông tin khoản thành công", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Success);
+
                                 }
                                 resetText();
                             }
                             catch
                             {
-                                MessageBox.Show("Có lỗi khi sửa thông tin tài khoản", "THÔNG BÁO",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                                msg.Show("Có lỗi khi sửa thông tin tài khoản", "THÔNG BÁO",msg.Buttons.No, msg.Icon.Error);
                             }
                         }
                     }
                 }
             }
-
         }
 
         // xoa tai khoan
@@ -217,12 +218,12 @@ namespace quanLyNhaHang_Nhom4.Admin
                 // kiem tra tai khoan co hop le hay khong va userName co bang khoang trong khong
                 if(userName == "" || (from x in contextDB.Accounts where x.userName == userName select x).FirstOrDefault() == null)
                 {
-                    MessageBox.Show("Tài khoản không hợp lệ.\n Vui lòng chọn đúng tài khoản cần sửa", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    msg.Show("Tài khoản không hợp lệ.\n Vui lòng chọn đúng tài khoản cần sửa", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Info);
                 }
                 else
                 {
                     // hoi nguoi dung xem co chac chan khong
-                    if(MessageBox.Show("Bạn có chắc chắn muốn xóa tài khoản ? ", "THÔNG BÁO", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if(msg.Show("Bạn có chắc chắn muốn xóa tài khoản ? ", "THÔNG BÁO", msg.Buttons.YesNo, msg.Icon.Question) == DialogResult.Yes)
                     {
                         try
                         {
@@ -231,18 +232,18 @@ namespace quanLyNhaHang_Nhom4.Admin
                             contextDB.Accounts.Remove(acc);
                             if(contextDB.SaveChanges() > 0)
                             {
-                                MessageBox.Show("Xóa tài khoản thành công", "THÔNG BÁO",MessageBoxButtons.OK);
+                                msg.Show("Xóa tài khoản thành công", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Success);
                             }
                         }catch
                         {
-                            MessageBox.Show("Đã xảy ra lỗi khi xóa tài khoản", "THÔNG BÁO",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                            msg.Show("Đã xảy ra lỗi khi xóa tài khoản", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Error);
                         }
                     }
                 }
             }
             catch
             {
-                MessageBox.Show("Bạn không thể xóa tài khoản này!", "THÔNG BÁO",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                msg.Show("Bạn không thể xóa tài khoản này!", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Error);
             }
         }
 
@@ -253,11 +254,11 @@ namespace quanLyNhaHang_Nhom4.Admin
 
             if (userName == "" || (from x in contextDB.Accounts where x.userName == userName select x).FirstOrDefault() == null)
             {
-                MessageBox.Show("Tài khoản không hợp lệ.\n Vui lòng chọn đúng tài khoản cần sửa", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                msg.Show("Tài khoản không hợp lệ.\n Vui lòng chọn đúng tài khoản cần sửa", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Info);
             }
             else
             {
-                if (MessageBox.Show("Bạn có chắc chắn muốn đặt mật khẩu về mặc định?", "THÔNG BÁO", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (msg.Show("Bạn có chắc chắn muốn đặt mật khẩu về mặc định?", "THÔNG BÁO", msg.Buttons.YesNo, msg.Icon.Question) == DialogResult.Yes)
                 {
                     try
                     {
@@ -266,12 +267,12 @@ namespace quanLyNhaHang_Nhom4.Admin
                         acc.passWord = "1";
                         if (contextDB.SaveChanges() > 0)
                         {
-                            MessageBox.Show("Đặt lại mật khẩu thành công.\nMật khẩu mặc định của bạn là: 1", "THÔNG BÁO", MessageBoxButtons.OK);
+                            msg.Show("Đặt lại mật khẩu thành công.\nMật khẩu mặc định của bạn là: 1", "THÔNG BÁO", msg.Buttons.Yes,msg.Icon.Success);
                         }
                     }
                     catch
                     {
-                        MessageBox.Show("Đã xảy ra lỗi khi xóa tài khoản", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        msg.Show("Đã xảy ra lỗi khi xóa tài khoản", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Error);
                     }
                 }
             }

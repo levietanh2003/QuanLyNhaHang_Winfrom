@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolstripTim = new System.Windows.Forms.ToolStripLabel();
             this.txtFindTableName = new System.Windows.Forms.ToolStripTextBox();
             this.dgvTableFood = new System.Windows.Forms.DataGridView();
@@ -36,6 +37,10 @@
             this.colTenBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnShowTable = new System.Windows.Forms.Button();
+            this.btnDeleteTable = new System.Windows.Forms.Button();
+            this.btnEditTable = new System.Windows.Forms.Button();
+            this.btnAddTable = new System.Windows.Forms.Button();
             this.lblThongtin = new System.Windows.Forms.Label();
             this.lblMaban = new System.Windows.Forms.Label();
             this.lblTenban = new System.Windows.Forms.Label();
@@ -46,11 +51,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblTotalTableFood = new System.Windows.Forms.Label();
-            this.btnShowTable = new System.Windows.Forms.Button();
-            this.btnDeleteTable = new System.Windows.Forms.Button();
-            this.btnEditTable = new System.Windows.Forms.Button();
-            this.btnAddTable = new System.Windows.Forms.Button();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTableFood)).BeginInit();
             this.panel3.SuspendLayout();
@@ -69,15 +69,24 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.toolStrip1.Size = new System.Drawing.Size(802, 50);
+            this.toolStrip1.Size = new System.Drawing.Size(802, 43);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.Tatice_Cristal_Intense_Loupe_256;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(46, 37);
+            this.toolStripButton1.Text = "toolStripButton1";
             // 
             // toolstripTim
             // 
             this.toolstripTim.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.toolstripTim.Name = "toolstripTim";
-            this.toolstripTim.Size = new System.Drawing.Size(229, 44);
+            this.toolstripTim.Size = new System.Drawing.Size(229, 37);
             this.toolstripTim.Text = "Tìm kiếm bàn ăn";
             this.toolstripTim.Click += new System.EventHandler(this.toolStripLabel1_Click);
             // 
@@ -85,7 +94,7 @@
             // 
             this.txtFindTableName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtFindTableName.Name = "txtFindTableName";
-            this.txtFindTableName.Size = new System.Drawing.Size(500, 50);
+            this.txtFindTableName.Size = new System.Drawing.Size(500, 43);
             this.txtFindTableName.Click += new System.EventHandler(this.txtFindTableName_Click);
             this.txtFindTableName.TextChanged += new System.EventHandler(this.txtFindTableName_TextChanged);
             // 
@@ -141,124 +150,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(984, 145);
             this.panel3.TabIndex = 12;
-            // 
-            // lblThongtin
-            // 
-            this.lblThongtin.AutoSize = true;
-            this.lblThongtin.Font = new System.Drawing.Font("Cambria", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblThongtin.ForeColor = System.Drawing.Color.White;
-            this.lblThongtin.Location = new System.Drawing.Point(83, 215);
-            this.lblThongtin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblThongtin.Name = "lblThongtin";
-            this.lblThongtin.Size = new System.Drawing.Size(359, 47);
-            this.lblThongtin.TabIndex = 0;
-            this.lblThongtin.Text = "Thông Tin Món Ăn";
-            this.lblThongtin.Click += new System.EventHandler(this.label1_Click_1);
-            // 
-            // lblMaban
-            // 
-            this.lblMaban.AutoSize = true;
-            this.lblMaban.BackColor = System.Drawing.Color.DimGray;
-            this.lblMaban.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaban.ForeColor = System.Drawing.Color.White;
-            this.lblMaban.Location = new System.Drawing.Point(29, 317);
-            this.lblMaban.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblMaban.Name = "lblMaban";
-            this.lblMaban.Size = new System.Drawing.Size(103, 32);
-            this.lblMaban.TabIndex = 1;
-            this.lblMaban.Text = "Mã bàn";
-            // 
-            // lblTenban
-            // 
-            this.lblTenban.AutoSize = true;
-            this.lblTenban.BackColor = System.Drawing.Color.DimGray;
-            this.lblTenban.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTenban.ForeColor = System.Drawing.Color.White;
-            this.lblTenban.Location = new System.Drawing.Point(29, 443);
-            this.lblTenban.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTenban.Name = "lblTenban";
-            this.lblTenban.Size = new System.Drawing.Size(112, 32);
-            this.lblTenban.TabIndex = 2;
-            this.lblTenban.Text = "Tên bàn";
-            // 
-            // lblTrangthai
-            // 
-            this.lblTrangthai.AutoSize = true;
-            this.lblTrangthai.BackColor = System.Drawing.Color.DimGray;
-            this.lblTrangthai.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTrangthai.ForeColor = System.Drawing.Color.White;
-            this.lblTrangthai.Location = new System.Drawing.Point(29, 584);
-            this.lblTrangthai.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTrangthai.Name = "lblTrangthai";
-            this.lblTrangthai.Size = new System.Drawing.Size(140, 32);
-            this.lblTrangthai.TabIndex = 3;
-            this.lblTrangthai.Text = "Trạng thái";
-            // 
-            // txtTableID
-            // 
-            this.txtTableID.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTableID.Location = new System.Drawing.Point(203, 314);
-            this.txtTableID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtTableID.Name = "txtTableID";
-            this.txtTableID.Size = new System.Drawing.Size(193, 36);
-            this.txtTableID.TabIndex = 4;
-            // 
-            // txtTableName
-            // 
-            this.txtTableName.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTableName.Location = new System.Drawing.Point(203, 447);
-            this.txtTableName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtTableName.Name = "txtTableName";
-            this.txtTableName.Size = new System.Drawing.Size(193, 36);
-            this.txtTableName.TabIndex = 5;
-            // 
-            // txtTableStatus
-            // 
-            this.txtTableStatus.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTableStatus.Location = new System.Drawing.Point(203, 584);
-            this.txtTableStatus.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtTableStatus.Name = "txtTableStatus";
-            this.txtTableStatus.Size = new System.Drawing.Size(193, 36);
-            this.txtTableStatus.TabIndex = 6;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.DimGray;
-            this.panel1.Controls.Add(this.txtTableStatus);
-            this.panel1.Controls.Add(this.txtTableName);
-            this.panel1.Controls.Add(this.txtTableID);
-            this.panel1.Controls.Add(this.lblTrangthai);
-            this.panel1.Controls.Add(this.lblTenban);
-            this.panel1.Controls.Add(this.lblMaban);
-            this.panel1.Controls.Add(this.lblThongtin);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(1041, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(487, 957);
-            this.panel1.TabIndex = 6;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Silver;
-            this.panel2.Controls.Add(this.lblTotalTableFood);
-            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(0, 60);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(984, 53);
-            this.panel2.TabIndex = 13;
-            // 
-            // lblTotalTableFood
-            // 
-            this.lblTotalTableFood.AutoSize = true;
-            this.lblTotalTableFood.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalTableFood.Location = new System.Drawing.Point(19, 13);
-            this.lblTotalTableFood.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTotalTableFood.Name = "lblTotalTableFood";
-            this.lblTotalTableFood.Size = new System.Drawing.Size(210, 32);
-            this.lblTotalTableFood.TabIndex = 3;
-            this.lblTotalTableFood.Text = "Tổng danh mục:";
             // 
             // btnShowTable
             // 
@@ -318,14 +209,125 @@
             this.btnAddTable.UseVisualStyleBackColor = true;
             this.btnAddTable.Click += new System.EventHandler(this.btnAddTable_Click);
             // 
-            // toolStripButton1
+            // lblThongtin
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.Tatice_Cristal_Intense_Loupe_256;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(46, 44);
-            this.toolStripButton1.Text = "toolStripButton1";
+            this.lblThongtin.AutoSize = true;
+            this.lblThongtin.Font = new System.Drawing.Font("Cambria", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblThongtin.ForeColor = System.Drawing.Color.White;
+            this.lblThongtin.Location = new System.Drawing.Point(83, 215);
+            this.lblThongtin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblThongtin.Name = "lblThongtin";
+            this.lblThongtin.Size = new System.Drawing.Size(359, 47);
+            this.lblThongtin.TabIndex = 0;
+            this.lblThongtin.Text = "Thông Tin Món Ăn";
+            this.lblThongtin.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // lblMaban
+            // 
+            this.lblMaban.AutoSize = true;
+            this.lblMaban.BackColor = System.Drawing.Color.DimGray;
+            this.lblMaban.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaban.ForeColor = System.Drawing.Color.White;
+            this.lblMaban.Location = new System.Drawing.Point(29, 317);
+            this.lblMaban.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMaban.Name = "lblMaban";
+            this.lblMaban.Size = new System.Drawing.Size(103, 32);
+            this.lblMaban.TabIndex = 1;
+            this.lblMaban.Text = "Mã bàn";
+            // 
+            // lblTenban
+            // 
+            this.lblTenban.AutoSize = true;
+            this.lblTenban.BackColor = System.Drawing.Color.DimGray;
+            this.lblTenban.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTenban.ForeColor = System.Drawing.Color.White;
+            this.lblTenban.Location = new System.Drawing.Point(29, 443);
+            this.lblTenban.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTenban.Name = "lblTenban";
+            this.lblTenban.Size = new System.Drawing.Size(112, 32);
+            this.lblTenban.TabIndex = 2;
+            this.lblTenban.Text = "Tên bàn";
+            // 
+            // lblTrangthai
+            // 
+            this.lblTrangthai.AutoSize = true;
+            this.lblTrangthai.BackColor = System.Drawing.Color.DimGray;
+            this.lblTrangthai.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTrangthai.ForeColor = System.Drawing.Color.White;
+            this.lblTrangthai.Location = new System.Drawing.Point(29, 584);
+            this.lblTrangthai.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTrangthai.Name = "lblTrangthai";
+            this.lblTrangthai.Size = new System.Drawing.Size(140, 32);
+            this.lblTrangthai.TabIndex = 3;
+            this.lblTrangthai.Text = "Trạng thái";
+            // 
+            // txtTableID
+            // 
+            this.txtTableID.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTableID.Location = new System.Drawing.Point(203, 314);
+            this.txtTableID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTableID.Name = "txtTableID";
+            this.txtTableID.ReadOnly = true;
+            this.txtTableID.Size = new System.Drawing.Size(193, 36);
+            this.txtTableID.TabIndex = 4;
+            // 
+            // txtTableName
+            // 
+            this.txtTableName.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTableName.Location = new System.Drawing.Point(203, 447);
+            this.txtTableName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTableName.Name = "txtTableName";
+            this.txtTableName.Size = new System.Drawing.Size(193, 36);
+            this.txtTableName.TabIndex = 5;
+            // 
+            // txtTableStatus
+            // 
+            this.txtTableStatus.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTableStatus.Location = new System.Drawing.Point(203, 584);
+            this.txtTableStatus.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTableStatus.Name = "txtTableStatus";
+            this.txtTableStatus.ReadOnly = true;
+            this.txtTableStatus.Size = new System.Drawing.Size(193, 36);
+            this.txtTableStatus.TabIndex = 6;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DimGray;
+            this.panel1.Controls.Add(this.txtTableStatus);
+            this.panel1.Controls.Add(this.txtTableName);
+            this.panel1.Controls.Add(this.txtTableID);
+            this.panel1.Controls.Add(this.lblTrangthai);
+            this.panel1.Controls.Add(this.lblTenban);
+            this.panel1.Controls.Add(this.lblMaban);
+            this.panel1.Controls.Add(this.lblThongtin);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(1041, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(487, 957);
+            this.panel1.TabIndex = 6;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Silver;
+            this.panel2.Controls.Add(this.lblTotalTableFood);
+            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel2.Location = new System.Drawing.Point(0, 60);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(984, 53);
+            this.panel2.TabIndex = 13;
+            // 
+            // lblTotalTableFood
+            // 
+            this.lblTotalTableFood.AutoSize = true;
+            this.lblTotalTableFood.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalTableFood.Location = new System.Drawing.Point(19, 13);
+            this.lblTotalTableFood.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTotalTableFood.Name = "lblTotalTableFood";
+            this.lblTotalTableFood.Size = new System.Drawing.Size(210, 32);
+            this.lblTotalTableFood.TabIndex = 3;
+            this.lblTotalTableFood.Text = "Tổng danh mục:";
             // 
             // frmAdminTable
             // 

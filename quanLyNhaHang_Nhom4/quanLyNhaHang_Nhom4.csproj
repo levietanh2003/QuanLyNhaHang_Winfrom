@@ -74,6 +74,12 @@
     <Compile Include="Admin\frmAdminAccount.Designer.cs">
       <DependentUpon>frmAdminAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin\frmAdminStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\frmAdminStaff.Designer.cs">
+      <DependentUpon>frmAdminStaff.cs</DependentUpon>
+    </Compile>
     <Compile Include="Database\Account.cs">
       <DependentUpon>QuanLyNhaHangEntities.tt</DependentUpon>
     </Compile>
@@ -170,6 +176,12 @@
     <Compile Include="Manager\frmAttendanceList.Designer.cs">
       <DependentUpon>frmAttendanceList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager\frmEditPosition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\frmEditPosition.Designer.cs">
+      <DependentUpon>frmEditPosition.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manager\frmHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,11 +245,17 @@
     <EmbeddedResource Include="Admin\frmAdminAccount.resx">
       <DependentUpon>frmAdminAccount.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin\frmAdminStaff.resx">
+      <DependentUpon>frmAdminStaff.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Manager\frmAccount.resx">
       <DependentUpon>frmAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\frmAttendanceList.resx">
       <DependentUpon>frmAttendanceList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\frmEditPosition.resx">
+      <DependentUpon>frmEditPosition.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>
@@ -308,18 +326,64 @@
       <DependentUpon>QuanLyNhaHangEntities.edmx</DependentUpon>
       <LastGenOutput>QuanLyNhaHangEntities.cs</LastGenOutput>
     </Content>
+    <Content Include="Image\food\bap-bo-hap-hanh-gung.png" />
     <Content Include="Image\food\bia-heineken.jpeg" />
     <Content Include="Image\food\bia-huda.jpg" />
     <Content Include="Image\food\bia-saigon.png" />
     <Content Include="Image\food\bia-tiger-bac.png" />
     <Content Include="Image\food\bia-tiger.png" />
+    <Content Include="Image\food\bo-bit-tet.png" />
+    <Content Include="Image\food\bo-luc-lac.png" />
+    <Content Include="Image\food\bo-ne.png" />
     <Content Include="Image\food\bo-xao-cu-hanh.png" />
+    <Content Include="Image\food\bun-them.png" />
+    <Content Include="Image\food\ca-basa-kho-to.png" />
+    <Content Include="Image\food\cai-bo-xoi-xao-toi.png" />
+    <Content Include="Image\food\canh-bi-do.png" />
+    <Content Include="Image\food\canh-chua-ca-loc.png" />
+    <Content Include="Image\food\canh-cua-rau-day.png" />
+    <Content Include="Image\food\canh-ga-chien-nuoc-mam.png" />
+    <Content Include="Image\food\canh-kho-qua-nhoi-thit.png" />
+    <Content Include="Image\food\canh-tan-o-cha-ca-thac-lac.png" />
+    <Content Include="Image\food\com-bo-luc-lac.png" />
     <Content Include="Image\food\com-trang.png" />
+    <Content Include="Image\food\cua-hoang-de.png" />
+    <Content Include="Image\food\cua-rang-muoi.png" />
+    <Content Include="Image\food\default.png" />
+    <Content Include="Image\food\ech-chien-bo.png" />
+    <Content Include="Image\food\ech-rang-muoi.png" />
+    <Content Include="Image\food\ech-xao-cu-hanh.png" />
+    <Content Include="Image\food\ech-xao-lang.png" />
+    <Content Include="Image\food\ech-xao-xa-ot.png" />
+    <Content Include="Image\food\ga-chien-bo.png" />
+    <Content Include="Image\food\ga-kho-xa-ot.png" />
+    <Content Include="Image\food\goi-bap-bo.png" />
+    <Content Include="Image\food\hoa-chuoi-tom-thit.png" />
     <Content Include="Image\food\khan-lanh.png" />
+    <Content Include="Image\food\kho-qua-xao-tom-thit.png" />
+    <Content Include="Image\food\kho-qua-xao-trung.png" />
     <Content Include="Image\food\khoai-tay-chien.png" />
+    <Content Include="Image\food\lau-ca-bop.png" />
+    <Content Include="Image\food\lau-cua-dong.png" />
+    <Content Include="Image\food\lau-ga-la-giang.png" />
+    <Content Include="Image\food\lau-nam.png" />
+    <Content Include="Image\food\lau-thai.png" />
     <Content Include="Image\food\mi-xao-bo.png" />
+    <Content Include="Image\food\muc-chien-gion.png" />
+    <Content Include="Image\food\muc-hap-hanh-gung.png" />
+    <Content Include="Image\food\muc-nuong-muoi-ot.png" />
+    <Content Include="Image\food\muc-xao-rau-cu.png" />
+    <Content Include="Image\food\nuoc-aquafina.png" />
     <Content Include="Image\food\nuoc-ngot-cocacola.png" />
+    <Content Include="Image\food\nuoc-ngot-pepsi.png" />
+    <Content Include="Image\food\nuoc-ngot-sting.png" />
+    <Content Include="Image\food\rau-muong-xao-toi.png" />
     <Content Include="Image\food\soup-cua.png" />
+    <Content Include="Image\food\suon-non-sot-chua-ngot.png" />
+    <Content Include="Image\food\tom-chien-gion.png" />
+    <Content Include="Image\food\tom-chien-trung-muoi.png" />
+    <Content Include="Image\food\tom-hum-nuong-muoi-ot.png" />
+    <Content Include="Image\food\tom-hum-pho-mai-bo-toi.png" />
     <Content Include="Image\food\trung-chien-thit-bam.png" />
     <Content Include="Image\Icon\checked.png" />
     <Content Include="Image\Icon\security.png" />

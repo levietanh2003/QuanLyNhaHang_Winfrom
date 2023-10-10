@@ -51,7 +51,23 @@ namespace quanLyNhaHang_Nhom4.Manager
         {
             AddCategory();
         }
-
+        private void btnEditCategory_Click(object sender, EventArgs e)
+        {
+            EditCategory();
+        }
+        private void btnDeleteCategory_Click(object sender, EventArgs e)
+        {
+            DeleteCategory();
+        }
+        private void btnShowCategory_Click(object sender, EventArgs e)
+        {
+            LoadCategory();
+            txtFindCategoryByName.Text = "";
+        }
+        private void txtFindCategoryByName_TextChanged(object sender, EventArgs e)
+        {
+            LoadCategoryByName(txtFindCategoryByName.Text);
+        }
         #endregion
 
         #region Method
@@ -87,6 +103,22 @@ namespace quanLyNhaHang_Nhom4.Manager
 
             setDataGirdView(dgvFoodCategory);
         }
+
+        // load category theo ten
+        void LoadCategoryByName(string nameCategory)
+        {
+            int index = 0;
+            dgvFoodCategory.Rows.Clear();  
+            foreach(var item in (from x in rm.FoodCategories where x.nameFC.Contains(nameCategory) select x).ToList())
+            {
+                index = dgvFoodCategory.Rows.Add();
+                dgvFoodCategory.Rows[index].Cells[0].Value = item.idFC;
+                dgvFoodCategory.Rows[index].Cells[1].Value = item.nameFC;
+            }
+            lblTotalCategory.Text = (dgvFoodCategory.Rows.Count - 1).ToString();
+            setDataGirdView(dgvFoodCategory);
+
+        }
         void setDataGirdView(DataGridView dataGrid)
         {
             // fontSize 
@@ -121,43 +153,41 @@ namespace quanLyNhaHang_Nhom4.Manager
         void AddCategory()
         {
             string nameCategory = txtCategoryName.Text;
-
-            if(nameCategory != "")
+            if (nameCategory != "")
             {
-                // kiem tra ten danh muc co ton tai chua
-                if (IsCategoryExists(nameCategory))
+                if ((from c in rm.FoodCategories where c.nameFC == nameCategory select c).FirstOrDefault() != null)
                 {
-                    // hoi nguoi dung da ton tai roi co van muon them khong
-                    if (MessageBox.Show("Tên danh mục đã tồn tại. Bạn có muốn thêm?", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (msg.Show("Tên danh mục đã tồn tại. Bạn có muốn thêm?", "THÔNG BÁO", msg.Buttons.YesNo, msg.Icon.Question) == DialogResult.Yes)
                     {
                         rm.FoodCategories.Add(new FoodCategory() { nameFC = nameCategory });
                         if (rm.SaveChanges() > 0)
                         {
-                            MessageBox.Show("Thêm danh mục thành công!", "THÔNG BÁO", MessageBoxButtons.OK);
-                            LoadCategory();
+                            msg.Show("Thêm danh mục thành công!", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Success);
+                            Load();
                         }
                         else
                         {
-                            MessageBox.Show("Đã xảy ra lỗi khi thêm!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            msg.Show("Đã xảy ra lỗi khi thêm!", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Error);
                         }
                     }
-                }else
+                }
+                else
                 {
                     rm.FoodCategories.Add(new FoodCategory() { nameFC = nameCategory });
                     if (rm.SaveChanges() > 0)
                     {
-                        MessageBox.Show("Thêm danh mục thành công!", "THÔNG BÁO", MessageBoxButtons.OK);
-                        LoadCategory();
+                        msg.Show("Thêm danh mục thành công!", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Success);
+                        Load();
                     }
                     else
                     {
-                        MessageBox.Show("Đã xảy ra lỗi khi thêm!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        msg.Show("Đã xảy ra lỗi khi thêm!", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Error);
                     }
                 }
             }
             else
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ!", "THÔNG BÁO",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                msg.Show("Vui lòng nhập đầy đủ!", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Info);
             }
         }
 
@@ -168,11 +198,70 @@ namespace quanLyNhaHang_Nhom4.Manager
             string nameCategory = txtCategoryName.Text;
             if(nameCategory != "")
             {
-
+                FoodCategory foodCategoryEdit = (from x in rm.FoodCategories where x.nameFC == nameCategory select x).FirstOrDefault();
+                if(foodCategoryEdit != null)
+                {
+                    if(msg.Show("Tên danh mục đã tồn tại.\n Bạn có muốn sửa tên danh mục?", "Sửa danh mục món ăn", msg.Buttons.YesNo, msg.Icon.Question) == DialogResult.Yes)
+                    {
+                        foodCategoryEdit.nameFC = nameCategory;
+                        if(rm.SaveChanges() > 0)
+                        {
+                            msg.Show("Sửa danh mục thành công!", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Success);
+                            LoadCategory();
+                        }
+                    }
+                }
+                else
+                {
+                    FoodCategory cat = (from c in rm.FoodCategories where c.idFC == idCategory select c).FirstOrDefault();
+                    cat.nameFC = nameCategory;
+                    if (rm.SaveChanges() > 0)
+                    {
+                        msg.Show("Sửa danh mục thành công!", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Success);
+                        Load();
+                    }
+                    else
+                    {
+                        msg.Show("Đã xảy ra lỗi khi sửa!", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Error);
+                    }
+                }
             }
             else
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                msg.Show("Vui lòng nhập đầy đủ!", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Info);
+            }
+        }
+
+        // xoa danh muc
+        void DeleteCategory()
+        {
+            int idCategory = Int32.Parse(txtCategoryID.Text);
+            string nameCategory = txtCategoryName.Text;
+
+            FoodCategory foodCategoryDelete = (from x in rm.FoodCategories where x.nameFC == nameCategory select x).FirstOrDefault();
+            if (idCategory == 0 || nameCategory == "" || foodCategoryDelete == null || txtCategoryID.Text == "")
+            {
+                msg.Show("Ban vui lòng chọn danh mục muốn xóa.", "THÔNG BÁO", msg.Buttons.Yes,msg.Icon.Info);
+            }
+            else
+            {
+                try
+                {
+                    rm.FoodCategories.Remove(foodCategoryDelete);
+                    if (rm.SaveChanges() > 0)
+                    {
+                        msg.Show("Xóa thành công", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Success);
+                        Load();
+                    }
+                    else
+                    {
+                        msg.Show("Đã có lỗi xảy ra", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Error);
+                    }
+                }
+                catch
+                {
+                    msg.Show("Bạn không thể xóa danh mục này!", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Error);
+                }
             }
         }
         #endregion

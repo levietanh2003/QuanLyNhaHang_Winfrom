@@ -153,6 +153,7 @@
             this.btnAddBillOfWareHouse.TabIndex = 4;
             this.btnAddBillOfWareHouse.Text = "Nhập đơn mới";
             this.btnAddBillOfWareHouse.UseVisualStyleBackColor = false;
+            this.btnAddBillOfWareHouse.Click += new System.EventHandler(this.btnAddBillOfWareHouse_Click);
             // 
             // btnInfoWareHouse
             // 
@@ -235,6 +236,7 @@
             this.btnOpenFormStaff.TabIndex = 7;
             this.btnOpenFormStaff.Text = "Nhân viên";
             this.btnOpenFormStaff.UseVisualStyleBackColor = false;
+            this.btnOpenFormStaff.Click += new System.EventHandler(this.btnOpenFormStaff_Click);
             // 
             // btnOpenFromTable
             // 

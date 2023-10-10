@@ -172,22 +172,52 @@ namespace quanLyNhaHang_Nhom4.Manager
 
         private void cbStatus_CheckedChanged(object sender, EventArgs e)
         {
+            //try
+            //{
+            //    int idFood = Int32.Parse(txtFoodID.Text);
+            //    QuanLyQuanAnEntities rm = new QuanLyQuanAnEntities();
+            //    Food food = (from f in rm.Foods where f.idFood == idFood select f).First();
+            //    food.statusFood = (cbStatus.Checked == true) ? "Đang bán" : "Tạm ngưng";
+            //    if (rm.SaveChanges() > 0)
+            //    {
+            //        msg.Show("Cập nhật trạng thái thành công.", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Success);
+            //    }
+            //}
+            //catch
+            //{
+            //    msg.Show("Vui lòng chọn món trước khi điều chỉnh", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Warning);
+            //}
             try
             {
                 int idFood = Int32.Parse(txtFoodID.Text);
-                QuanLyQuanAnEntities rm = new QuanLyQuanAnEntities();
-                Food food = (from f in rm.Foods where f.idFood == idFood select f).First();
-                food.statusFood = (cbStatus.Checked == true) ? "Đang bán" : "Tạm ngưng";
-                if ((rm.SaveChanges() > 0))
-                {
-                    msg.Show("Cập nhật trạng thái thành công.", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Success);
-                }
+                ChangeStatus(cbStatus.Checked == true, idFood);
             }
             catch
             {
                 msg.Show("Vui lòng chọn món trước khi điều chỉnh", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Warning);
             }
         }
+        public bool ChangeStatus(bool status, int idFood)
+        {
+            Food food = (from f in contextDB.Foods where f.idFood == idFood select f).FirstOrDefault();
+            food.statusFood = "Đang bán";
+            //string query = string.Format("update food set statusFood = N'Đang bán' where idFood = " + idFood);
+            if (status == false) food.statusFood = "Tạm ngưng";// query = string.Format("update food set statusFood = N'Tạm ngưng' where idFood = " + idFood);
+            //int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return contextDB.SaveChanges() > 0;
+        }
+        //private void cbStatus_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        int idFood = Int32.Parse(txtFoodID.Text);
+        //        ChangeStatus(cbStatus.Checked == true, idFood);
+        //    }
+        //    catch
+        //    {
+        //        msg.Show("Vui lòng chọn món trước khi điều chỉnh", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Warning);
+        //    }
+        //}
 
         private void txtSearchFood_TextChanged(object sender, EventArgs e)
         {
@@ -196,6 +226,10 @@ namespace quanLyNhaHang_Nhom4.Manager
         private void lblLinkImage_Click(object sender, EventArgs e)
         {
 
+        }
+        private void btnShowFood_Click(object sender, EventArgs e)
+        {
+            loadFoodList();
         }
         #endregion
     }

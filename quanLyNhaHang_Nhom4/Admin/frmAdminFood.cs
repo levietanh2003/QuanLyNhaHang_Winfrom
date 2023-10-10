@@ -1,4 +1,5 @@
 ﻿using quanLyNhaHang_Nhom4.Database;
+using quanLyNhaHang_Nhom4.Manager;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +22,7 @@ namespace quanLyNhaHang_Nhom4.Admin
         {
             InitializeComponent();
             load();
+            columnRatio();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -32,6 +34,20 @@ namespace quanLyNhaHang_Nhom4.Admin
         {
             loadListFood();
             loadCategory();
+        }
+        public void columnRatio()
+        {
+            int totalWidth = dgvFoodList.Width;
+            int column1Width = (int)(totalWidth * 0.25);
+            int column2Width = (int)(totalWidth * 0.25);
+            int column3Width = (int)(totalWidth * 0.25);
+            int column4Width = (int)(totalWidth * 0.25);
+
+            dgvFoodList.Columns[0].Width = column1Width;
+            dgvFoodList.Columns[1].Width = column2Width;
+            dgvFoodList.Columns[2].Width = column3Width;
+            dgvFoodList.Columns[3].Width = column4Width;
+
         }
         // load du lieu le dataGirdView
         void loadListFood()
@@ -176,20 +192,20 @@ namespace quanLyNhaHang_Nhom4.Admin
             {
                 if ((from f in contextDB.Foods where f.nameFood == name select f).FirstOrDefault() != null)
                 {
-                    if (MessageBox.Show("Tên món ăn đã tồn tại. Bạn có chắc chắn thêm món?", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    if (msg.Show("Tên món ăn đã tồn tại. Bạn có chắc chắn thêm món?", "THÔNG BÁO", msg.Buttons.YesNo, msg.Icon.Warning) == DialogResult.Yes)
                     {
                         if (linkImage == "")
                         {
-                            if (MessageBox.Show("Bạn vẫn chưa tải hình món ăn lên. Bạn có chắc chắn thêm món?", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            if (msg.Show("Bạn vẫn chưa tải hình món ăn lên. Bạn có chắc chắn thêm món?", "THÔNG BÁO", msg.Buttons.YesNo, msg.Icon.Question) == DialogResult.Yes)
                             {
                                 if (contextDB.USP_InsertFood(name, idCategory, price, linkImage) > 0)
                                 {
-                                    MessageBox.Show("Thêm thành công", "THÔNG BÁO", MessageBoxButtons.OK);
+                                    msg.Show("Thêm thành công", "THÔNG BÁO",msg.Buttons.Yes, msg.Icon.Success);
                                     loadListFood();
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Có lỗi khi thêm món ăn", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    msg.Show("Có lỗi khi thêm món ăn", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Error);
                                 }
                             }
                         }
@@ -197,12 +213,12 @@ namespace quanLyNhaHang_Nhom4.Admin
                         {
                             if (contextDB.USP_InsertFood(name, idCategory, price, linkImage) > 0)
                             {
-                                MessageBox.Show("Thêm thành công", "THÔNG BÁO", MessageBoxButtons.OK);
+                                msg.Show("Thêm thành công", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Success);
                                 loadListFood();
                             }
                             else
                             {
-                               MessageBox.Show("Có lỗi khi thêm món ăn", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                               msg.Show("Có lỗi khi thêm món ăn", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Error);
                             }
                         }
                     }
@@ -211,12 +227,12 @@ namespace quanLyNhaHang_Nhom4.Admin
                 {
                     if (contextDB.USP_InsertFood(name, idCategory, price, linkImage) > 0)
                     {
-                        MessageBox.Show("Thêm thành công", "THÔNG BÁO", MessageBoxButtons.OK);
+                        msg.Show("Thêm thành công", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Success);
                         loadListFood();
                     }
                     else
                     {
-                        MessageBox.Show("Có lỗi khi thêm món ăn", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        msg.Show("Có lỗi khi thêm món ăn", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Error);
                     }
                 }
             }
@@ -224,11 +240,87 @@ namespace quanLyNhaHang_Nhom4.Admin
             {
                 if (name == "")
                 {
-                    MessageBox.Show("Vui lòng nhập tên món ăn !", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    msg.Show("Vui lòng nhập tên món ăn !", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Error);
                 }
                 else
                 {
-                    MessageBox.Show("Vui lòng nhập giá món ăn là số!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    msg.Show("Vui lòng nhập giá món ăn là số!", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Error);
+                }
+            }
+        }
+
+        // xoa food
+        void DeleteFood()
+        {
+            try
+            {
+                int idFood = Int32.Parse(txtFoodID.Text);
+                string name = txtFoodID.Text;
+                string linkImage = lblLinkImage.Text;
+
+                if (msg.Show("Bạn có chắc chắn muốn xóa món " + name + "?", "THÔNG BÁO", msg.Buttons.YesNo, msg.Icon.Question) == DialogResult.Yes)
+                {
+                    Food foodDelete = (from food in contextDB.Foods where food.idFood == idFood select food).FirstOrDefault();
+                    contextDB.Foods.Remove(foodDelete);
+                    if (contextDB.SaveChanges() > 0)
+                    {
+                        msg.Show("Xóa thành công", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Success);
+                        if (File.Exists(@"..\..\Image\food\" + linkImage)) // kiem tra tap tin dung huong dan 
+                        {
+                            File.Delete(@"..\..\Image\food\" + linkImage); // xao tep anh do
+                        }
+                        loadListFood();
+                    }
+                    else
+                    {
+                        msg.Show("Đã có lỗi xảy ra", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Error);
+                    }
+                }
+            }
+            catch
+            {
+                msg.Show("Bạn không thể xóa món ăn này!", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Info);
+            }
+        }
+
+        // sua food
+        void EditFood()
+        {
+            int idFood = Int32.Parse(txtFoodID.Text);
+            string name = txtFoodName.Text;
+            int idCategory = (cbbFoodCategory.SelectedIndex) + 1;
+            float price = 0;
+            string linkImage = lblLinkImage.Text;
+
+            if(name == "" || float.TryParse(txtPrice.Text, out price))
+            {
+                Food foodEdit = (from food in contextDB.Foods where food.idFood ==  idFood select  food).FirstOrDefault();
+                if(msg.Show("Bạn vẫn chưa tải hình món ăn lên.\n Bạn có chắc chắn thêm món?", "THÔNG BÁO", msg.Buttons.YesNo, msg.Icon.Question) == DialogResult.Yes)
+                {
+                    foodEdit.idFood = idFood;
+                    foodEdit.nameFood = name;
+                    foodEdit.price = price;
+                    foodEdit.imageFood = linkImage;
+                    if (contextDB.SaveChanges() > 0)
+                    {
+                        msg.Show("Sửa thành công", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Success);
+                        loadListFood();
+                    }
+                    else
+                    {
+                        msg.Show("Có lỗi khi sửa món ăn", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Warning);
+                    }
+                }
+            }
+            else
+            {
+                if (name == "")
+                {
+                    msg.Show("Vui lòng nhập tên món ăn !", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Error);
+                }
+                else
+                {
+                    msg.Show("Vui lòng nhập giá món ăn là số!", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Error);
                 }
             }
         }
@@ -262,7 +354,14 @@ namespace quanLyNhaHang_Nhom4.Admin
         {
             AddFood();
         }
-
+        private void btnDeleteFood_Click(object sender, EventArgs e)
+        {
+            DeleteFood();
+        }
+        private void btnEditFood_Click(object sender, EventArgs e)
+        {
+            EditFood();
+        }
         private void btnShowFood_Click(object sender, EventArgs e)
         {
             loadListFood();
@@ -311,22 +410,13 @@ namespace quanLyNhaHang_Nhom4.Admin
             try
             {
                 int idFood = Int32.Parse(txtFoodID.Text);
-                if (!ChangeStatus(cbStatus.Checked == true, idFood))
-                {
-                    //msg.Show("Đã có lỗi xảy ra","THÔNG BÁO",msg.Buttons.No,msg.Icon.Error);
-                }
-                loadListFood();
+                ChangeStatus(cbStatus.Checked == true , idFood);
             }
             catch
             {
-                //msg.Show("Vui lòng chọn món trước khi điều chỉnh", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Warning);
-                MessageBox.Show("Vui lòng chọn món trước khi điều chỉnh", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                msg.Show("Vui lòng chọn món trước khi điều chỉnh", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Warning);
             }
         }
-
-
         #endregion
-
-
     }
 }

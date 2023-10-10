@@ -233,7 +233,7 @@ namespace quanLyNhaHang_Nhom4.Manager
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Ban con muon dang xuat khong", "THONG BAO", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (msg.Show("Bạn có muốn đăng xuất không. ", "THÔNG BÁO", msg.Buttons.YesNo, msg.Icon.Question) == DialogResult.Yes)
             {
                 this.Close();
             }
@@ -271,6 +271,26 @@ namespace quanLyNhaHang_Nhom4.Manager
             frmAccount f = new frmAccount(LoginAccount);
             f.ShowDialog();
         }
+        private void btnAddBillOfWareHouse_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOpenFormStaff_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            lblTitle.Text = "Quản lý nhân viên";
+            this.pnlDesktop.Controls.Clear();
+            frmAdminStaff frmAdminStaff = new frmAdminStaff()
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false,
+                TopMost = true,
+            };
+            this.pnlDesktop.Controls.Add((frmAdminStaff)frmAdminStaff);
+            frmAdminStaff.Show();
+        }
+
         #endregion
 
 

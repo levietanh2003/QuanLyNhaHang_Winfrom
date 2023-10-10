@@ -130,7 +130,7 @@ namespace quanLyNhaHang_Nhom4.Manager
 
             if (nameStaff == "")
             {
-                msg.Show("Vui lòng kiểm tra thông tin nhân viên trước khi chấm công!", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Error);
+                msg.Show("Vui lòng kiểm tra thông tin nhân viên trước khi chấm công!", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Error);
             }
             else
             {

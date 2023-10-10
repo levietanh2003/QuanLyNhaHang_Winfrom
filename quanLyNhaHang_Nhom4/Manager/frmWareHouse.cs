@@ -111,7 +111,6 @@ namespace quanLyNhaHang_Nhom4.Manager
 
             }catch(Exception ex)
             {
-                MessageBox.Show("Da loi he thong xin hay doi chut" + ex.Message,"Thong bao",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
         private void textBox2_TextChanged(object sender, EventArgs e)

@@ -85,9 +85,9 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lblThongtin);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(837, 0);
+            this.panel1.Location = new System.Drawing.Point(1008, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(552, 877);
+            this.panel1.Size = new System.Drawing.Size(520, 957);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -232,9 +232,9 @@
             this.lblThongtin.Location = new System.Drawing.Point(53, 35);
             this.lblThongtin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblThongtin.Name = "lblThongtin";
-            this.lblThongtin.Size = new System.Drawing.Size(438, 62);
+            this.lblThongtin.Size = new System.Drawing.Size(456, 62);
             this.lblThongtin.TabIndex = 1;
-            this.lblThongtin.Text = "Thông tin bàn ăn";
+            this.lblThongtin.Text = "Thông tin món ăn";
             // 
             // panel2
             // 
@@ -244,7 +244,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 77);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(803, 53);
+            this.panel2.Size = new System.Drawing.Size(979, 53);
             this.panel2.TabIndex = 3;
             // 
             // lblTotalFood
@@ -274,7 +274,7 @@
             this.dgvFoodList.RowHeadersWidth = 82;
             this.dgvFoodList.RowTemplate.Height = 33;
             this.dgvFoodList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFoodList.Size = new System.Drawing.Size(803, 541);
+            this.dgvFoodList.Size = new System.Drawing.Size(979, 541);
             this.dgvFoodList.TabIndex = 4;
             this.dgvFoodList.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvFoodList_CellMouseClick);
             // 
@@ -359,10 +359,10 @@
             this.panel3.Controls.Add(this.btnDeleteFood);
             this.panel3.Controls.Add(this.btnEditFood);
             this.panel3.Controls.Add(this.btnAddFood);
-            this.panel3.Location = new System.Drawing.Point(0, 718);
+            this.panel3.Location = new System.Drawing.Point(0, 760);
             this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(803, 145);
+            this.panel3.Size = new System.Drawing.Size(979, 145);
             this.panel3.TabIndex = 13;
             // 
             // btnShowFood
@@ -370,7 +370,7 @@
             this.btnShowFood.Font = new System.Drawing.Font("Cambria", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowFood.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.bx_show_icon;
             this.btnShowFood.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnShowFood.Location = new System.Drawing.Point(609, 36);
+            this.btnShowFood.Location = new System.Drawing.Point(751, 36);
             this.btnShowFood.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnShowFood.Name = "btnShowFood";
             this.btnShowFood.Size = new System.Drawing.Size(169, 72);
@@ -386,26 +386,28 @@
             this.btnDeleteFood.Font = new System.Drawing.Font("Cambria", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteFood.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.Close_2_icon;
             this.btnDeleteFood.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDeleteFood.Location = new System.Drawing.Point(395, 36);
+            this.btnDeleteFood.Location = new System.Drawing.Point(494, 36);
             this.btnDeleteFood.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDeleteFood.Name = "btnDeleteFood";
             this.btnDeleteFood.Size = new System.Drawing.Size(174, 72);
             this.btnDeleteFood.TabIndex = 2;
             this.btnDeleteFood.Text = "Xóa";
             this.btnDeleteFood.UseVisualStyleBackColor = true;
+            this.btnDeleteFood.Click += new System.EventHandler(this.btnDeleteFood_Click);
             // 
             // btnEditFood
             // 
             this.btnEditFood.Font = new System.Drawing.Font("Cambria", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditFood.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.Pencil_icon;
             this.btnEditFood.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditFood.Location = new System.Drawing.Point(202, 36);
+            this.btnEditFood.Location = new System.Drawing.Point(261, 36);
             this.btnEditFood.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEditFood.Name = "btnEditFood";
             this.btnEditFood.Size = new System.Drawing.Size(174, 72);
             this.btnEditFood.TabIndex = 1;
             this.btnEditFood.Text = "Sửa";
             this.btnEditFood.UseVisualStyleBackColor = true;
+            this.btnEditFood.Click += new System.EventHandler(this.btnEditFood_Click);
             // 
             // btnAddFood
             // 
@@ -425,7 +427,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1389, 877);
+            this.ClientSize = new System.Drawing.Size(1528, 957);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.btnSearchFood);
             this.Controls.Add(this.txtSearchFood);

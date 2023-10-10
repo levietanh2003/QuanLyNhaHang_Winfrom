@@ -65,7 +65,7 @@ namespace quanLyNhaHang_Nhom4.Manager
                 {
                     if (!newpass.Equals(retypepass))
                     {
-                        msg.Show("Mật khẩu nhập lại không trùng với mật khẩu mới", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Error);
+                        msg.Show("Mật khẩu nhập lại không trùng với mật khẩu mới", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Error);
                     }
                     else
                     {

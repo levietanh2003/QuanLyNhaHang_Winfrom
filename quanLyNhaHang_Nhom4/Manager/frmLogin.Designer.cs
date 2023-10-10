@@ -94,20 +94,20 @@
             // txtUser
             // 
             this.txtUser.BackColor = System.Drawing.Color.White;
-            this.txtUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUser.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUser.Location = new System.Drawing.Point(431, 232);
             this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(280, 38);
+            this.txtUser.Size = new System.Drawing.Size(280, 39);
             this.txtUser.TabIndex = 1;
             this.txtUser.Enter += new System.EventHandler(this.txtUserName_Enter);
             this.txtUser.Leave += new System.EventHandler(this.txtUserName_Leave);
             // 
             // txtPassWord
             // 
-            this.txtPassWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassWord.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassWord.Location = new System.Drawing.Point(431, 373);
             this.txtPassWord.Name = "txtPassWord";
-            this.txtPassWord.Size = new System.Drawing.Size(280, 38);
+            this.txtPassWord.Size = new System.Drawing.Size(280, 39);
             this.txtPassWord.TabIndex = 2;
             this.txtPassWord.Enter += new System.EventHandler(this.txtPassWord_Enter);
             this.txtPassWord.Leave += new System.EventHandler(this.txtPassWord_Leave);

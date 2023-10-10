@@ -31,7 +31,7 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripTracuu = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripTxtTracuu = new System.Windows.Forms.ToolStripTextBox();
+            this.txtFindCategoryByName = new System.Windows.Forms.ToolStripTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtCategoryName = new System.Windows.Forms.TextBox();
             this.txtCategoryID = new System.Windows.Forms.TextBox();
@@ -42,9 +42,9 @@
             this.lblTotalCategory = new System.Windows.Forms.Label();
             this.lblTongDM = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnHienthi = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
+            this.btnShowCategory = new System.Windows.Forms.Button();
+            this.btnDeleteCategory = new System.Windows.Forms.Button();
+            this.btnEditCategory = new System.Windows.Forms.Button();
             this.btnAddCategory = new System.Windows.Forms.Button();
             this.dgvFoodCategory = new System.Windows.Forms.DataGridView();
             this.colMaDM = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,11 +64,11 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
             this.toolStripTracuu,
-            this.toolStripTxtTracuu});
+            this.txtFindCategoryByName});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.toolStrip1.Size = new System.Drawing.Size(679, 40);
+            this.toolStrip1.Size = new System.Drawing.Size(679, 50);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -89,11 +89,12 @@
             this.toolStripTracuu.Size = new System.Drawing.Size(256, 34);
             this.toolStripTracuu.Text = "Tra cứu danh mục";
             // 
-            // toolStripTxtTracuu
+            // txtFindCategoryByName
             // 
-            this.toolStripTxtTracuu.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.toolStripTxtTracuu.Name = "toolStripTxtTracuu";
-            this.toolStripTxtTracuu.Size = new System.Drawing.Size(350, 40);
+            this.txtFindCategoryByName.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFindCategoryByName.Name = "txtFindCategoryByName";
+            this.txtFindCategoryByName.Size = new System.Drawing.Size(350, 40);
+            this.txtFindCategoryByName.TextChanged += new System.EventHandler(this.txtFindCategoryByName_TextChanged);
             // 
             // panel1
             // 
@@ -104,10 +105,10 @@
             this.panel1.Controls.Add(this.lblMaDM);
             this.panel1.Controls.Add(this.lblThongtin);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(1041, 0);
+            this.panel1.Location = new System.Drawing.Point(1012, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(487, 957);
+            this.panel1.Size = new System.Drawing.Size(516, 957);
             this.panel1.TabIndex = 1;
             // 
             // txtCategoryName
@@ -125,6 +126,7 @@
             this.txtCategoryID.Location = new System.Drawing.Point(218, 343);
             this.txtCategoryID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCategoryID.Name = "txtCategoryID";
+            this.txtCategoryID.ReadOnly = true;
             this.txtCategoryID.Size = new System.Drawing.Size(193, 39);
             this.txtCategoryID.TabIndex = 3;
             // 
@@ -201,9 +203,9 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Silver;
-            this.panel3.Controls.Add(this.btnHienthi);
-            this.panel3.Controls.Add(this.btnXoa);
-            this.panel3.Controls.Add(this.btnSua);
+            this.panel3.Controls.Add(this.btnShowCategory);
+            this.panel3.Controls.Add(this.btnDeleteCategory);
+            this.panel3.Controls.Add(this.btnEditCategory);
             this.panel3.Controls.Add(this.btnAddCategory);
             this.panel3.Location = new System.Drawing.Point(0, 746);
             this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -212,46 +214,49 @@
             this.panel3.TabIndex = 3;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
-            // btnHienthi
+            // btnShowCategory
             // 
-            this.btnHienthi.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHienthi.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.bx_show_icon;
-            this.btnHienthi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHienthi.Location = new System.Drawing.Point(756, 37);
-            this.btnHienthi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnHienthi.Name = "btnHienthi";
-            this.btnHienthi.Size = new System.Drawing.Size(169, 72);
-            this.btnHienthi.TabIndex = 4;
-            this.btnHienthi.Text = "Hiển thị";
-            this.btnHienthi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnHienthi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnHienthi.UseVisualStyleBackColor = true;
+            this.btnShowCategory.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowCategory.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.bx_show_icon;
+            this.btnShowCategory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnShowCategory.Location = new System.Drawing.Point(756, 37);
+            this.btnShowCategory.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnShowCategory.Name = "btnShowCategory";
+            this.btnShowCategory.Size = new System.Drawing.Size(169, 72);
+            this.btnShowCategory.TabIndex = 4;
+            this.btnShowCategory.Text = "Hiển thị";
+            this.btnShowCategory.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnShowCategory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnShowCategory.UseVisualStyleBackColor = true;
+            this.btnShowCategory.Click += new System.EventHandler(this.btnShowCategory_Click);
             // 
-            // btnXoa
+            // btnDeleteCategory
             // 
-            this.btnXoa.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.Close_2_icon;
-            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(554, 37);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(174, 72);
-            this.btnXoa.TabIndex = 2;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnDeleteCategory.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteCategory.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.Close_2_icon;
+            this.btnDeleteCategory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDeleteCategory.Location = new System.Drawing.Point(554, 37);
+            this.btnDeleteCategory.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnDeleteCategory.Name = "btnDeleteCategory";
+            this.btnDeleteCategory.Size = new System.Drawing.Size(174, 72);
+            this.btnDeleteCategory.TabIndex = 2;
+            this.btnDeleteCategory.Text = "Xóa";
+            this.btnDeleteCategory.UseVisualStyleBackColor = true;
+            this.btnDeleteCategory.Click += new System.EventHandler(this.btnDeleteCategory_Click);
             // 
-            // btnSua
+            // btnEditCategory
             // 
-            this.btnSua.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.Pencil_icon;
-            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(344, 37);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(174, 72);
-            this.btnSua.TabIndex = 1;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnEditCategory.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditCategory.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.Pencil_icon;
+            this.btnEditCategory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditCategory.Location = new System.Drawing.Point(344, 37);
+            this.btnEditCategory.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnEditCategory.Name = "btnEditCategory";
+            this.btnEditCategory.Size = new System.Drawing.Size(174, 72);
+            this.btnEditCategory.TabIndex = 1;
+            this.btnEditCategory.Text = "Sửa";
+            this.btnEditCategory.UseVisualStyleBackColor = true;
+            this.btnEditCategory.Click += new System.EventHandler(this.btnEditCategory_Click);
             // 
             // btnAddCategory
             // 
@@ -344,7 +349,7 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripLabel toolStripTracuu;
-        private System.Windows.Forms.ToolStripTextBox toolStripTxtTracuu;
+        private System.Windows.Forms.ToolStripTextBox txtFindCategoryByName;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblTenDM;
         private System.Windows.Forms.Label lblMaDM;
@@ -355,9 +360,9 @@
         private System.Windows.Forms.Label lblTotalCategory;
         private System.Windows.Forms.Label lblTongDM;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button btnHienthi;
-        private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.Button btnShowCategory;
+        private System.Windows.Forms.Button btnDeleteCategory;
+        private System.Windows.Forms.Button btnEditCategory;
         private System.Windows.Forms.Button btnAddCategory;
         private System.Windows.Forms.DataGridView dgvFoodCategory;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaDM;
