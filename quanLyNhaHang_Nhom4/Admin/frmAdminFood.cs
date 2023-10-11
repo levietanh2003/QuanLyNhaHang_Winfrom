@@ -97,38 +97,18 @@ namespace quanLyNhaHang_Nhom4.Admin
             cbbFoodCategory.DisplayMember = "nameFC";
         }
 
+        // kiem tra anh trong Image\food\ va do len tren form
         void LoadImageFoodByIdFood(int id)
         {
             String image = (from f in contextDB.Foods where f.idFood == id select f.imageFood).FirstOrDefault();
             Image img = GetCopyImage(@"..\..\Image\food\" + image);
             ptbImageOfFood.Image = img;
             ptbImageOfFood.SizeMode = PictureBoxSizeMode.StretchImage;
-            //try
-            //{
-            //    // Retrieve image path from the database based on the provided id
-            //    string image = (from f in contextDB.Foods where f.idFood == id select f.imageFood).FirstOrDefault();
-
-            //    if (!string.IsNullOrEmpty(image))
-            //    {
-            //        // Load and display the image
-            //        Image img = GetCopyImage(@"./Image/food/" + image);
-
-            //        ptbImageOfFood.Image = img;
-            //        ptbImageOfFood.SizeMode = PictureBoxSizeMode.StretchImage;
-            //    }
-            //    else
-            //    {
-            //        // Handle case where image path is empty or invalid
-            //        MessageBox.Show("Image path is empty or invalid.");
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    // Handle any exceptions that may occur during image loading
-            //    MessageBox.Show("Error loading image: " + ex.Message);
-            //}
+ 
+ 
         }
 
+        // copy duong dan anh
         private Image GetCopyImage(string path)
         {
             using (Image im = Image.FromFile(path))
@@ -136,22 +116,9 @@ namespace quanLyNhaHang_Nhom4.Admin
                 Bitmap bm = new Bitmap(im);
                 return bm;
             }
-            //try
-            //{
-            //    using (Image im = Image.FromFile(path))
-            //    {
-            //        Bitmap bm = new Bitmap(im);
-            //        return bm;
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    // Handle any exceptions that may occur during image loading
-            //    MessageBox.Show("Error loading image: " + ex.Message);
-            //    return null;
-            //}
         }
 
+        // mo file de upload anh
         void GetFile()
         {
             System.Windows.Forms.OpenFileDialog openImage = new OpenFileDialog();

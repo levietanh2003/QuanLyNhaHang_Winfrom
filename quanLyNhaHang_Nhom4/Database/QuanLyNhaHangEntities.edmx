@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="QuanLyQuanAnModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="QuanLyQuanAnModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Account">
           <Key>
             <PropertyRef Name="userName" />
@@ -555,6 +555,10 @@
         <Function Name="USP_GetAccountByName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="userName" Type="nvarchar" Mode="In" />
         </Function>
+        <Function Name="USP_GetFoodTop5" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="checkIn" Type="date" Mode="In" />
+          <Parameter Name="checkOut" Type="date" Mode="In" />
+        </Function>
         <Function Name="USP_GetListBillByDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="checkIn" Type="date" Mode="In" />
           <Parameter Name="checkOut" Type="date" Mode="In" />
@@ -759,8 +763,7 @@
             <End Role="Staff" EntitySet="Staff" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QuanLyQuanAnModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1493,7 +1496,7 @@
             <Parameter Name="nameTable" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="USP_CheckExitsAttendanceList" ReturnType="Collection(QuanLyQuanAnModel.USP_CheckExitsAttendanceList_Result)">
-            <Parameter Name="idStaff" Mode="In" Type="String" />
+          <Parameter Name="idStaff" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="USP_CheckOut">
             <Parameter Name="discount" Mode="In" Type="Int32" />
@@ -1502,10 +1505,10 @@
             <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="USP_DeleteMaterial">
-            <Parameter Name="idMaterial" Mode="In" Type="Int32" />
+          <Parameter Name="idMaterial" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="USP_GetAccountByName" ReturnType="Collection(QuanLyQuanAnModel.USP_GetAccountByName_Result)">
-            <Parameter Name="userName" Mode="In" Type="String" />
+          <Parameter Name="userName" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="USP_GetListBillByDate" ReturnType="Collection(QuanLyQuanAnModel.USP_GetListBillByDate_Result)">
             <Parameter Name="checkIn" Mode="In" Type="DateTime" />
@@ -1527,10 +1530,10 @@
             <Parameter Name="idStaff" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="USP_InsertAttendanceList">
-            <Parameter Name="idStaff" Mode="In" Type="String" />
+          <Parameter Name="idStaff" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="USP_InsertBill">
-            <Parameter Name="idTable" Mode="In" Type="Int32" />
+          <Parameter Name="idTable" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="USP_InsertBillInfo">
             <Parameter Name="idBill" Mode="In" Type="Int32" />
@@ -1570,11 +1573,15 @@
             <Parameter Name="address" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="USP_InsertUnit">
-            <Parameter Name="name" Mode="In" Type="String" />
+          <Parameter Name="name" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="USP_Login" ReturnType="Collection(QuanLyQuanAnModel.USP_Login_Result)">
             <Parameter Name="userName" Mode="In" Type="String" />
             <Parameter Name="passWord" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="USP_GetFoodTop5" ReturnType="Collection(QuanLyQuanAnModel.USP_GetFoodTop5_Result)">
+            <Parameter Name="checkIn" Mode="In" Type="DateTime" />
+            <Parameter Name="checkOut" Mode="In" Type="DateTime" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
@@ -1642,6 +1649,13 @@
           <Property Type="String" Name="displayName" Nullable="false" MaxLength="100" />
           <Property Type="Int32" Name="typeAccount" Nullable="false" />
           <Property Type="String" Name="idStaff" Nullable="false" MaxLength="5" />
+        </ComplexType>
+        <ComplexType Name="USP_GetFoodTop5_Result">
+          <Property Type="Int32" Name="idFood" Nullable="false" />
+          <Property Type="String" Name="nameFood" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="countFood" Nullable="true" />
+          <Property Type="Double" Name="unitPrice" Nullable="false" />
+          <Property Type="Double" Name="totalPrice" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1910,6 +1924,17 @@
                 <ScalarProperty Name="displayName" ColumnName="displayName" />
                 <ScalarProperty Name="typeAccount" ColumnName="typeAccount" />
                 <ScalarProperty Name="idStaff" ColumnName="idStaff" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_GetFoodTop5" FunctionName="QuanLyQuanAnModel.Store.USP_GetFoodTop5">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyQuanAnModel.USP_GetFoodTop5_Result">
+                <ScalarProperty Name="idFood" ColumnName="idFood" />
+                <ScalarProperty Name="nameFood" ColumnName="nameFood" />
+                <ScalarProperty Name="countFood" ColumnName="countFood" />
+                <ScalarProperty Name="unitPrice" ColumnName="unitPrice" />
+                <ScalarProperty Name="totalPrice" ColumnName="totalPrice" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

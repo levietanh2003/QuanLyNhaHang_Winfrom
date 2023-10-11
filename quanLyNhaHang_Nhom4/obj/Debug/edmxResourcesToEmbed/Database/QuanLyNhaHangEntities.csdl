@@ -812,6 +812,10 @@
       <Parameter Name="userName" Mode="In" Type="String" />
       <Parameter Name="passWord" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="USP_GetFoodTop5" ReturnType="Collection(QuanLyQuanAnModel.USP_GetFoodTop5_Result)">
+      <Parameter Name="checkIn" Mode="In" Type="DateTime" />
+      <Parameter Name="checkOut" Mode="In" Type="DateTime" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
     <Property Type="Int32" Name="version" Nullable="true" />
@@ -878,5 +882,12 @@
     <Property Type="String" Name="displayName" Nullable="false" MaxLength="100" />
     <Property Type="Int32" Name="typeAccount" Nullable="false" />
     <Property Type="String" Name="idStaff" Nullable="false" MaxLength="5" />
+  </ComplexType>
+  <ComplexType Name="USP_GetFoodTop5_Result">
+    <Property Type="Int32" Name="idFood" Nullable="false" />
+    <Property Type="String" Name="nameFood" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="countFood" Nullable="true" />
+    <Property Type="Double" Name="unitPrice" Nullable="false" />
+    <Property Type="Double" Name="totalPrice" Nullable="true" />
   </ComplexType>
 </Schema>

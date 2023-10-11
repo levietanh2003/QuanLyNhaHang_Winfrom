@@ -100,6 +100,7 @@
             // 
             // dgvTableFood
             // 
+            this.dgvTableFood.AllowUserToAddRows = false;
             this.dgvTableFood.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTableFood.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colMaBan,

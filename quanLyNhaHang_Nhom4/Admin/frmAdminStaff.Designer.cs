@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnEditPosition = new System.Windows.Forms.Button();
             this.cmbPosition = new System.Windows.Forms.ComboBox();
             this.rtbAddress = new System.Windows.Forms.RichTextBox();
             this.dtpDateOfBirth = new System.Windows.Forms.DateTimePicker();
@@ -47,6 +48,10 @@
             this.lblMaban = new System.Windows.Forms.Label();
             this.lblThongtin = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnShowStaff = new System.Windows.Forms.Button();
+            this.btnDeleteStaff = new System.Windows.Forms.Button();
+            this.btnEditStaff = new System.Windows.Forms.Button();
+            this.btnAddStaff = new System.Windows.Forms.Button();
             this.dgvStaff = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,14 +64,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblTotalStaff = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolstripTim = new System.Windows.Forms.ToolStripLabel();
             this.txtFindTableName = new System.Windows.Forms.ToolStripTextBox();
-            this.btnEditPosition = new System.Windows.Forms.Button();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.btnShowStaff = new System.Windows.Forms.Button();
-            this.btnDeleteStaff = new System.Windows.Forms.Button();
-            this.btnEditStaff = new System.Windows.Forms.Button();
-            this.btnAddStaff = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).BeginInit();
@@ -101,6 +101,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(492, 957);
             this.panel1.TabIndex = 0;
+            // 
+            // btnEditPosition
+            // 
+            this.btnEditPosition.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditPosition.Location = new System.Drawing.Point(359, 404);
+            this.btnEditPosition.Name = "btnEditPosition";
+            this.btnEditPosition.Size = new System.Drawing.Size(53, 36);
+            this.btnEditPosition.TabIndex = 9;
+            this.btnEditPosition.Text = "...";
+            this.btnEditPosition.UseVisualStyleBackColor = true;
+            this.btnEditPosition.Click += new System.EventHandler(this.btnEditPosition_Click);
             // 
             // cmbPosition
             // 
@@ -303,8 +314,67 @@
             this.panel3.Size = new System.Drawing.Size(984, 145);
             this.panel3.TabIndex = 13;
             // 
+            // btnShowStaff
+            // 
+            this.btnShowStaff.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowStaff.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.bx_show_icon;
+            this.btnShowStaff.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnShowStaff.Location = new System.Drawing.Point(720, 37);
+            this.btnShowStaff.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnShowStaff.Name = "btnShowStaff";
+            this.btnShowStaff.Size = new System.Drawing.Size(169, 72);
+            this.btnShowStaff.TabIndex = 4;
+            this.btnShowStaff.Text = "Hiển thị";
+            this.btnShowStaff.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnShowStaff.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnShowStaff.UseVisualStyleBackColor = true;
+            this.btnShowStaff.Click += new System.EventHandler(this.btnShowStaff_Click);
+            // 
+            // btnDeleteStaff
+            // 
+            this.btnDeleteStaff.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteStaff.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.Close_2_icon;
+            this.btnDeleteStaff.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDeleteStaff.Location = new System.Drawing.Point(487, 37);
+            this.btnDeleteStaff.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnDeleteStaff.Name = "btnDeleteStaff";
+            this.btnDeleteStaff.Size = new System.Drawing.Size(174, 72);
+            this.btnDeleteStaff.TabIndex = 2;
+            this.btnDeleteStaff.Text = "Xóa";
+            this.btnDeleteStaff.UseVisualStyleBackColor = true;
+            this.btnDeleteStaff.Click += new System.EventHandler(this.btnDeleteStaff_Click);
+            // 
+            // btnEditStaff
+            // 
+            this.btnEditStaff.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditStaff.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.Pencil_icon;
+            this.btnEditStaff.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditStaff.Location = new System.Drawing.Point(264, 37);
+            this.btnEditStaff.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnEditStaff.Name = "btnEditStaff";
+            this.btnEditStaff.Size = new System.Drawing.Size(174, 72);
+            this.btnEditStaff.TabIndex = 1;
+            this.btnEditStaff.Text = "Sửa";
+            this.btnEditStaff.UseVisualStyleBackColor = true;
+            this.btnEditStaff.Click += new System.EventHandler(this.btnEditStaff_Click);
+            // 
+            // btnAddStaff
+            // 
+            this.btnAddStaff.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddStaff.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.Actions_list_add_icon;
+            this.btnAddStaff.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddStaff.Location = new System.Drawing.Point(35, 37);
+            this.btnAddStaff.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAddStaff.Name = "btnAddStaff";
+            this.btnAddStaff.Size = new System.Drawing.Size(174, 72);
+            this.btnAddStaff.TabIndex = 0;
+            this.btnAddStaff.Text = "Thêm";
+            this.btnAddStaff.UseVisualStyleBackColor = true;
+            this.btnAddStaff.Click += new System.EventHandler(this.btnAddStaff_Click);
+            // 
             // dgvStaff
             // 
+            this.dgvStaff.AllowUserToAddRows = false;
             this.dgvStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStaff.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -422,34 +492,9 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 18);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.toolStrip1.Size = new System.Drawing.Size(802, 50);
+            this.toolStrip1.Size = new System.Drawing.Size(802, 43);
             this.toolStrip1.TabIndex = 15;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolstripTim
-            // 
-            this.toolstripTim.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.toolstripTim.Name = "toolstripTim";
-            this.toolstripTim.Size = new System.Drawing.Size(229, 44);
-            this.toolstripTim.Text = "Tìm kiếm bàn ăn";
-            // 
-            // txtFindTableName
-            // 
-            this.txtFindTableName.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFindTableName.Name = "txtFindTableName";
-            this.txtFindTableName.Size = new System.Drawing.Size(500, 50);
-            this.txtFindTableName.TextChanged += new System.EventHandler(this.txtFindTableName_TextChanged);
-            // 
-            // btnEditPosition
-            // 
-            this.btnEditPosition.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditPosition.Location = new System.Drawing.Point(359, 404);
-            this.btnEditPosition.Name = "btnEditPosition";
-            this.btnEditPosition.Size = new System.Drawing.Size(53, 36);
-            this.btnEditPosition.TabIndex = 9;
-            this.btnEditPosition.Text = "...";
-            this.btnEditPosition.UseVisualStyleBackColor = true;
-            this.btnEditPosition.Click += new System.EventHandler(this.btnEditPosition_Click);
             // 
             // toolStripButton1
             // 
@@ -457,66 +502,22 @@
             this.toolStripButton1.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.Tatice_Cristal_Intense_Loupe_256;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(46, 44);
+            this.toolStripButton1.Size = new System.Drawing.Size(46, 37);
             this.toolStripButton1.Text = "toolStripButton1";
             // 
-            // btnShowStaff
+            // toolstripTim
             // 
-            this.btnShowStaff.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowStaff.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.bx_show_icon;
-            this.btnShowStaff.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnShowStaff.Location = new System.Drawing.Point(720, 37);
-            this.btnShowStaff.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnShowStaff.Name = "btnShowStaff";
-            this.btnShowStaff.Size = new System.Drawing.Size(169, 72);
-            this.btnShowStaff.TabIndex = 4;
-            this.btnShowStaff.Text = "Hiển thị";
-            this.btnShowStaff.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnShowStaff.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnShowStaff.UseVisualStyleBackColor = true;
-            this.btnShowStaff.Click += new System.EventHandler(this.btnShowStaff_Click);
+            this.toolstripTim.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.toolstripTim.Name = "toolstripTim";
+            this.toolstripTim.Size = new System.Drawing.Size(229, 37);
+            this.toolstripTim.Text = "Tìm kiếm bàn ăn";
             // 
-            // btnDeleteStaff
+            // txtFindTableName
             // 
-            this.btnDeleteStaff.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteStaff.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.Close_2_icon;
-            this.btnDeleteStaff.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDeleteStaff.Location = new System.Drawing.Point(487, 37);
-            this.btnDeleteStaff.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnDeleteStaff.Name = "btnDeleteStaff";
-            this.btnDeleteStaff.Size = new System.Drawing.Size(174, 72);
-            this.btnDeleteStaff.TabIndex = 2;
-            this.btnDeleteStaff.Text = "Xóa";
-            this.btnDeleteStaff.UseVisualStyleBackColor = true;
-            this.btnDeleteStaff.Click += new System.EventHandler(this.btnDeleteStaff_Click);
-            // 
-            // btnEditStaff
-            // 
-            this.btnEditStaff.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditStaff.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.Pencil_icon;
-            this.btnEditStaff.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditStaff.Location = new System.Drawing.Point(264, 37);
-            this.btnEditStaff.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnEditStaff.Name = "btnEditStaff";
-            this.btnEditStaff.Size = new System.Drawing.Size(174, 72);
-            this.btnEditStaff.TabIndex = 1;
-            this.btnEditStaff.Text = "Sửa";
-            this.btnEditStaff.UseVisualStyleBackColor = true;
-            this.btnEditStaff.Click += new System.EventHandler(this.btnEditStaff_Click);
-            // 
-            // btnAddStaff
-            // 
-            this.btnAddStaff.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddStaff.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.Actions_list_add_icon;
-            this.btnAddStaff.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddStaff.Location = new System.Drawing.Point(35, 37);
-            this.btnAddStaff.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnAddStaff.Name = "btnAddStaff";
-            this.btnAddStaff.Size = new System.Drawing.Size(174, 72);
-            this.btnAddStaff.TabIndex = 0;
-            this.btnAddStaff.Text = "Thêm";
-            this.btnAddStaff.UseVisualStyleBackColor = true;
-            this.btnAddStaff.Click += new System.EventHandler(this.btnAddStaff_Click);
+            this.txtFindTableName.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFindTableName.Name = "txtFindTableName";
+            this.txtFindTableName.Size = new System.Drawing.Size(500, 43);
+            this.txtFindTableName.TextChanged += new System.EventHandler(this.txtFindTableName_TextChanged);
             // 
             // frmAdminStaff
             // 

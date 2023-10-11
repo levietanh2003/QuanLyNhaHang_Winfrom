@@ -260,6 +260,7 @@
             // 
             // dgvFoodList
             // 
+            this.dgvFoodList.AllowUserToAddRows = false;
             this.dgvFoodList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFoodList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,

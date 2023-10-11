@@ -31,6 +31,7 @@ namespace quanLyNhaHang_Nhom4.Manager
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ptbExit = new System.Windows.Forms.PictureBox();
             this.btnShowPosition = new System.Windows.Forms.Button();
             this.txtPositionName = new System.Windows.Forms.TextBox();
             this.btnEditPosition = new System.Windows.Forms.Button();
@@ -49,12 +50,11 @@ namespace quanLyNhaHang_Nhom4.Manager
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolstripTim = new System.Windows.Forms.ToolStripLabel();
             this.txtFindPositionByName = new System.Windows.Forms.ToolStripTextBox();
-            this.ptbExit = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPosition)).BeginInit();
             this.panel2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbExit)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -75,6 +75,18 @@ namespace quanLyNhaHang_Nhom4.Manager
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(521, 873);
             this.panel1.TabIndex = 0;
+            // 
+            // ptbExit
+            // 
+            this.ptbExit.BackColor = System.Drawing.Color.Transparent;
+            this.ptbExit.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.exit_solid_24;
+            this.ptbExit.Location = new System.Drawing.Point(395, 778);
+            this.ptbExit.Name = "ptbExit";
+            this.ptbExit.Size = new System.Drawing.Size(58, 58);
+            this.ptbExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbExit.TabIndex = 10;
+            this.ptbExit.TabStop = false;
+            this.ptbExit.Click += new System.EventHandler(this.ptbExit_Click);
             // 
             // btnShowPosition
             // 
@@ -193,6 +205,7 @@ namespace quanLyNhaHang_Nhom4.Manager
             // 
             // dgvPosition
             // 
+            this.dgvPosition.AllowUserToAddRows = false;
             this.dgvPosition.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPosition.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -256,7 +269,7 @@ namespace quanLyNhaHang_Nhom4.Manager
             this.toolStrip1.Location = new System.Drawing.Point(0, 9);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.toolStrip1.Size = new System.Drawing.Size(514, 50);
+            this.toolStrip1.Size = new System.Drawing.Size(514, 43);
             this.toolStrip1.TabIndex = 17;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -266,34 +279,22 @@ namespace quanLyNhaHang_Nhom4.Manager
             this.toolStripButton1.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.Tatice_Cristal_Intense_Loupe_256;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(46, 44);
+            this.toolStripButton1.Size = new System.Drawing.Size(46, 37);
             this.toolStripButton1.Text = "toolStripButton1";
             // 
             // toolstripTim
             // 
             this.toolstripTim.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.toolstripTim.Name = "toolstripTim";
-            this.toolstripTim.Size = new System.Drawing.Size(241, 44);
+            this.toolstripTim.Size = new System.Drawing.Size(241, 37);
             this.toolstripTim.Text = "Tìm kiếm chức vụ";
             // 
             // txtFindPositionByName
             // 
             this.txtFindPositionByName.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFindPositionByName.Name = "txtFindPositionByName";
-            this.txtFindPositionByName.Size = new System.Drawing.Size(200, 50);
+            this.txtFindPositionByName.Size = new System.Drawing.Size(200, 43);
             this.txtFindPositionByName.TextChanged += new System.EventHandler(this.txtFindPositionByName_TextChanged);
-            // 
-            // ptbExit
-            // 
-            this.ptbExit.BackColor = System.Drawing.Color.Transparent;
-            this.ptbExit.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.exit_solid_24;
-            this.ptbExit.Location = new System.Drawing.Point(395, 778);
-            this.ptbExit.Name = "ptbExit";
-            this.ptbExit.Size = new System.Drawing.Size(58, 58);
-            this.ptbExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ptbExit.TabIndex = 10;
-            this.ptbExit.TabStop = false;
-            this.ptbExit.Click += new System.EventHandler(this.ptbExit_Click);
             // 
             // frmEditPosition
             // 
@@ -314,12 +315,12 @@ namespace quanLyNhaHang_Nhom4.Manager
             this.Text = "Quản Lý Chức Vụ";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbExit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPosition)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbExit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

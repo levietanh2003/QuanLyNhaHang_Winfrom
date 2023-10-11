@@ -31,6 +31,7 @@ namespace quanLyNhaHang_Nhom4.Manager
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManagerFood));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnShowFood = new System.Windows.Forms.Button();
             this.cbStatus = new System.Windows.Forms.CheckBox();
             this.ptbImageOfFood = new System.Windows.Forms.PictureBox();
             this.cmbNameFC = new System.Windows.Forms.ComboBox();
@@ -53,7 +54,6 @@ namespace quanLyNhaHang_Nhom4.Manager
             this.giaMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.danAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.trangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnShowFood = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImageOfFood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFoodList)).BeginInit();
@@ -82,6 +82,22 @@ namespace quanLyNhaHang_Nhom4.Manager
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(640, 957);
             this.panel2.TabIndex = 1;
+            // 
+            // btnShowFood
+            // 
+            this.btnShowFood.Font = new System.Drawing.Font("Cambria", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowFood.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.bx_show_icon;
+            this.btnShowFood.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnShowFood.Location = new System.Drawing.Point(18, 871);
+            this.btnShowFood.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnShowFood.Name = "btnShowFood";
+            this.btnShowFood.Size = new System.Drawing.Size(169, 72);
+            this.btnShowFood.TabIndex = 8;
+            this.btnShowFood.Text = "Hiển thị";
+            this.btnShowFood.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnShowFood.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnShowFood.UseVisualStyleBackColor = true;
+            this.btnShowFood.Click += new System.EventHandler(this.btnShowFood_Click);
             // 
             // cbStatus
             // 
@@ -249,6 +265,7 @@ namespace quanLyNhaHang_Nhom4.Manager
             // 
             // dgvFoodList
             // 
+            this.dgvFoodList.AllowUserToAddRows = false;
             this.dgvFoodList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFoodList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maMon,
@@ -317,22 +334,6 @@ namespace quanLyNhaHang_Nhom4.Manager
             this.trangThai.Name = "trangThai";
             this.trangThai.ReadOnly = true;
             this.trangThai.Width = 200;
-            // 
-            // btnShowFood
-            // 
-            this.btnShowFood.Font = new System.Drawing.Font("Cambria", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowFood.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.bx_show_icon;
-            this.btnShowFood.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnShowFood.Location = new System.Drawing.Point(18, 871);
-            this.btnShowFood.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnShowFood.Name = "btnShowFood";
-            this.btnShowFood.Size = new System.Drawing.Size(169, 72);
-            this.btnShowFood.TabIndex = 8;
-            this.btnShowFood.Text = "Hiển thị";
-            this.btnShowFood.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnShowFood.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnShowFood.UseVisualStyleBackColor = true;
-            this.btnShowFood.Click += new System.EventHandler(this.btnShowFood_Click);
             // 
             // frmManagerFood
             // 

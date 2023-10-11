@@ -133,8 +133,14 @@
   <data name="Awicons-Vista-Artistic-Add.256" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Awicons-Vista-Artistic-Add.256.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="billing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\billing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logo_quanAN" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo_quanAN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="image-add-regular-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\image-add-regular-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bx-show-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bx-show-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,7 +166,7 @@
   <data name="user-circle-solid-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user-circle-solid-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="image-add-regular-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image-add-regular-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="billing (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\billing (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

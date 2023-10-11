@@ -504,5 +504,18 @@ namespace quanLyNhaHang_Nhom4.Database
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_Login_Result>("USP_Login", userNameParameter, passWordParameter);
         }
+    
+        public virtual ObjectResult<USP_GetFoodTop5_Result> USP_GetFoodTop5(Nullable<System.DateTime> checkIn, Nullable<System.DateTime> checkOut)
+        {
+            var checkInParameter = checkIn.HasValue ?
+                new ObjectParameter("checkIn", checkIn) :
+                new ObjectParameter("checkIn", typeof(System.DateTime));
+    
+            var checkOutParameter = checkOut.HasValue ?
+                new ObjectParameter("checkOut", checkOut) :
+                new ObjectParameter("checkOut", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_GetFoodTop5_Result>("USP_GetFoodTop5", checkInParameter, checkOutParameter);
+        }
     }
 }

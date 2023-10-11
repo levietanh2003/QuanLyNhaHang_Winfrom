@@ -265,5 +265,16 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_GetFoodTop5" FunctionName="QuanLyQuanAnModel.Store.USP_GetFoodTop5">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuanLyQuanAnModel.USP_GetFoodTop5_Result">
+          <ScalarProperty Name="idFood" ColumnName="idFood" />
+          <ScalarProperty Name="nameFood" ColumnName="nameFood" />
+          <ScalarProperty Name="countFood" ColumnName="countFood" />
+          <ScalarProperty Name="unitPrice" ColumnName="unitPrice" />
+          <ScalarProperty Name="totalPrice" ColumnName="totalPrice" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -118,9 +118,41 @@ namespace quanLyNhaHang_Nhom4.Manager
         private void btnOrder_Click(object sender, EventArgs e)
         {
             hideSubMenu();
-           
+            lblTitle.Text = "Đặt món";
+            this.pnlDesktop.Controls.Clear();
+            frmTableManager frmTableManager = new frmTableManager(LoginAccount)
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false,
+                TopMost = true,
+            };
+            this.pnlDesktop.Controls.Add((frmTableManager)frmTableManager);
+            frmTableManager.Show();
         }
+        private void btnOpenFormRevenue_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            lblTitle.Text = "Quản lý thông kê";
+            this.pnlDesktop.Controls.Clear();
 
+            frmAdminRevenue frmAdminRevenue = new frmAdminRevenue()
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false,
+                TopMost = true,
+            };
+            this.pnlDesktop.Controls.Add((frmAdminRevenue)frmAdminRevenue);
+            frmAdminRevenue.Show();
+        }
+        void timer()
+        {
+            timer1 = new Timer();
+            timer1.Interval = 1000;
+            
+
+            // Bắt đầu Timer
+            timer1.Start();
+        }
         private void btnOpenFromTable_Click(object sender, EventArgs e)
         {
             
@@ -291,8 +323,29 @@ namespace quanLyNhaHang_Nhom4.Manager
             frmAdminStaff.Show();
         }
 
+
+
         #endregion
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
 
+            DateTime currentTime = DateTime.Now;
+
+            // Hiển thị thời gian lên Label dưới định dạng "HH:mm:ss"
+            lblTime.Text = currentTime.ToString("HH:mm:ss - dd/MM/yyyy");
+        }
+
+        private void pnlDesktop_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+
+            // Bắt đầu timer
+            timer1.Start();
+        }
     }
 }
