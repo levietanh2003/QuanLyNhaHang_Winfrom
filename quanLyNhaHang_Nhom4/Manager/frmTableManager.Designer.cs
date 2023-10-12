@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTableManager));
             this.flpTable = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlFood = new System.Windows.Forms.Panel();
+            this.btnLoadTable = new System.Windows.Forms.Button();
             this.lblFoodPrice = new System.Windows.Forms.Label();
             this.btnAddFood = new System.Windows.Forms.Button();
             this.nmCountFood = new System.Windows.Forms.NumericUpDown();
@@ -68,7 +69,6 @@
             // flpTable
             // 
             this.flpTable.Dock = System.Windows.Forms.DockStyle.Left;
-            this.flpTable.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flpTable.Location = new System.Drawing.Point(0, 0);
             this.flpTable.Name = "flpTable";
             this.flpTable.Size = new System.Drawing.Size(358, 957);
@@ -76,6 +76,7 @@
             // 
             // pnlFood
             // 
+            this.pnlFood.Controls.Add(this.btnLoadTable);
             this.pnlFood.Controls.Add(this.lblFoodPrice);
             this.pnlFood.Controls.Add(this.btnAddFood);
             this.pnlFood.Controls.Add(this.nmCountFood);
@@ -91,6 +92,15 @@
             this.pnlFood.Name = "pnlFood";
             this.pnlFood.Size = new System.Drawing.Size(489, 957);
             this.pnlFood.TabIndex = 1;
+            // 
+            // btnLoadTable
+            // 
+            this.btnLoadTable.Location = new System.Drawing.Point(15, 809);
+            this.btnLoadTable.Name = "btnLoadTable";
+            this.btnLoadTable.Size = new System.Drawing.Size(79, 84);
+            this.btnLoadTable.TabIndex = 13;
+            this.btnLoadTable.UseVisualStyleBackColor = true;
+            this.btnLoadTable.Click += new System.EventHandler(this.btnLoadTable_Click);
             // 
             // lblFoodPrice
             // 
@@ -115,6 +125,7 @@
             this.btnAddFood.TabIndex = 10;
             this.btnAddFood.Text = "Thêm món";
             this.btnAddFood.UseVisualStyleBackColor = true;
+            this.btnAddFood.Click += new System.EventHandler(this.btnAddFood_Click);
             // 
             // nmCountFood
             // 
@@ -236,6 +247,7 @@
             this.lsvBill.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lsvBill.GridLines = true;
             this.lsvBill.HideSelection = false;
+            this.lsvBill.LabelEdit = true;
             this.lsvBill.Location = new System.Drawing.Point(0, 100);
             this.lsvBill.Name = "lsvBill";
             this.lsvBill.Size = new System.Drawing.Size(681, 725);
@@ -330,6 +342,7 @@
             this.btnPayment.Text = "Thanh Toán";
             this.btnPayment.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPayment.UseVisualStyleBackColor = true;
+            this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
             // 
             // nmDiscount
             // 
@@ -402,5 +415,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.Button btnLoadTable;
     }
 }
