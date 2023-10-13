@@ -63,6 +63,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\frmAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\frmAdmin.Designer.cs">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin\frmAdminFood.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +186,12 @@
     <Compile Include="Manager\frmAccount.Designer.cs">
       <DependentUpon>frmAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager\frmAddWareHouse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\frmAddWareHouse.designer.cs">
+      <DependentUpon>frmAddWareHouse.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manager\frmAttendanceList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -255,6 +267,9 @@
     <Compile Include="NumberToText.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Admin\frmAdmin.resx">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin\frmAdminFood.resx">
       <DependentUpon>frmAdminFood.cs</DependentUpon>
     </EmbeddedResource>
@@ -269,6 +284,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\frmAccount.resx">
       <DependentUpon>frmAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\frmAddWareHouse.resx">
+      <DependentUpon>frmAddWareHouse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\frmAttendanceList.resx">
       <DependentUpon>frmAttendanceList.cs</DependentUpon>
@@ -407,7 +425,13 @@
     <Content Include="Image\food\tom-hum-nuong-muoi-ot.png" />
     <Content Include="Image\food\tom-hum-pho-mai-bo-toi.png" />
     <Content Include="Image\food\trung-chien-thit-bam.png" />
+    <Content Include="Image\Icon\anh-5-sao.png" />
     <Content Include="Image\Icon\checked.png" />
+    <None Include="Resources\restaurant %281%29.png" />
+    <None Include="Resources\user.png" />
+    <None Include="Resources\restaurant.png" />
+    <None Include="Resources\tray.png" />
+    <None Include="Image\Icon\logo_quanAN.png" />
     <Content Include="Image\Icon\security.png" />
     <Content Include="Image\Icon\error.png" />
     <Content Include="Image\Icon\info.png" />
@@ -416,6 +440,7 @@
     <Content Include="Image\Icon\warning.png" />
     <None Include="Resources\billing.png" />
     <None Include="Resources\billing %281%29.png" />
+    <None Include="Resources\bill.png" />
     <Content Include="Resources\icons8-eye-30.png" />
     <Content Include="Resources\icons8-lock-50.png" />
     <Content Include="Resources\icons8-minus-30.png" />
@@ -425,6 +450,7 @@
     <None Include="Resources\user-circle-solid-24.png" />
     <None Include="Resources\low-vision-solid-24.png" />
     <None Include="Resources\image-add-regular-24.png" />
+    <None Include="Resources\payment.png" />
     <Content Include="Resources\pngtree-unlock-glyph-icon-vector-png-image_1859166.jpg" />
   </ItemGroup>
   <ItemGroup>

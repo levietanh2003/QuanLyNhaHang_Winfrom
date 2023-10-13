@@ -51,11 +51,11 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.ptbLogo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTime = new System.Windows.Forms.Label();
             this.btnDisplayName = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pnlDesktop = new System.Windows.Forms.Panel();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.lblTime = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pnlMenu.SuspendLayout();
             this.pnlSubWareHouse.SuspendLayout();
@@ -409,6 +409,18 @@
             this.panel1.Size = new System.Drawing.Size(1528, 104);
             this.panel1.TabIndex = 1;
             // 
+            // lblTime
+            // 
+            this.lblTime.BackColor = System.Drawing.Color.Transparent;
+            this.lblTime.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.ForeColor = System.Drawing.Color.White;
+            this.lblTime.Location = new System.Drawing.Point(1071, 60);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(239, 57);
+            this.lblTime.TabIndex = 2;
+            this.lblTime.Text = "Time";
+            this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // btnDisplayName
             // 
             this.btnDisplayName.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
@@ -448,18 +460,6 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // lblTime
-            // 
-            this.lblTime.BackColor = System.Drawing.Color.Transparent;
-            this.lblTime.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.ForeColor = System.Drawing.Color.White;
-            this.lblTime.Location = new System.Drawing.Point(1071, 60);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(239, 57);
-            this.lblTime.TabIndex = 2;
-            this.lblTime.Text = "Time";
-            this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // timer1
             // 
             this.timer1.Enabled = true;
@@ -474,6 +474,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlMenu);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MinimumSize = new System.Drawing.Size(1718, 1132);
             this.Name = "frmMain";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Main";

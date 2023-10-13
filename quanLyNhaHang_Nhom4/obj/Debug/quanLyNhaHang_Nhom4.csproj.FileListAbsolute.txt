@@ -63,3 +63,5 @@ C:\Users\admin\OneDrive\Máy tính\QuanLyNhaHang_Nhom04\quanLyNhaHang_Nhom4\obj\
 \\Mac\Home\Desktop\quanLyNhaHang_Nhom4\quanLyNhaHang_Nhom4\obj\Debug\quanLyNhaHang_Nhom4.Manager.frmEditPosition.resources
 \\Mac\Home\Desktop\quanLyNhaHang_Nhom4\quanLyNhaHang_Nhom4\obj\Debug\quanLyNhaHang_Nhom4.Admin.frmAdminRevenue.resources
 \\Mac\Home\Desktop\quanLyNhaHang_Nhom4\quanLyNhaHang_Nhom4\obj\Debug\quanLyNhaHang_Nhom4.Manager.frmTableManager.resources
+\\Mac\Home\Desktop\quanLyNhaHang_Nhom4\quanLyNhaHang_Nhom4\obj\Debug\quanLyNhaHang_Nhom4.Manager.frmAddWareHouse.resources
+\\Mac\Home\Desktop\quanLyNhaHang_Nhom4\quanLyNhaHang_Nhom4\obj\Debug\quanLyNhaHang_Nhom4.Admin.frmAdmin.resources

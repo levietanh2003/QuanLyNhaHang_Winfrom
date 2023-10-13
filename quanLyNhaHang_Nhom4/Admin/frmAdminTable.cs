@@ -169,17 +169,17 @@ namespace quanLyNhaHang_Nhom4.Manager
             {
                 if ((from t in contextDB.TableFoods where t.nameTable == nameTable select t).FirstOrDefault() != null)
                 {
-                    if (MessageBox.Show("Tên bàn đã tồn tại. Bạn có muốn thêm?", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                    if (msg.Show("Tên bàn đã tồn tại. Bạn có muốn thêm?", "THÔNG BÁO", msg.Buttons.YesNo, msg.Icon.Info) == DialogResult.Yes)
                     {
                         contextDB.TableFoods.Add(new TableFood() { nameTable = nameTable });
                         if (contextDB.SaveChanges() > 0)
                         {
-                            MessageBox.Show("Thêm bàn thành công!", "THÔNG BÁO", MessageBoxButtons.OK);
+                            msg.Show("Thêm bàn thành công!", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Success);
                             Load();
                         }
                         else
                         {
-                            MessageBox.Show("Đã xảy ra lỗi khi thêm!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            msg.Show("Đã xảy ra lỗi khi thêm!", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Error);
                         }
                     }
                 }
@@ -194,7 +194,7 @@ namespace quanLyNhaHang_Nhom4.Manager
             }
             else
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                msg.Show("Vui lòng nhập đầy đủ!", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Info);
             }
         }
 
@@ -204,23 +204,24 @@ namespace quanLyNhaHang_Nhom4.Manager
             string name = txtTableName.Text;
             try
             {
-                if (MessageBox.Show("Bạn có chắc chắn muốn xóa " + name + "?", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (msg.Show("Bạn có chắc chắn muốn xóa " + name + "?", "THÔNG BÁO", msg.Buttons.YesNo, msg.Icon.Question) == DialogResult.Yes)
                 {
                     contextDB.TableFoods.Remove((from t in contextDB.TableFoods where t.idTable == idTable select t).FirstOrDefault());
                     if (contextDB.SaveChanges() > 0)
                     {
-                        MessageBox.Show("Xóa thành công", "THÔNG BÁO", MessageBoxButtons.OK);
+                        msg.Show("Xóa thành công", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Success);
+
                         Load();
                     }
                     else
                     {
-                        MessageBox.Show("Đã có lỗi xảy ra", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        msg.Show("Đã xảy ra lỗi khi thêm!", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Error);
                     }
                 }
             }
             catch
             {
-                MessageBox.Show("Bạn không thể xóa bàn này!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                msg.Show("Bạn không thể xóa bàn này!", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Error);
             }
         }
 

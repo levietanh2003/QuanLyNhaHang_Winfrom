@@ -114,7 +114,7 @@
             // txtCategoryName
             // 
             this.txtCategoryName.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCategoryName.Location = new System.Drawing.Point(218, 494);
+            this.txtCategoryName.Location = new System.Drawing.Point(218, 443);
             this.txtCategoryName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCategoryName.Name = "txtCategoryName";
             this.txtCategoryName.Size = new System.Drawing.Size(193, 39);
@@ -135,7 +135,7 @@
             this.lblTenDM.AutoSize = true;
             this.lblTenDM.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTenDM.ForeColor = System.Drawing.Color.White;
-            this.lblTenDM.Location = new System.Drawing.Point(18, 494);
+            this.lblTenDM.Location = new System.Drawing.Point(18, 443);
             this.lblTenDM.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTenDM.Name = "lblTenDM";
             this.lblTenDM.Size = new System.Drawing.Size(187, 32);

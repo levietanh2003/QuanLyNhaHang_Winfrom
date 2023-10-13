@@ -247,21 +247,26 @@ namespace quanLyNhaHang_Nhom4.Manager
             {
                 try
                 {
-                    rm.FoodCategories.Remove(foodCategoryDelete);
-                    if (rm.SaveChanges() > 0)
+
+                    if (msg.Show("Bạn có chắc chắn muốn xóa danh mục " + nameCategory + " ?", "THÔNG BÁO", msg.Buttons.YesNo, msg.Icon.Question) == DialogResult.Yes)
                     {
-                        msg.Show("Xóa thành công", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Success);
-                        Load();
-                    }
-                    else
-                    {
-                        msg.Show("Đã có lỗi xảy ra", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Error);
+                        rm.FoodCategories.Remove(foodCategoryDelete);
+                        if (rm.SaveChanges() > 0)
+                        {
+                            msg.Show("Xóa thành công", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Success);
+                            Load();
+                        }
+                        else
+                        {
+                            msg.Show("Đã có lỗi xảy ra", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Error);
+                        }
                     }
                 }
                 catch
                 {
                     msg.Show("Bạn không thể xóa danh mục này!", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Error);
                 }
+
             }
         }
         #endregion

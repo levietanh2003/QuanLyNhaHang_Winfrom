@@ -109,8 +109,9 @@ namespace quanLyNhaHang_Nhom4.Manager
                 txtSupplier.Text = dgvBillOfWareHouse.Rows[select].Cells[2].Value.ToString();
                 rtbNote.Text = dgvBillOfWareHouse.Rows[select].Cells[3].Value.ToString();
 
-            }catch(Exception ex)
+            }catch
             {
+                msg.Show("Đã xảy ra lỗi khi thêm!", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Error);
             }
         }
         private void textBox2_TextChanged(object sender, EventArgs e)

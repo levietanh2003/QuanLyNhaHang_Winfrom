@@ -19,7 +19,7 @@ namespace quanLyNhaHang_Nhom4
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmLogin());
-            //Application.Run(new frmTableManager());
+            //Application.Run(new frmAdmin());
         }
     }
 }

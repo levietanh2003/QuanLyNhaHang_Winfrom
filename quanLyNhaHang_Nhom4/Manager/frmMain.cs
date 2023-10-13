@@ -104,6 +104,17 @@ namespace quanLyNhaHang_Nhom4.Manager
         private void btnAdmin_Click(object sender, EventArgs e)
         {
             showSubMeNu(pnlSubAdmin);
+            lblTitle.Text = string.Empty;
+
+            this.pnlDesktop.Controls.Clear();
+            frmAdmin frmAdmin = new frmAdmin()
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false,
+                TopMost = true,
+            };
+            this.pnlDesktop.Controls.Add((frmAdmin)frmAdmin);
+            frmAdmin.Show();
         }
 
         private void btnWareHouse_Click(object sender, EventArgs e)
@@ -305,7 +316,17 @@ namespace quanLyNhaHang_Nhom4.Manager
         }
         private void btnAddBillOfWareHouse_Click(object sender, EventArgs e)
         {
-
+            hideSubMenu();
+            lblTitle.Text = "Thêm nhà cung cấp";
+            this.pnlDesktop.Controls.Clear();
+            frmAddWareHouse frmAddWareHouse = new frmAddWareHouse(LoginAccount) 
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false,
+                TopMost = true,
+            };
+            this.pnlDesktop.Controls.Add((frmAddWareHouse)frmAddWareHouse);
+            frmAddWareHouse.Show();
         }
 
         private void btnOpenFormStaff_Click(object sender, EventArgs e)

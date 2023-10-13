@@ -135,14 +135,14 @@ namespace quanLyNhaHang_Nhom4.Admin
 
             if(idStaff == "" || nameStaff == "" || sexStaff == "" || identityCard == "" || phoneNumber == "" || address == "")
             {
-                msg.Show("Vui lòng nhập đầy đủ thông tin","THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Info);
+                msg.Show("Vui lòng nhập đầy đủ thông tin","THÔNG BÁO", msg.Buttons.No, msg.Icon.Info);
             }
             else
             {
                 // kiem tra ma nhan vien co ton tai chua
                 if((from x in contextDB.Staffs where x.idStaff == idStaff select x).FirstOrDefault() != null)
                 {
-                    msg.Show("Mã nhân viên đã tồn tại. Vui lòng lấy mã khác!","THÔNG BÁO", msg.Buttons.Yes,msg.Icon.Warning);
+                    msg.Show("Mã nhân viên đã tồn tại. Vui lòng lấy mã khác!","THÔNG BÁO", msg.Buttons.No,msg.Icon.Warning);
                 }
                 else
                 {
@@ -150,6 +150,7 @@ namespace quanLyNhaHang_Nhom4.Admin
                     {
                         contextDB.USP_InsertStaff(idStaff, nameStaff, sexStaff, position.idPosition, dateOfBirth, identityCard, phoneNumber, address);
                         msg.Show("Thêm thành công !", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Success);
+                        loadStaff();
                     }
                     catch
                     {
@@ -167,7 +168,7 @@ namespace quanLyNhaHang_Nhom4.Admin
 
             if (idStaff == "" || staffDelete == null)
             {
-                msg.Show("Vui lòng chọn nhân viên cần xóa!", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Info);
+                msg.Show("Vui lòng chọn nhân viên cần xóa!", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Info);
                 return;
             }
             else
@@ -175,13 +176,13 @@ namespace quanLyNhaHang_Nhom4.Admin
                 // huong dan nguoi dung xoa tai khoan roi moi xoa nhan vien
                 if((from x in contextDB.Accounts where x.idStaff == idStaff select x).FirstOrDefault() != null)
                 {
-                    msg.Show("Vui lòng xóa tài khoản trước khi xóa nhân viên", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Warning);
+                    msg.Show("Vui lòng xóa tài khoản trước khi xóa nhân viên", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Warning);
                 }
                 else
                 {
                     try
                     {
-                        if(msg.Show("Bạn có chắc chắn muốn xóa?", "THÔNG BÁO", msg.Buttons.YesNo, msg.Icon.Warning) == DialogResult.Yes)
+                        if(msg.Show("Bạn có chắc chắn muốn xóa?", "THÔNG BÁO", msg.Buttons.YesNo, msg.Icon.Question) == DialogResult.Yes)
                         {
                             contextDB.Staffs.Remove(staffDelete);
                             contextDB.SaveChanges();
@@ -237,6 +238,7 @@ namespace quanLyNhaHang_Nhom4.Admin
                     {
                         msg.Show("Sửa thành công !", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Success);
                     }
+                    loadStaff();
                 }catch
                 {
                     msg.Show("Đã xảy ra lỗi khi sửa, vui lòng kiểm tra lại !", "THÀNH CÔNG", msg.Buttons.No, msg.Icon.Error);

@@ -268,15 +268,18 @@ namespace quanLyNhaHang_Nhom4.Admin
                     foodEdit.nameFood = name;
                     foodEdit.price = price;
                     foodEdit.imageFood = linkImage;
-                    if (contextDB.SaveChanges() > 0)
-                    {
-                        msg.Show("Sửa thành công", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Success);
-                        loadListFood();
-                    }
-                    else
-                    {
-                        msg.Show("Có lỗi khi sửa món ăn", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Warning);
-                    }
+                    //if (contextDB.SaveChanges() > 0)
+                    //{
+                    //    msg.Show("Sửa thành công", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Success);
+                    //    loadListFood();
+                    //}
+                    //else
+                    //{
+                    //    msg.Show("Có lỗi khi sửa món ăn", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Warning);
+                    //}
+                    contextDB.SaveChanges();
+                    msg.Show("Sửa thành công", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Success);
+                    loadListFood();
                 }
             }
             else

@@ -36,8 +36,9 @@
             // lblSoftWare
             // 
             this.lblSoftWare.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblSoftWare.Font = new System.Drawing.Font("Cambria", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSoftWare.Location = new System.Drawing.Point(0, 350);
+            this.lblSoftWare.Font = new System.Drawing.Font("Cambria", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSoftWare.ForeColor = System.Drawing.Color.DimGray;
+            this.lblSoftWare.Location = new System.Drawing.Point(3, 136);
             this.lblSoftWare.Name = "lblSoftWare";
             this.lblSoftWare.Size = new System.Drawing.Size(1919, 104);
             this.lblSoftWare.TabIndex = 2;
@@ -48,9 +49,9 @@
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.logo_quanAN;
-            this.pictureBox2.Location = new System.Drawing.Point(764, 480);
+            this.pictureBox2.Location = new System.Drawing.Point(617, 291);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(338, 287);
+            this.pictureBox2.Size = new System.Drawing.Size(658, 498);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;

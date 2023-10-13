@@ -492,7 +492,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 18);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.toolStrip1.Size = new System.Drawing.Size(802, 43);
+            this.toolStrip1.Size = new System.Drawing.Size(841, 43);
             this.toolStrip1.TabIndex = 15;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -509,8 +509,8 @@
             // 
             this.toolstripTim.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.toolstripTim.Name = "toolstripTim";
-            this.toolstripTim.Size = new System.Drawing.Size(229, 37);
-            this.toolstripTim.Text = "Tìm kiếm bàn ăn";
+            this.toolstripTim.Size = new System.Drawing.Size(268, 37);
+            this.toolstripTim.Text = "Tìm kiếm danh mục";
             // 
             // txtFindTableName
             // 

@@ -56,6 +56,8 @@
             this.txtTotalPrice = new System.Windows.Forms.TextBox();
             this.btnPayment = new System.Windows.Forms.Button();
             this.nmDiscount = new System.Windows.Forms.NumericUpDown();
+            this.pddHoaDon = new System.Windows.Forms.PrintPreviewDialog();
+            this.pdHoaDon = new System.Drawing.Printing.PrintDocument();
             this.pnlFood.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmCountFood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImageFood)).BeginInit();
@@ -358,6 +360,20 @@
             this.nmDiscount.Size = new System.Drawing.Size(106, 39);
             this.nmDiscount.TabIndex = 7;
             // 
+            // pddHoaDon
+            // 
+            this.pddHoaDon.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.pddHoaDon.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.pddHoaDon.ClientSize = new System.Drawing.Size(400, 300);
+            this.pddHoaDon.Enabled = true;
+            this.pddHoaDon.Icon = ((System.Drawing.Icon)(resources.GetObject("pddHoaDon.Icon")));
+            this.pddHoaDon.Name = "pddHoaDon";
+            this.pddHoaDon.Visible = false;
+            // 
+            // pdHoaDon
+            // 
+            this.pdHoaDon.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.dpHoaDon_PrintPage);
+            // 
             // frmTableManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
@@ -416,5 +432,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Button btnLoadTable;
+        private System.Windows.Forms.PrintPreviewDialog pddHoaDon;
+        private System.Drawing.Printing.PrintDocument pdHoaDon;
     }
 }
