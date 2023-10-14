@@ -31,12 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTableManager));
             this.flpTable = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlFood = new System.Windows.Forms.Panel();
-            this.btnLoadTable = new System.Windows.Forms.Button();
             this.lblFoodPrice = new System.Windows.Forms.Label();
-            this.btnAddFood = new System.Windows.Forms.Button();
             this.nmCountFood = new System.Windows.Forms.NumericUpDown();
             this.lblNumber = new System.Windows.Forms.Label();
-            this.ptbImageFood = new System.Windows.Forms.PictureBox();
             this.cmbNameFood = new System.Windows.Forms.ComboBox();
             this.cmbCategoryFood = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -54,18 +51,21 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTotalPrice = new System.Windows.Forms.TextBox();
-            this.btnPayment = new System.Windows.Forms.Button();
             this.nmDiscount = new System.Windows.Forms.NumericUpDown();
             this.pddHoaDon = new System.Windows.Forms.PrintPreviewDialog();
             this.pdHoaDon = new System.Drawing.Printing.PrintDocument();
+            this.btnPayment = new System.Windows.Forms.Button();
+            this.btnLoadTable = new System.Windows.Forms.Button();
+            this.btnAddFood = new System.Windows.Forms.Button();
+            this.ptbImageFood = new System.Windows.Forms.PictureBox();
             this.pnlFood.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmCountFood)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbImageFood)).BeginInit();
             this.panel4.SuspendLayout();
             this.pnlView.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmDiscount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbImageFood)).BeginInit();
             this.SuspendLayout();
             // 
             // flpTable
@@ -95,15 +95,6 @@
             this.pnlFood.Size = new System.Drawing.Size(489, 957);
             this.pnlFood.TabIndex = 1;
             // 
-            // btnLoadTable
-            // 
-            this.btnLoadTable.Location = new System.Drawing.Point(15, 809);
-            this.btnLoadTable.Name = "btnLoadTable";
-            this.btnLoadTable.Size = new System.Drawing.Size(79, 84);
-            this.btnLoadTable.TabIndex = 13;
-            this.btnLoadTable.UseVisualStyleBackColor = true;
-            this.btnLoadTable.Click += new System.EventHandler(this.btnLoadTable_Click);
-            // 
             // lblFoodPrice
             // 
             this.lblFoodPrice.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -115,30 +106,11 @@
             this.lblFoodPrice.Text = "0 đ";
             this.lblFoodPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnAddFood
-            // 
-            this.btnAddFood.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddFood.Image = ((System.Drawing.Image)(resources.GetObject("btnAddFood.Image")));
-            this.btnAddFood.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddFood.Location = new System.Drawing.Point(101, 809);
-            this.btnAddFood.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAddFood.Name = "btnAddFood";
-            this.btnAddFood.Size = new System.Drawing.Size(328, 96);
-            this.btnAddFood.TabIndex = 10;
-            this.btnAddFood.Text = "Thêm món";
-            this.btnAddFood.UseVisualStyleBackColor = true;
-            this.btnAddFood.Click += new System.EventHandler(this.btnAddFood_Click);
-            // 
             // nmCountFood
             // 
             this.nmCountFood.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nmCountFood.Location = new System.Drawing.Point(312, 725);
             this.nmCountFood.Margin = new System.Windows.Forms.Padding(4);
-            this.nmCountFood.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            -2147483648});
             this.nmCountFood.Name = "nmCountFood";
             this.nmCountFood.Size = new System.Drawing.Size(78, 39);
             this.nmCountFood.TabIndex = 9;
@@ -158,14 +130,6 @@
             this.lblNumber.Size = new System.Drawing.Size(132, 32);
             this.lblNumber.TabIndex = 11;
             this.lblNumber.Text = "Số lượng:";
-            // 
-            // ptbImageFood
-            // 
-            this.ptbImageFood.Location = new System.Drawing.Point(57, 430);
-            this.ptbImageFood.Name = "ptbImageFood";
-            this.ptbImageFood.Size = new System.Drawing.Size(372, 214);
-            this.ptbImageFood.TabIndex = 3;
-            this.ptbImageFood.TabStop = false;
             // 
             // cmbNameFood
             // 
@@ -247,6 +211,7 @@
             this.columnHeader4});
             this.lsvBill.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lsvBill.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lsvBill.FullRowSelect = true;
             this.lsvBill.GridLines = true;
             this.lsvBill.HideSelection = false;
             this.lsvBill.LabelEdit = true;
@@ -331,21 +296,6 @@
             this.txtTotalPrice.TabIndex = 8;
             this.txtTotalPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // btnPayment
-            // 
-            this.btnPayment.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPayment.Image = ((System.Drawing.Image)(resources.GetObject("btnPayment.Image")));
-            this.btnPayment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPayment.Location = new System.Drawing.Point(410, 40);
-            this.btnPayment.Margin = new System.Windows.Forms.Padding(4);
-            this.btnPayment.Name = "btnPayment";
-            this.btnPayment.Size = new System.Drawing.Size(254, 79);
-            this.btnPayment.TabIndex = 9;
-            this.btnPayment.Text = "Thanh Toán";
-            this.btnPayment.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPayment.UseVisualStyleBackColor = true;
-            this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
-            // 
             // nmDiscount
             // 
             this.nmDiscount.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -374,6 +324,53 @@
             // 
             this.pdHoaDon.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.dpHoaDon_PrintPage);
             // 
+            // btnPayment
+            // 
+            this.btnPayment.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPayment.Image = ((System.Drawing.Image)(resources.GetObject("btnPayment.Image")));
+            this.btnPayment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPayment.Location = new System.Drawing.Point(410, 40);
+            this.btnPayment.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPayment.Name = "btnPayment";
+            this.btnPayment.Size = new System.Drawing.Size(254, 79);
+            this.btnPayment.TabIndex = 9;
+            this.btnPayment.Text = "Thanh Toán";
+            this.btnPayment.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPayment.UseVisualStyleBackColor = true;
+            this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
+            // 
+            // btnLoadTable
+            // 
+            this.btnLoadTable.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.delete;
+            this.btnLoadTable.Location = new System.Drawing.Point(15, 809);
+            this.btnLoadTable.Name = "btnLoadTable";
+            this.btnLoadTable.Size = new System.Drawing.Size(79, 84);
+            this.btnLoadTable.TabIndex = 13;
+            this.btnLoadTable.UseVisualStyleBackColor = true;
+            this.btnLoadTable.Click += new System.EventHandler(this.btnLoadTable_Click);
+            // 
+            // btnAddFood
+            // 
+            this.btnAddFood.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddFood.Image = ((System.Drawing.Image)(resources.GetObject("btnAddFood.Image")));
+            this.btnAddFood.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddFood.Location = new System.Drawing.Point(101, 809);
+            this.btnAddFood.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddFood.Name = "btnAddFood";
+            this.btnAddFood.Size = new System.Drawing.Size(328, 96);
+            this.btnAddFood.TabIndex = 10;
+            this.btnAddFood.Text = "Thêm món";
+            this.btnAddFood.UseVisualStyleBackColor = true;
+            this.btnAddFood.Click += new System.EventHandler(this.btnAddFood_Click);
+            // 
+            // ptbImageFood
+            // 
+            this.ptbImageFood.Location = new System.Drawing.Point(57, 430);
+            this.ptbImageFood.Name = "ptbImageFood";
+            this.ptbImageFood.Size = new System.Drawing.Size(372, 214);
+            this.ptbImageFood.TabIndex = 3;
+            this.ptbImageFood.TabStop = false;
+            // 
             // frmTableManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
@@ -390,7 +387,6 @@
             this.pnlFood.ResumeLayout(false);
             this.pnlFood.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmCountFood)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbImageFood)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.pnlView.ResumeLayout(false);
@@ -399,6 +395,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmDiscount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbImageFood)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -430,9 +427,9 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Button btnLoadTable;
         private System.Windows.Forms.PrintPreviewDialog pddHoaDon;
         private System.Drawing.Printing.PrintDocument pdHoaDon;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }

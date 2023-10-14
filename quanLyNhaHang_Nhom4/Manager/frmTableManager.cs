@@ -54,6 +54,7 @@ namespace quanLyNhaHang_Nhom4.Manager
                 Button btn = new Button() { Width = TableWidth, Height = TableHeight };
                 btn.Text = item.nameTable + Environment.NewLine + item.statusTable;
                 btn.Click += btnTable_Click;
+                btnLoadTable.Click += btnLoadTable_Click;
                 btn.Tag = item;
                 btn.TabStop = false;
                 btn.FlatStyle = FlatStyle.Flat;
@@ -182,21 +183,29 @@ namespace quanLyNhaHang_Nhom4.Manager
 
                 int idFood = (cmbNameFood.SelectedItem as Food).idFood;
                 int count = (int)nmCountFood.Value;
-                if (idBill == -1)
+                if(count == 0)
                 {
-                    contextDB.USP_InsertBill(table.idTable);
-                    int idBillMax = (from b in contextDB.Bills select b.idBill).Max();
-                    contextDB.USP_InsertBillInfo(idBillMax, idFood, count);
+                    msg.Show("Vui lòng kiểm trả lại số lượng.", "THÔNG BÁO",msg.Buttons.No,msg.Icon.Warning);
+                    return;
                 }
                 else
                 {
-                    contextDB.USP_InsertBillInfo(idBill, idFood, count);
-                }
-                table.statusTable = "Có người";
+                    if (idBill == -1)
+                    {
+                        contextDB.USP_InsertBill(table.idTable);
+                        int idBillMax = (from b in contextDB.Bills select b.idBill).Max();
+                        contextDB.USP_InsertBillInfo(idBillMax, idFood, count);
+                    }
+                    else
+                    {
+                        contextDB.USP_InsertBillInfo(idBill, idFood, count);
+                    }
+                    table.statusTable = "Có người";
 
-                // lay thong tin mon an an dat vao listView
-                showInfoFood(table.idTable);
-                loadTable();
+                    // lay thong tin mon an an dat vao listView
+                    showInfoFood(table.idTable);
+                    loadTable();
+                }
             }
             else
             {
@@ -230,6 +239,7 @@ namespace quanLyNhaHang_Nhom4.Manager
                 lsvItem.SubItems.Add(item.countFood.ToString());
                 // gia mon 
                 lsvItem.SubItems.Add(item.price.ToString());
+                
                 // tinh tien theo mon
                 lsvItem.SubItems.Add((item.countFood * item.price).ToString());
                 //tong so mon an
@@ -244,8 +254,11 @@ namespace quanLyNhaHang_Nhom4.Manager
                 txtTotalPrice.Text = double.Parse(totalPrice.ToString()).ToString("#,###", culture.NumberFormat) + " đ";
             else
                 txtTotalPrice.Text = "";
-            //txbTotalPrice.Text = totalPrice.
         }
+
+
+
+        // ham xoa thuc don
         private void cmbNameFood_SelectedIndexChanged(object sender, EventArgs e)
         {
             int idFood = 0;
@@ -260,10 +273,52 @@ namespace quanLyNhaHang_Nhom4.Manager
             loadImageFoodByIdFood(idFood);
             loadPriceFoodByIdFood(idFood);
         }
+        
         private void btnLoadTable_Click(object sender, EventArgs e)
         {
-            load();
-            
+            if (lsvBill.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = lsvBill.SelectedItems[0];
+                TableFood table = lsvBill.Tag as TableFood;
+
+                // Lấy thông tin món ăn cần xóa
+                string foodName = selectedItem.SubItems[0].Text;
+
+                // Xóa món ăn khỏi ListView
+                lsvBill.Items.Remove(selectedItem);
+
+                // TODO: Thực hiện xóa món ăn khỏi bảng BillInfo trong CSDL
+                DeleteFoodInfoFromBillInfo(table.idTable, foodName);
+                showInfoFood(table.idTable);
+
+                // TODO: Tính lại tổng tiền
+                //float totalPrice = CalculateTotalPrice(table.idTable);
+
+                // Hiển thị lại tổng tiền
+                //CultureInfo culture = CultureInfo.CurrentCulture;
+                //txtTotalPrice.Text = double.Parse(totalPrice.ToString()).ToString("#,###", culture.NumberFormat) + " đ";
+            }
+
+
+        }
+        private void DeleteFoodInfoFromBillInfo(int tableId, string foodName)
+        {
+            // Lấy id của hóa đơn chưa thanh toán cho bàn tableId
+            var unpaidBill = contextDB.Bills.FirstOrDefault(b => b.idTable == tableId && b.statusBill == 0);
+            if (unpaidBill != null)
+            {
+                int billId = unpaidBill.idBill;
+
+                // Lấy thông tin món ăn cần xóa
+                var foodInfoToDelete = contextDB.BillInfoes.FirstOrDefault(bi => bi.idBill == billId && bi.Food.nameFood == foodName);
+                if (foodInfoToDelete != null)
+                {
+                    // Xóa thông tin món ăn từ bảng BillInfo
+                    contextDB.BillInfoes.Remove(foodInfoToDelete);
+                    contextDB.SaveChanges(); // Lưu thay đổi vào CSDL
+                    
+                }
+            }
         }
         private void btnPayment_Click(object sender, EventArgs e)
         {
@@ -282,25 +337,32 @@ namespace quanLyNhaHang_Nhom4.Manager
                 string payperID = loginAccount.userName;
                 if (idBill != -1)
                 {
-                    float totalPrice = float.Parse((txtTotalPrice.Text).ToString().Split(' ')[0]);
-                    float finalTotalPrice = (totalPrice - totalPrice * discount / 100);
-                    if (msg.Show(string.Format("Bạn có muốn thành toán cho bàn {0}\nTổng tiền: {1}đ\nSố tiền của bạn sau khi được giảm giá {2}% là: {3}đ", table.nameTable, totalPrice, discount, finalTotalPrice), "THÔNG BÁO", msg.Buttons.YesNo, msg.Icon.Success) == DialogResult.Yes)
+                    try
                     {
-                        printBill();
-                        contextDB.USP_CheckOut(discount, finalTotalPrice, payperID, idBill);
-                        showInfoFood(table.idTable);
-                        table.statusTable = "Trống";
-                        loadTable();
+                        float totalPrice = float.Parse((txtTotalPrice.Text).ToString().Split(' ')[0]);
+                        float finalTotalPrice = (totalPrice - totalPrice * discount / 100);
+                        if (msg.Show(string.Format("Bạn có muốn thành toán cho bàn {0}\nTổng tiền: {1}đ\nSố tiền của bạn sau khi được giảm giá {2}% là: {3}đ", table.nameTable, totalPrice, discount, finalTotalPrice), "THÔNG BÁO", msg.Buttons.YesNo, msg.Icon.Success) == DialogResult.Yes)
+                        {
+                            printBill();
+                            contextDB.USP_CheckOut(discount, finalTotalPrice, payperID, idBill);
+                            showInfoFood(table.idTable);
+                            table.statusTable = "Trống";
+                            loadTable();
+                        }
+                    }
+                    catch
+                    {
+                        msg.Show("Chua con mon nen khong the thanh toan!", "THÔNG BÁO",msg.Buttons.No,msg.Icon.Warning);
                     }
                 }
                 else
                 {
-                    msg.Show("Da co loi xay ra ! ", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Warning);
+                    msg.Show("Da co loi xay ra ! ", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Warning);
                 }
             }
             else
             {
-                msg.Show("Vui lòng chọn bàn để thêm món! ", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Warning);
+                msg.Show("Vui lòng chọn bàn để thêm món! ", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Warning);
 
             }
 

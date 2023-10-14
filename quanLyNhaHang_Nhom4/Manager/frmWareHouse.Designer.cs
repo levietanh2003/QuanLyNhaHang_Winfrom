@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnTotalBill = new System.Windows.Forms.Panel();
             this.lblTotalBill = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -114,15 +114,15 @@
             this.dateAdded,
             this.supplier,
             this.note});
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Cambria", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBillOfWareHouse.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Cambria", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBillOfWareHouse.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvBillOfWareHouse.Location = new System.Drawing.Point(0, 102);
             this.dgvBillOfWareHouse.Margin = new System.Windows.Forms.Padding(2);
             this.dgvBillOfWareHouse.Name = "dgvBillOfWareHouse";
@@ -258,7 +258,7 @@
             this.txtSupplier.ReadOnly = true;
             this.txtSupplier.Size = new System.Drawing.Size(237, 45);
             this.txtSupplier.TabIndex = 1;
-            this.txtSupplier.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSupplier.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtSupplier.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // txtDateAdd
@@ -270,7 +270,7 @@
             this.txtDateAdd.ReadOnly = true;
             this.txtDateAdd.Size = new System.Drawing.Size(237, 45);
             this.txtDateAdd.TabIndex = 1;
-            this.txtDateAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtDateAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtBillOfWareHouseID
             // 

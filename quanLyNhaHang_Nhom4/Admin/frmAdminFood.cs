@@ -104,8 +104,6 @@ namespace quanLyNhaHang_Nhom4.Admin
             Image img = GetCopyImage(@"..\..\Image\food\" + image);
             ptbImageOfFood.Image = img;
             ptbImageOfFood.SizeMode = PictureBoxSizeMode.StretchImage;
- 
- 
         }
 
         // copy duong dan anh

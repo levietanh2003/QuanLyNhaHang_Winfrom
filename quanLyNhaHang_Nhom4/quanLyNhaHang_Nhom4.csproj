@@ -441,6 +441,7 @@
     <None Include="Resources\billing.png" />
     <None Include="Resources\billing %281%29.png" />
     <None Include="Resources\bill.png" />
+    <None Include="Resources\delete.png" />
     <Content Include="Resources\icons8-eye-30.png" />
     <Content Include="Resources\icons8-lock-50.png" />
     <Content Include="Resources\icons8-minus-30.png" />

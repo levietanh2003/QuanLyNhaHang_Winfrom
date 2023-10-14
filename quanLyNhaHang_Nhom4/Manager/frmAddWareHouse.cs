@@ -237,7 +237,8 @@ namespace quanLyNhaHang_Nhom4.Manager
             lsvBillInfoOfWH.Items.Clear();
         }
 
-        private void btnSaveBillOfWH_Click(object sender, EventArgs e)
+       
+        private void btnSaveBillOfWH_Click_1(object sender, EventArgs e)
         {
             addBillOfWareHouse();
         }
@@ -289,6 +290,11 @@ namespace quanLyNhaHang_Nhom4.Manager
             }
         }
 
+        private void btnAddMaterial_Click_1(object sender, EventArgs e)
+        {
+            AddMaterial();
+            loadComboboxMaterial();
+        }
         private void EditMaterial()
         {
             try
@@ -321,6 +327,12 @@ namespace quanLyNhaHang_Nhom4.Manager
             {
                 msg.Show("Vui lòng chọn dòng nguyên liệu cần sửa", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Info);
             }
+        }
+
+        private void btnEditMaterial_Click_1(object sender, EventArgs e)
+        {
+            EditMaterial();
+            loadComboboxMaterial();
         }
 
         private void DeleteMaterial()
@@ -361,17 +373,11 @@ namespace quanLyNhaHang_Nhom4.Manager
             }
         }
 
-        private void btnAddMaterial_Click(object sender, EventArgs e)
-        {
-            AddMaterial();
-            loadComboboxMaterial();
-        }
 
-        private void btnEditMaterial_Click(object sender, EventArgs e)
-        {
-            EditMaterial();
-            loadComboboxMaterial();
-        }
+        //private void btnDeleteMaterial_Click(object sender, EventArgs e)
+        //{
+        //   
+        //}
 
         private void btnDeleteMaterial_Click(object sender, EventArgs e)
         {
@@ -379,11 +385,11 @@ namespace quanLyNhaHang_Nhom4.Manager
             loadComboboxMaterial();
         }
 
-        private void btnShowMaterial_Click(object sender, EventArgs e)
+        
+        private void btnShowMaterial_Click_1(object sender, EventArgs e)
         {
             loadMaterialList();
         }
-
         //Unit
         void addUnit()
         {
@@ -543,15 +549,19 @@ namespace quanLyNhaHang_Nhom4.Manager
         private void pdHoaDon_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
 
-            string tencuahang = "Nhà Hàng A";
-            string diachi = "475A Đ. Điện Biên Phủ, Phường 25, Bình Thạnh, Thành phố Hồ Chí Minh, Việt Nam";
-            string phone = "0772722361";
+            var tenNhaHang = "Cuộc Hẹn Sau Giờ Làm";
+            var diaChi = "Đại học Công nghệ TP.HCM (Thu Duc Campus)";
+            var phone = "0772722361";
             string idBill = txtIdBillOfWareHouse.Text;
 
             var w = pdHoaDon.DefaultPageSettings.PaperSize.Width;
-            //e.Graphics.DrawImage(Image.FromFile(@"./Image/Logo2.png"), w / 4 - 20, 20, 100, 100);
-            e.Graphics.DrawString(tencuahang.ToUpper(), new Font("Courier New", 30, FontStyle.Bold), Brushes.Black, new Point(100, 120));
+            // lo go quan an
+            e.Graphics.DrawImage(Image.FromFile(@"..\..\Image\Icon\logo_quanAN.png"), w / 4 - 20, 20, 100, 100);
+            // ten nha hang
+            e.Graphics.DrawString(tenNhaHang.ToUpper(), new Font("Courier New", 30, FontStyle.Bold), Brushes.Black, new Point(100, 120));
+            // so hoa don
             e.Graphics.DrawString(String.Format("Số hóa đơn: {0}", idBill), new Font("Courier New", 15, FontStyle.Bold), Brushes.Black, new Point(w / 2 + 190, 85));
+
             Pen blackPen = new Pen(Color.Black, 1);
             Point p1 = new Point(w / 2 + 180, 105);
             Point p2 = new Point(w - 40, 105);
@@ -561,7 +571,7 @@ namespace quanLyNhaHang_Nhom4.Manager
             p2 = new Point(w - 50, 108);
             e.Graphics.DrawLine(blackPen, p1, p2);
 
-            e.Graphics.DrawString(string.Format("{0} - {1}", diachi, phone), new Font("Courier New", 10, FontStyle.Bold), Brushes.Black, new Point(70, 160));
+            e.Graphics.DrawString(string.Format("{0} - {1}", diaChi, phone), new Font("Courier New", 10, FontStyle.Bold), Brushes.Black, new Point(70, 160));
             e.Graphics.DrawString(String.Format("{0}", DateTime.Now.ToString("dd/MM/yyyy HH:mm")), new Font("Courier New", 12, FontStyle.Bold), Brushes.Black, new Point(w / 2 + 200, 110));
 
 
@@ -628,9 +638,30 @@ namespace quanLyNhaHang_Nhom4.Manager
             e.Graphics.DrawString(string.Format("Thành chữ:", new NumberToText().ChuyenSoSangChuoi(sum)), new Font("Courier New", 10, FontStyle.Italic), Brushes.Black, new Point(40, y));
             e.Graphics.DrawString(string.Format("{0}", new NumberToText().ChuyenSoSangChuoi(sum)), new Font("Courier New", 10, FontStyle.Italic), Brushes.Black, new Point(w - 40 - (new NumberToText().ChuyenSoSangChuoi(sum)).ToString().Length * 10, y));
 
-            //y += 40;
-            //e.Graphics.DrawString("Xin chân thành cảm ơn sự ủng hộ của quý khách!", new Font("Courier New", 12, FontStyle.Bold), Brushes.Black, new Point(200, y + 50));
-            //e.Graphics.DrawImage(Image.FromFile(@"./Image/fivestars.png"), w / 4 + 20, y + 80, 400, 85);
+        }
+
+        private void lblNote_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtMaterialID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbUnit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tpUnit_Click(object sender, EventArgs e)
+        {
 
         }
     }

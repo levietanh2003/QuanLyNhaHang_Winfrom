@@ -17,9 +17,15 @@ namespace quanLyNhaHang_Nhom4.Manager
         public frmWareHouse()
         {
             InitializeComponent();
+            load();
         }
 
         #region Method
+
+        void load()
+        {
+            loadBillOfWaseHouse();
+        }
         void loadBillOfWaseHouse()
         {
             int insertRow = 0;
@@ -61,12 +67,12 @@ namespace quanLyNhaHang_Nhom4.Manager
 
         void loadBillInfoWareHouseById(int idBillWareHouseList)
         {
-            lsvBillInfoOfWH.Items.Clear();  
+            lsvBillInfoOfWH.Items.Clear();
             int totalPrice = 0;
-            // lay ra bang thong tin chi tiet hoa don nha cung cung theo ma
-            foreach(var item in 
+            //lay ra bang thong tin chi tiet hoa don nha cung cung theo ma
+            foreach (var item in
                 (from biwh in contextDB.BillInfoOfWareHouses
-                 where biwh.idBillInfoOfWareHouse == idBillWareHouseList
+                 where biwh.idBillOfWareHouse == idBillWareHouseList
                  select biwh).ToList()
                 )
             {
@@ -77,7 +83,7 @@ namespace quanLyNhaHang_Nhom4.Manager
                 totalPrice += item.price;
                 lsvBillInfoOfWH.Items.Add(lsvItem);
             }
-           txtTotalPrice.Text = totalPrice.ToString();
+            txtTotalPrice.Text = totalPrice.ToString();
         }
 
         #endregion
@@ -85,14 +91,7 @@ namespace quanLyNhaHang_Nhom4.Manager
         #region Event
         private void frmWareHouse_Load(object sender, EventArgs e)
         {
-            try
-            {
-                loadBillOfWaseHouse();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Da xay ra loi " + ex.Message, "Thong bao", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
         }
         private void lsvBillInfoOfWH_SelectedIndexChanged(object sender, EventArgs e)
         {
