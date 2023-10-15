@@ -1,4 +1,6 @@
-﻿namespace quanLyNhaHang_Nhom4.Manager
+﻿using quanLyNhaHang_Nhom4.Database;
+
+namespace quanLyNhaHang_Nhom4.Manager
 {
     partial class frmTableManager
     {
@@ -55,6 +57,7 @@
             this.pddHoaDon = new System.Windows.Forms.PrintPreviewDialog();
             this.pdHoaDon = new System.Drawing.Printing.PrintDocument();
             this.btnPayment = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.btnLoadTable = new System.Windows.Forms.Button();
             this.btnAddFood = new System.Windows.Forms.Button();
             this.ptbImageFood = new System.Windows.Forms.PictureBox();
@@ -78,6 +81,7 @@
             // 
             // pnlFood
             // 
+            this.pnlFood.Controls.Add(this.btnEdit);
             this.pnlFood.Controls.Add(this.btnLoadTable);
             this.pnlFood.Controls.Add(this.lblFoodPrice);
             this.pnlFood.Controls.Add(this.btnAddFood);
@@ -111,6 +115,11 @@
             this.nmCountFood.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nmCountFood.Location = new System.Drawing.Point(312, 725);
             this.nmCountFood.Margin = new System.Windows.Forms.Padding(4);
+            this.nmCountFood.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmCountFood.Name = "nmCountFood";
             this.nmCountFood.Size = new System.Drawing.Size(78, 39);
             this.nmCountFood.TabIndex = 9;
@@ -119,6 +128,7 @@
             0,
             0,
             0});
+            this.nmCountFood.ValueChanged += new System.EventHandler(this.nmCountFood_ValueChanged);
             // 
             // lblNumber
             // 
@@ -221,6 +231,7 @@
             this.lsvBill.TabIndex = 2;
             this.lsvBill.UseCompatibleStateImageBehavior = false;
             this.lsvBill.View = System.Windows.Forms.View.Details;
+            this.lsvBill.SelectedIndexChanged += new System.EventHandler(this.lsvBill_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -339,10 +350,20 @@
             this.btnPayment.UseVisualStyleBackColor = true;
             this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
             // 
+            // btnEdit
+            // 
+            this.btnEdit.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.update;
+            this.btnEdit.Location = new System.Drawing.Point(116, 818);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(79, 84);
+            this.btnEdit.TabIndex = 14;
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
             // btnLoadTable
             // 
             this.btnLoadTable.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.delete;
-            this.btnLoadTable.Location = new System.Drawing.Point(15, 809);
+            this.btnLoadTable.Location = new System.Drawing.Point(15, 818);
             this.btnLoadTable.Name = "btnLoadTable";
             this.btnLoadTable.Size = new System.Drawing.Size(79, 84);
             this.btnLoadTable.TabIndex = 13;
@@ -354,10 +375,10 @@
             this.btnAddFood.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddFood.Image = ((System.Drawing.Image)(resources.GetObject("btnAddFood.Image")));
             this.btnAddFood.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddFood.Location = new System.Drawing.Point(101, 809);
+            this.btnAddFood.Location = new System.Drawing.Point(228, 809);
             this.btnAddFood.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddFood.Name = "btnAddFood";
-            this.btnAddFood.Size = new System.Drawing.Size(328, 96);
+            this.btnAddFood.Size = new System.Drawing.Size(257, 96);
             this.btnAddFood.TabIndex = 10;
             this.btnAddFood.Text = "Thêm món";
             this.btnAddFood.UseVisualStyleBackColor = true;
@@ -431,5 +452,6 @@
         private System.Windows.Forms.PrintPreviewDialog pddHoaDon;
         private System.Drawing.Printing.PrintDocument pdHoaDon;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.Button btnEdit;
     }
 }

@@ -164,6 +164,7 @@ namespace quanLyNhaHang_Nhom4.Admin
         void DeleteStaff()
         {
             string idStaff = txtStaffID.Text.Trim();
+            string nameStaff = txtStaffName.Text;
             Staff staffDelete = (from staff in contextDB.Staffs where staff.idStaff == idStaff select staff).FirstOrDefault();
 
             if (idStaff == "" || staffDelete == null)
@@ -182,7 +183,7 @@ namespace quanLyNhaHang_Nhom4.Admin
                 {
                     try
                     {
-                        if(msg.Show("Bạn có chắc chắn muốn xóa?", "THÔNG BÁO", msg.Buttons.YesNo, msg.Icon.Question) == DialogResult.Yes)
+                        if(msg.Show("Bạn có chắc chắn muốn xóa nhân viên "+ nameStaff +" ?", "THÔNG BÁO", msg.Buttons.YesNo, msg.Icon.Question) == DialogResult.Yes)
                         {
                             contextDB.Staffs.Remove(staffDelete);
                             contextDB.SaveChanges();
@@ -213,7 +214,7 @@ namespace quanLyNhaHang_Nhom4.Admin
             Staff staffEdit = (from x in contextDB.Staffs where x.idStaff == idStaff select x).FirstOrDefault();
             if (idStaff == "" || staffEdit == null)
             {
-                msg.Show("Vui lòng chọn nhân viên cần sửa!", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Info);
+                msg.Show("Vui lòng chọn nhân viên cần sửa!", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Info);
                 return;
             }
             if (nameStaff == "" || identityCard == "" || phoneNumber == "" || address == "")

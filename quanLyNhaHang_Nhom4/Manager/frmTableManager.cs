@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Documents;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace quanLyNhaHang_Nhom4.Manager
 {
@@ -54,7 +55,7 @@ namespace quanLyNhaHang_Nhom4.Manager
                 Button btn = new Button() { Width = TableWidth, Height = TableHeight };
                 btn.Text = item.nameTable + Environment.NewLine + item.statusTable;
                 btn.Click += btnTable_Click;
-                btnLoadTable.Click += btnLoadTable_Click;
+                //btnLoadTable.Click += btnLoadTable_Click;
                 btn.Tag = item;
                 btn.TabStop = false;
                 btn.FlatStyle = FlatStyle.Flat;
@@ -143,6 +144,98 @@ namespace quanLyNhaHang_Nhom4.Manager
         {
            
         }
+        private void UpdateFoodQuantityInDatabase()
+        {
+            if (lsvBill.SelectedItems.Count > 0)
+            {
+                int selectedQuantity = (int)nmCountFood.Value;
+                ListViewItem selectedItem = lsvBill.SelectedItems[0];
+                string foodName = selectedItem.SubItems[0].Text;
+
+                TableFood table = lsvBill.Tag as TableFood;
+                if (table != null)
+                {
+                    int tableId = table.idTable;
+                    var bill = contextDB.Bills.FirstOrDefault(b => b.idTable == tableId && b.statusBill == 0);
+                    if (bill != null)
+                    {
+                        int billId = bill.idBill;
+                        var billInfo = contextDB.BillInfoes.FirstOrDefault(bi => bi.idBill == billId && bi.Food.nameFood == foodName);
+                        if (billInfo != null)
+                        {
+                            billInfo.countFood = selectedQuantity;
+                            contextDB.SaveChanges(); // Lưu thay đổi vào CSDL
+                        }
+                    }
+                }
+            }
+        }
+        // kiem tra bill trong bang con khong tra ve trang thai trong
+        private bool IsListViewNotEmpty()
+        {
+            return lsvBill.Items.Count > 0;
+        }
+        // luu thong tin mon an dat len listView
+        void showInfoFood(int id)
+        {
+
+            lsvBill.Items.Clear();
+            float totalPrice = 0;
+            // thuc hien truy van de ket noi bang va lay thong tin nhu mong muon 
+            var listBillInfro = (from bi in contextDB.BillInfoes
+                                 join b in contextDB.Bills on bi.idBill equals b.idBill
+                                 join f in contextDB.Foods on bi.idFood equals f.idFood
+                                 where b.statusBill == 0 && b.idTable == id
+                                 select new
+                                 {
+                                     f.nameFood,
+                                     bi.countFood,
+                                     f.price,
+
+                                 });
+
+            foreach (var item in listBillInfro)
+            {
+                ListViewItem lsvItem = new ListViewItem(item.nameFood.ToString());
+                // so luong
+                lsvItem.SubItems.Add(item.countFood.ToString());
+                // gia mon 
+                lsvItem.SubItems.Add(item.price.ToString());
+
+                // tinh tien theo mon
+                lsvItem.SubItems.Add((item.countFood * item.price).ToString());
+                //tong so mon an
+                totalPrice += float.Parse((item.countFood * item.price).ToString());
+                lsvBill.Items.Add(lsvItem);
+            }
+            //CultureInfo culture = new CultureInfo("vi-VN");
+            CultureInfo culture = CultureInfo.CurrentCulture;
+
+            //Thread.CurrentThread.CurrentCulture = culture;
+            if (double.Parse(totalPrice.ToString()) != 0)
+                txtTotalPrice.Text = double.Parse(totalPrice.ToString()).ToString("#,###", culture.NumberFormat) + " đ";
+            else
+                txtTotalPrice.Text = "";
+        }
+        // xoa mon an trong ban mong muon
+        private void DeleteFoodInfoFromBillInfo(int tableId, string foodName)
+        {
+            // Lấy id của hóa đơn chưa thanh toán cho bàn tableId
+            var unpaidBill = contextDB.Bills.FirstOrDefault(b => b.idTable == tableId && b.statusBill == 0);
+            if (unpaidBill != null)
+            {
+                int billId = unpaidBill.idBill;
+
+                // Lấy thông tin món ăn cần xóa
+                var foodInfoToDelete = contextDB.BillInfoes.FirstOrDefault(bi => bi.idBill == billId && bi.Food.nameFood == foodName);
+                if (foodInfoToDelete != null)
+                {
+                    // Xóa thông tin món ăn từ bảng BillInfo
+                    contextDB.BillInfoes.Remove(foodInfoToDelete);
+                    contextDB.SaveChanges(); // Lưu thay đổi vào CSDL
+                }
+            }
+        }
         #endregion
 
         #region Event
@@ -212,53 +305,6 @@ namespace quanLyNhaHang_Nhom4.Manager
                 msg.Show("Vui lòng chọn bàn để thêm món! ", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Info);
             }
         }
-
-        // luu thong tin mon an dat len listView
-        void showInfoFood(int id)
-        {
-
-            lsvBill.Items.Clear();
-            float totalPrice = 0;
-            // thuc hien truy van de ket noi bang va lay thong tin nhu mong muon 
-            var listBillInfro = (from bi in contextDB.BillInfoes
-                                join b in contextDB.Bills on bi.idBill equals b.idBill
-                                join f in contextDB.Foods on bi.idFood equals f.idFood
-                                where b.statusBill == 0 && b.idTable == id
-                                select new
-                                {
-                                    f.nameFood,
-                                    bi.countFood,
-                                    f.price,
-
-                                });
-
-            foreach (var item in listBillInfro)
-            {
-                ListViewItem lsvItem = new ListViewItem(item.nameFood.ToString());
-                // so luong
-                lsvItem.SubItems.Add(item.countFood.ToString());
-                // gia mon 
-                lsvItem.SubItems.Add(item.price.ToString());
-                
-                // tinh tien theo mon
-                lsvItem.SubItems.Add((item.countFood * item.price).ToString());
-                //tong so mon an
-                totalPrice += float.Parse((item.countFood * item.price).ToString());
-                lsvBill.Items.Add(lsvItem);
-            }
-            //CultureInfo culture = new CultureInfo("vi-VN");
-            CultureInfo culture = CultureInfo.CurrentCulture;
-
-            //Thread.CurrentThread.CurrentCulture = culture;
-            if (double.Parse(totalPrice.ToString()) != 0)
-                txtTotalPrice.Text = double.Parse(totalPrice.ToString()).ToString("#,###", culture.NumberFormat) + " đ";
-            else
-                txtTotalPrice.Text = "";
-        }
-
-
-
-        // ham xoa thuc don
         private void cmbNameFood_SelectedIndexChanged(object sender, EventArgs e)
         {
             int idFood = 0;
@@ -273,51 +319,44 @@ namespace quanLyNhaHang_Nhom4.Manager
             loadImageFoodByIdFood(idFood);
             loadPriceFoodByIdFood(idFood);
         }
-        
+
         private void btnLoadTable_Click(object sender, EventArgs e)
         {
-            if (lsvBill.SelectedItems.Count > 0)
+         
+            TableFood table = lsvBill.Tag as TableFood;
+            // chi co admin moi duoc xoa mon trong bill
+            if (LoginAccount.typeAccount == 1)
             {
-                ListViewItem selectedItem = lsvBill.SelectedItems[0];
-                TableFood table = lsvBill.Tag as TableFood;
-
-                // Lấy thông tin món ăn cần xóa
-                string foodName = selectedItem.SubItems[0].Text;
-
-                // Xóa món ăn khỏi ListView
-                lsvBill.Items.Remove(selectedItem);
-
-                // TODO: Thực hiện xóa món ăn khỏi bảng BillInfo trong CSDL
-                DeleteFoodInfoFromBillInfo(table.idTable, foodName);
-                showInfoFood(table.idTable);
-
-                // TODO: Tính lại tổng tiền
-                //float totalPrice = CalculateTotalPrice(table.idTable);
-
-                // Hiển thị lại tổng tiền
-                //CultureInfo culture = CultureInfo.CurrentCulture;
-                //txtTotalPrice.Text = double.Parse(totalPrice.ToString()).ToString("#,###", culture.NumberFormat) + " đ";
-            }
-
-
-        }
-        private void DeleteFoodInfoFromBillInfo(int tableId, string foodName)
-        {
-            // Lấy id của hóa đơn chưa thanh toán cho bàn tableId
-            var unpaidBill = contextDB.Bills.FirstOrDefault(b => b.idTable == tableId && b.statusBill == 0);
-            if (unpaidBill != null)
-            {
-                int billId = unpaidBill.idBill;
-
-                // Lấy thông tin món ăn cần xóa
-                var foodInfoToDelete = contextDB.BillInfoes.FirstOrDefault(bi => bi.idBill == billId && bi.Food.nameFood == foodName);
-                if (foodInfoToDelete != null)
+                if(IsListViewNotEmpty())
                 {
-                    // Xóa thông tin món ăn từ bảng BillInfo
-                    contextDB.BillInfoes.Remove(foodInfoToDelete);
-                    contextDB.SaveChanges(); // Lưu thay đổi vào CSDL
-                    
+                    if (lsvBill.SelectedItems.Count > 0)
+                    {
+                        ListViewItem selectedItem = lsvBill.SelectedItems[0];
+
+                        string foodName = selectedItem.SubItems[0].Text;
+
+                        lsvBill.Items.Remove(selectedItem);
+
+                        DeleteFoodInfoFromBillInfo(table.idTable, foodName);
+                        showInfoFood(table.idTable);
+
+                    }
+                    else
+                    {
+                        msg.Show("Vui lòng chọn món để xóa.", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Warning);
+                    }
                 }
+                else
+                {
+                    msg.Show("Không còn món để xóa.", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Warning);
+                    table.statusTable = "Trống";
+                    contextDB.SaveChanges();
+                    loadTable();
+                }
+            }
+            else
+            {
+                msg.Show("Bạn chưa được cấp quyền.", "THÔNG BÁO", msg.Buttons.No,msg.Icon.Warning);
             }
         }
         private void btnPayment_Click(object sender, EventArgs e)
@@ -327,7 +366,7 @@ namespace quanLyNhaHang_Nhom4.Manager
             List<Bill> bills = (from b in contextDB.Bills where b.idTable == table.idTable && b.statusBill == 0 select b).ToList();
             if (table != null)
             {
-                foreach(var item in bills)
+                foreach (var item in bills)
                 {
                     idBill = item.idBill;
                 }
@@ -352,7 +391,7 @@ namespace quanLyNhaHang_Nhom4.Manager
                     }
                     catch
                     {
-                        msg.Show("Chua con mon nen khong the thanh toan!", "THÔNG BÁO",msg.Buttons.No,msg.Icon.Warning);
+                        msg.Show("Chua con mon nen khong the thanh toan!", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Warning);
                     }
                 }
                 else
@@ -363,7 +402,6 @@ namespace quanLyNhaHang_Nhom4.Manager
             else
             {
                 msg.Show("Vui lòng chọn bàn để thêm món! ", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Warning);
-
             }
 
         }
@@ -478,6 +516,29 @@ namespace quanLyNhaHang_Nhom4.Manager
             e.Graphics.DrawString("Xin chân thành cảm ơn sự ủng hộ của quý khách!", new Font("Courier New", 12, FontStyle.Bold), Brushes.Black, new Point(200, y + 50));
             e.Graphics.DrawImage(Image.FromFile(@"..\..\Image\Icon\anh-5-sao.png"), w / 4 + 20, y + 80, 400, 85);
         }
+        private void lsvBill_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lsvBill.SelectedItems.Count > 0)
+            {
+                int selectedQuantity = Convert.ToInt32(lsvBill.SelectedItems[0].SubItems[1].Text);
+
+                nmCountFood.Value = selectedQuantity;
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            loadTable();
+        }
+        private void nmCountFood_ValueChanged(object sender, EventArgs e)
+        {
+           
+            TableFood table = lsvBill.Tag as TableFood;
+            UpdateFoodQuantityInDatabase();
+            showInfoFood(table.idTable);
+        }
         #endregion
+
+
     }
 }

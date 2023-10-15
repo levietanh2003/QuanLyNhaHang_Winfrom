@@ -118,36 +118,48 @@ namespace quanLyNhaHang_Nhom4.Admin
 
             if(userName == "" || password == "" || retypePassword == "" || displayName == "" || idStaff == "" )
             {
-                msg.Show("Vui long nhap day du thong tin","THONG BAO",msg.Buttons.Yes,msg.Icon.Info);
+                msg.Show("Vui lòng nhập đầy đủ thông tin !!", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Info);
             }
             else
             {
                 // kiem tra tai khoan da ton tai hay chua
                 if((from a in contextDB.Accounts where a.userName == userName select a).FirstOrDefault() != null)
                 {
-                    msg.Show("Tai khoan da ton tai.","THONG BAO", msg.Buttons.Yes, msg.Icon.Error);
+                    msg.Show("Tài khoản đã tồn tại !!", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Error);
+
                 }
                 else
                 {
-                    if((from x in contextDB.Staffs where x.idStaff == idStaff select x).FirstOrDefault() == null)
+                    // kiem tra mat khau nhap lai phai trung voi mk 
+                    if(!password.Equals(retypePassword))
                     {
-                        msg.Show("Ma nhan vien khong hop le.", "THONG BAO", msg.Buttons.Yes, msg.Icon.Error);
+                        msg.Show("Mật khẩu nhập lại không trùng với mật khẩu mới", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Error);
                     }
                     else
                     {
-                        try
+                        // kiem tra ma nhan vien ton tai hay chua
+                        if ((from x in contextDB.Staffs where x.idStaff == idStaff select x).FirstOrDefault() == null)
                         {
-                            if(contextDB.USP_InsertAccount(userName, password, displayName, typeAccount, idStaff) > 0)
+                            msg.Show("Mã nhân viên không tồn tại !", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Error);
+                        }
+                        else
+                        {
+                            try
                             {
-                                LoadAccount();
-                                msg.Show("Them tai khoan thanh cong.", "THONG BAO", msg.Buttons.Yes, msg.Icon.Success);
-                                resetText();
+                                if (contextDB.USP_InsertAccount(userName, password, displayName, typeAccount, idStaff) > 0)
+                                {
+                                    LoadAccount();
+                                    msg.Show("Tạo tài khoản thành công", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Success);
+                                    resetText();
+                                }
                             }
-                        }catch
-                        {
-                            msg.Show("Da xay ra loi gi do.", "THONG BAO", msg.Buttons.Yes, msg.Icon.Error);
+                            catch
+                            {
+                                msg.Show("Có lỗi khi tạo tài khoản", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Warning);
+                            }
                         }
                     }
+    
                 }
             }
         }
@@ -264,6 +276,7 @@ namespace quanLyNhaHang_Nhom4.Admin
                     {
                         // lay ra account tuong ung tren userName
                         Account acc = (from x in contextDB.Accounts where x.userName == userName select x).FirstOrDefault();
+                        // tra password lai "1"
                         acc.passWord = "1";
                         if (contextDB.SaveChanges() > 0)
                         {

@@ -305,7 +305,7 @@
             // 
             // btnShowUnit
             // 
-            this.btnShowUnit.Font = new System.Drawing.Font("Cambria", 7.5F, System.Drawing.FontStyle.Bold);
+            this.btnShowUnit.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowUnit.Location = new System.Drawing.Point(254, 272);
             this.btnShowUnit.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.btnShowUnit.Name = "btnShowUnit";
@@ -317,7 +317,7 @@
             // 
             // btnDeleteUnit
             // 
-            this.btnDeleteUnit.Font = new System.Drawing.Font("Cambria", 7.5F, System.Drawing.FontStyle.Bold);
+            this.btnDeleteUnit.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteUnit.Location = new System.Drawing.Point(121, 340);
             this.btnDeleteUnit.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.btnDeleteUnit.Name = "btnDeleteUnit";
@@ -329,7 +329,7 @@
             // 
             // btnEditUnit
             // 
-            this.btnEditUnit.Font = new System.Drawing.Font("Cambria", 7.5F, System.Drawing.FontStyle.Bold);
+            this.btnEditUnit.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditUnit.Location = new System.Drawing.Point(254, 340);
             this.btnEditUnit.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.btnEditUnit.Name = "btnEditUnit";
@@ -341,7 +341,7 @@
             // 
             // btnAddUnit
             // 
-            this.btnAddUnit.Font = new System.Drawing.Font("Cambria", 7.5F, System.Drawing.FontStyle.Bold);
+            this.btnAddUnit.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddUnit.Location = new System.Drawing.Point(121, 272);
             this.btnAddUnit.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.btnAddUnit.Name = "btnAddUnit";
@@ -656,7 +656,7 @@
             // 
             // btnShowMaterial
             // 
-            this.btnShowMaterial.Font = new System.Drawing.Font("Cambria", 7F, System.Drawing.FontStyle.Bold);
+            this.btnShowMaterial.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowMaterial.Location = new System.Drawing.Point(253, 304);
             this.btnShowMaterial.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.btnShowMaterial.Name = "btnShowMaterial";
@@ -668,7 +668,7 @@
             // 
             // btnDeleteMaterial
             // 
-            this.btnDeleteMaterial.Font = new System.Drawing.Font("Cambria", 7.5F, System.Drawing.FontStyle.Bold);
+            this.btnDeleteMaterial.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteMaterial.Location = new System.Drawing.Point(253, 362);
             this.btnDeleteMaterial.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.btnDeleteMaterial.Name = "btnDeleteMaterial";
@@ -680,7 +680,7 @@
             // 
             // btnEditMaterial
             // 
-            this.btnEditMaterial.Font = new System.Drawing.Font("Cambria", 7.5F, System.Drawing.FontStyle.Bold);
+            this.btnEditMaterial.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditMaterial.Location = new System.Drawing.Point(107, 362);
             this.btnEditMaterial.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.btnEditMaterial.Name = "btnEditMaterial";
@@ -692,7 +692,7 @@
             // 
             // btnAddMaterial
             // 
-            this.btnAddMaterial.Font = new System.Drawing.Font("Cambria", 7.5F, System.Drawing.FontStyle.Bold);
+            this.btnAddMaterial.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddMaterial.Location = new System.Drawing.Point(107, 304);
             this.btnAddMaterial.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.btnAddMaterial.Name = "btnAddMaterial";
@@ -709,7 +709,7 @@
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
-            this.lsvBillInfoOfWH.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold);
+            this.lsvBillInfoOfWH.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lsvBillInfoOfWH.GridLines = true;
             this.lsvBillInfoOfWH.HideSelection = false;
             this.lsvBillInfoOfWH.LabelEdit = true;

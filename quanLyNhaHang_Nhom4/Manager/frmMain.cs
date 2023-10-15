@@ -348,15 +348,6 @@ namespace quanLyNhaHang_Nhom4.Manager
 
         #endregion
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-
-            DateTime currentTime = DateTime.Now;
-
-            // Hiển thị thời gian lên Label dưới định dạng "HH:mm:ss"
-            lblTime.Text = currentTime.ToString("HH:mm:ss - dd/MM/yyyy");
-        }
-
         private void pnlDesktop_Paint(object sender, PaintEventArgs e)
         {
 
@@ -367,6 +358,13 @@ namespace quanLyNhaHang_Nhom4.Manager
 
             // Bắt đầu timer
             timer1.Start();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            DateTime selectedTime = DateTime.Now;
+            string  formattedTime = selectedTime.ToString("dd/MM/yyyy - HH:mm:ss");
+            lblClock.Text = formattedTime;
         }
     }
 }

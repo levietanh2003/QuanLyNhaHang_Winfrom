@@ -141,7 +141,6 @@ namespace quanLyNhaHang_Nhom4.Manager
 
             }
         }
-
         private void addBillInfoOfWareHouse()
         {
             int number, price;
@@ -152,9 +151,7 @@ namespace quanLyNhaHang_Nhom4.Manager
             {
                 if(material == "")
                 {
-                    msg.Show("Vui lòng chọn loại nguyên liệu cần nhập", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Info);
-
-
+                    msg.Show("Vui lòng chọn loại nguyên liệu cần nhập", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Info);
                 }
                 else
                 {
@@ -213,11 +210,6 @@ namespace quanLyNhaHang_Nhom4.Manager
                         printBill();
                         LoadSuccessInsert();
                     }
-                    //}
-                    //catch
-                    //{
-                    //    msg.Show("Đã xảy ra lỗi khi thêm !", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Error);
-                    //}
                 }
                 else
                 {
@@ -225,9 +217,6 @@ namespace quanLyNhaHang_Nhom4.Manager
                 }
             }
         }
-
-
-
         void LoadSuccessInsert()
         {
             loadDetailOfBill();
@@ -320,12 +309,12 @@ namespace quanLyNhaHang_Nhom4.Manager
                 }
                 else
                 {
-                    msg.Show("Vui lòng nhập tên nguyên liệu!", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Info);
+                    msg.Show("Vui lòng nhập tên nguyên liệu!", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Info);
                 }
             }
             catch
             {
-                msg.Show("Vui lòng chọn dòng nguyên liệu cần sửa", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Info);
+                msg.Show("Vui lòng chọn dòng nguyên liệu cần sửa", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Info);
             }
         }
 
@@ -369,7 +358,7 @@ namespace quanLyNhaHang_Nhom4.Manager
             }
             catch
             {
-                msg.Show("Bạn không thể xóa nguyên liệu này!", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Info);
+                msg.Show("Bạn không thể xóa nguyên liệu này!", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Info);
             }
         }
 
@@ -431,7 +420,7 @@ namespace quanLyNhaHang_Nhom4.Manager
             }
             else
             {
-                msg.Show("Vui lòng nhập tên đơn vị tính!", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Info);
+                msg.Show("Vui lòng nhập tên đơn vị tính!", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Info);
             }
         }
 
@@ -464,7 +453,7 @@ namespace quanLyNhaHang_Nhom4.Manager
             }
             catch
             {
-                msg.Show("Vui lòng chọn đơn vị tính cần sửa!", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Info);
+                msg.Show("Vui lòng chọn đơn vị tính cần sửa!", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Info);
             }
         }
 
@@ -499,7 +488,7 @@ namespace quanLyNhaHang_Nhom4.Manager
             }
             catch
             {
-                msg.Show("Bạn không thể xóa đơn vị tính này!", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Info);
+                msg.Show("Bạn không thể xóa đơn vị tính này!", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Info);
             }
         }
 

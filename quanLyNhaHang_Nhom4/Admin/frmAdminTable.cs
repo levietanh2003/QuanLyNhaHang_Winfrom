@@ -221,7 +221,7 @@ namespace quanLyNhaHang_Nhom4.Manager
             }
             catch
             {
-                msg.Show("Bạn không thể xóa bàn này!", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Error);
+                msg.Show("Bạn không thể xóa bàn này!", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Error);
             }
         }
 
@@ -234,7 +234,7 @@ namespace quanLyNhaHang_Nhom4.Manager
             {
                 if (table != null)
                 {
-                    if (msg.Show("Tên bàn đã tồn tại.\n Bạn có muốn sửa tên bàn?", "THÔNG BÁO", msg.Buttons.YesNo, msg.Icon.Warning) == DialogResult.Yes)
+                    if (msg.Show("Tên bàn đã tồn tại.\n Bạn có muốn sửa tên bàn?", "THÔNG BÁO", msg.Buttons.YesNo, msg.Icon.Question) == DialogResult.Yes)
                     {
                         table.nameTable = nameTable;
                         if (contextDB.SaveChanges() > 0)
@@ -265,7 +265,7 @@ namespace quanLyNhaHang_Nhom4.Manager
             }
             else
             {
-                msg.Show("Vui lòng nhập đầy đủ!", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Info);
+                msg.Show("Vui lòng nhập đầy đủ!", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Info);
             }
         }
         #endregion

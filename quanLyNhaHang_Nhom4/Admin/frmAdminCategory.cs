@@ -253,12 +253,12 @@ namespace quanLyNhaHang_Nhom4.Manager
                         rm.FoodCategories.Remove(foodCategoryDelete);
                         if (rm.SaveChanges() > 0)
                         {
-                            msg.Show("Xóa thành công", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Success);
+                            msg.Show("Xóa thành công.", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Success);
                             Load();
                         }
                         else
                         {
-                            msg.Show("Đã có lỗi xảy ra", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Error);
+                            msg.Show("Đã có lỗi xảy ra.", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Error);
                         }
                     }
                 }

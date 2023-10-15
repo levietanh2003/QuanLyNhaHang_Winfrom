@@ -427,6 +427,7 @@
     <Content Include="Image\food\trung-chien-thit-bam.png" />
     <Content Include="Image\Icon\anh-5-sao.png" />
     <Content Include="Image\Icon\checked.png" />
+    <None Include="Resources\update.png" />
     <None Include="Resources\restaurant %281%29.png" />
     <None Include="Resources\user.png" />
     <None Include="Resources\restaurant.png" />

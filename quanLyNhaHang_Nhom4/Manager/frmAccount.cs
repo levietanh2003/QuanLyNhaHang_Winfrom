@@ -59,7 +59,7 @@ namespace quanLyNhaHang_Nhom4.Manager
                 // kiem tra mat khau cu co dung khong
                 if ((from x in rm.Accounts where x.userName == username && x.passWord == password select x).FirstOrDefault() == null)
                 {
-                    msg.Show("Mật khẩu cũ không đúng.", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Warning);
+                    msg.Show("Mật khẩu cũ không đúng.", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Warning);
                 }
                 else
                 {
