@@ -106,7 +106,6 @@ namespace quanLyNhaHang_Nhom4.Admin
             ptbImageOfFood.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
-        // copy duong dan anh
         private Image GetCopyImage(string path)
         {
             using (Image im = Image.FromFile(path))
@@ -260,7 +259,21 @@ namespace quanLyNhaHang_Nhom4.Admin
             if(name == "" || float.TryParse(txtPrice.Text, out price))
             {
                 Food foodEdit = (from food in contextDB.Foods where food.idFood ==  idFood select  food).FirstOrDefault();
-                if(msg.Show("Bạn vẫn chưa tải hình món ăn lên.\n Bạn có chắc chắn thêm món?", "THÔNG BÁO", msg.Buttons.YesNo, msg.Icon.Question) == DialogResult.Yes)
+                // kiem tra nguoi dung khi chua cap nhat anh
+                if((from x in contextDB.Foods where x.imageFood == linkImage && x.idFood == idFood select x).FirstOrDefault() != null)
+                {
+                    if (msg.Show("Bạn vẫn chưa tải hình món ăn lên.\n Bạn có chắc chắn sửa món?", "THÔNG BÁO", msg.Buttons.YesNo, msg.Icon.Question) == DialogResult.Yes)
+                    {
+                        foodEdit.idFood = idFood;
+                        foodEdit.nameFood = name;
+                        foodEdit.price = price;
+                        foodEdit.imageFood = linkImage;
+                        contextDB.SaveChanges();
+                        msg.Show("Sửa thành công", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Success);
+                        loadListFood();
+                    }
+                }
+                else
                 {
                     foodEdit.idFood = idFood;
                     foodEdit.nameFood = name;

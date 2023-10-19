@@ -110,6 +110,7 @@
             this.dgvTableFood.Location = new System.Drawing.Point(0, 122);
             this.dgvTableFood.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvTableFood.Name = "dgvTableFood";
+            this.dgvTableFood.ReadOnly = true;
             this.dgvTableFood.RowHeadersWidth = 51;
             this.dgvTableFood.RowTemplate.Height = 24;
             this.dgvTableFood.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -123,6 +124,7 @@
             this.colMaBan.HeaderText = "Mã bàn ăn";
             this.colMaBan.MinimumWidth = 6;
             this.colMaBan.Name = "colMaBan";
+            this.colMaBan.ReadOnly = true;
             this.colMaBan.Width = 200;
             // 
             // colTenBan
@@ -130,6 +132,7 @@
             this.colTenBan.HeaderText = "Tên bàn ăn";
             this.colTenBan.MinimumWidth = 6;
             this.colTenBan.Name = "colTenBan";
+            this.colTenBan.ReadOnly = true;
             this.colTenBan.Width = 300;
             // 
             // colTrangThai
@@ -137,6 +140,7 @@
             this.colTrangThai.HeaderText = "Trạng thái";
             this.colTrangThai.MinimumWidth = 6;
             this.colTrangThai.Name = "colTrangThai";
+            this.colTrangThai.ReadOnly = true;
             this.colTrangThai.Width = 300;
             // 
             // panel3

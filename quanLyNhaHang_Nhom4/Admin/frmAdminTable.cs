@@ -188,7 +188,7 @@ namespace quanLyNhaHang_Nhom4.Manager
 
                     contextDB.TableFoods.Add(new TableFood() { nameTable = nameTable, statusTable = "Trống" });
                     contextDB.SaveChanges();
-                    MessageBox.Show("Thêm bàn thành công!", "THÔNG BÁO", MessageBoxButtons.OK);
+                    msg.Show("Thêm bàn thành công!", "THÔNG BÁO",msg.Buttons.Yes,msg.Icon.Success);
                     Load();
                 }
             }

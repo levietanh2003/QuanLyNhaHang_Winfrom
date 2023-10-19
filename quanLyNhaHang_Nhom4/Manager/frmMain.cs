@@ -155,15 +155,6 @@ namespace quanLyNhaHang_Nhom4.Manager
             this.pnlDesktop.Controls.Add((frmAdminRevenue)frmAdminRevenue);
             frmAdminRevenue.Show();
         }
-        void timer()
-        {
-            timer1 = new Timer();
-            timer1.Interval = 1000;
-            
-
-            // Bắt đầu Timer
-            timer1.Start();
-        }
         private void btnOpenFromTable_Click(object sender, EventArgs e)
         {
             
@@ -356,15 +347,6 @@ namespace quanLyNhaHang_Nhom4.Manager
         private void frmMain_Load(object sender, EventArgs e)
         {
 
-            // Bắt đầu timer
-            timer1.Start();
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            DateTime selectedTime = DateTime.Now;
-            string  formattedTime = selectedTime.ToString("dd/MM/yyyy - HH:mm:ss");
-            lblClock.Text = formattedTime;
         }
     }
 }

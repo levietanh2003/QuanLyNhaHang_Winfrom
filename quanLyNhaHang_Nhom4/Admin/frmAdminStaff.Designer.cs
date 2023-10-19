@@ -184,6 +184,8 @@
             this.txtStaffID.Name = "txtStaffID";
             this.txtStaffID.Size = new System.Drawing.Size(258, 36);
             this.txtStaffID.TabIndex = 5;
+            this.txtStaffID.TextChanged += new System.EventHandler(this.txtStaffID_TextChanged);
+            this.txtStaffID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStaffID_KeyPress);
             // 
             // label7
             // 

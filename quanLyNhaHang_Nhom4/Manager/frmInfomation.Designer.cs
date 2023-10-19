@@ -63,9 +63,9 @@
             this.lblSoftware.Location = new System.Drawing.Point(428, 666);
             this.lblSoftware.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSoftware.Name = "lblSoftware";
-            this.lblSoftware.Size = new System.Drawing.Size(738, 49);
+            this.lblSoftware.Size = new System.Drawing.Size(712, 49);
             this.lblSoftware.TabIndex = 2;
-            this.lblSoftware.Text = "Software: Phần mềm quản lý nhà hàng A";
+            this.lblSoftware.Text = "Software: Phần mềm quản lý nhà hàng ";
             // 
             // lblEmail
             // 

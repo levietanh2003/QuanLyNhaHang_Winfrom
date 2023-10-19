@@ -28,61 +28,61 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea17 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend17 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series22 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series23 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea18 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend18 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series24 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea16 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend16 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series21 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.pnRevenue = new System.Windows.Forms.Panel();
-            this.pnBill = new System.Windows.Forms.Panel();
-            this.pnCategory = new System.Windows.Forms.Panel();
-            this.pnFood = new System.Windows.Forms.Panel();
-            this.pnFoodChart = new System.Windows.Forms.Panel();
-            this.lblFoodChart = new System.Windows.Forms.Label();
-            this.pnStaffChart = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblRevenue = new System.Windows.Forms.Label();
             this.lblRevenue2 = new System.Windows.Forms.Label();
+            this.pnBill = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblTotalBill = new System.Windows.Forms.Label();
             this.lblBill = new System.Windows.Forms.Label();
-            this.lblTotalFood = new System.Windows.Forms.Label();
-            this.lblFood = new System.Windows.Forms.Label();
+            this.pnCategory = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.lblTotalCategory = new System.Windows.Forms.Label();
             this.lblCategory = new System.Windows.Forms.Label();
-            this.FoodChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.StaffChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.lblStaff2 = new System.Windows.Forms.Label();
-            this.lblStaff = new System.Windows.Forms.Label();
-            this.ipbTableChart = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pnFood = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.TableChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.lblTable2 = new System.Windows.Forms.Label();
+            this.lblTotalFood = new System.Windows.Forms.Label();
+            this.lblFood = new System.Windows.Forms.Label();
+            this.pnFoodChart = new System.Windows.Forms.Panel();
+            this.FoodChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.lblFoodChart = new System.Windows.Forms.Label();
+            this.pnStaffChart = new System.Windows.Forms.Panel();
+            this.lblStaff2 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.StaffChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.lblTable = new System.Windows.Forms.Label();
+            this.lblTable2 = new System.Windows.Forms.Label();
+            this.TableChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.ipbTableChart = new System.Windows.Forms.PictureBox();
+            this.lblStaff = new System.Windows.Forms.Label();
             this.pnRevenue.SuspendLayout();
-            this.pnBill.SuspendLayout();
-            this.pnCategory.SuspendLayout();
-            this.pnFood.SuspendLayout();
-            this.pnFoodChart.SuspendLayout();
-            this.pnStaffChart.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.FoodChart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.StaffChart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ipbTableChart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnBill.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.pnCategory.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.pnFood.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.pnFoodChart.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FoodChart)).BeginInit();
+            this.pnStaffChart.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StaffChart)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TableChart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ipbTableChart)).BeginInit();
             this.SuspendLayout();
             // 
             // pnRevenue
@@ -96,84 +96,15 @@
             this.pnRevenue.Size = new System.Drawing.Size(370, 234);
             this.pnRevenue.TabIndex = 0;
             // 
-            // pnBill
+            // pictureBox1
             // 
-            this.pnBill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
-            this.pnBill.Controls.Add(this.pictureBox2);
-            this.pnBill.Controls.Add(this.lblTotalBill);
-            this.pnBill.Controls.Add(this.lblBill);
-            this.pnBill.Location = new System.Drawing.Point(391, 12);
-            this.pnBill.Name = "pnBill";
-            this.pnBill.Size = new System.Drawing.Size(370, 234);
-            this.pnBill.TabIndex = 0;
-            // 
-            // pnCategory
-            // 
-            this.pnCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(205)))), ((int)(((byte)(218)))));
-            this.pnCategory.Controls.Add(this.pictureBox4);
-            this.pnCategory.Controls.Add(this.lblTotalCategory);
-            this.pnCategory.Controls.Add(this.lblCategory);
-            this.pnCategory.Location = new System.Drawing.Point(1143, 12);
-            this.pnCategory.Name = "pnCategory";
-            this.pnCategory.Size = new System.Drawing.Size(370, 234);
-            this.pnCategory.TabIndex = 0;
-            // 
-            // pnFood
-            // 
-            this.pnFood.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(156)))), ((int)(((byte)(18)))));
-            this.pnFood.Controls.Add(this.pictureBox3);
-            this.pnFood.Controls.Add(this.lblTotalFood);
-            this.pnFood.Controls.Add(this.lblFood);
-            this.pnFood.Location = new System.Drawing.Point(767, 12);
-            this.pnFood.Name = "pnFood";
-            this.pnFood.Size = new System.Drawing.Size(370, 234);
-            this.pnFood.TabIndex = 0;
-            // 
-            // pnFoodChart
-            // 
-            this.pnFoodChart.Controls.Add(this.FoodChart);
-            this.pnFoodChart.Controls.Add(this.lblFoodChart);
-            this.pnFoodChart.Location = new System.Drawing.Point(15, 283);
-            this.pnFoodChart.Name = "pnFoodChart";
-            this.pnFoodChart.Size = new System.Drawing.Size(731, 662);
-            this.pnFoodChart.TabIndex = 1;
-            // 
-            // lblFoodChart
-            // 
-            this.lblFoodChart.AutoSize = true;
-            this.lblFoodChart.Font = new System.Drawing.Font("Cambria", 19.875F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFoodChart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.lblFoodChart.Location = new System.Drawing.Point(23, 0);
-            this.lblFoodChart.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.lblFoodChart.Name = "lblFoodChart";
-            this.lblFoodChart.Size = new System.Drawing.Size(684, 62);
-            this.lblFoodChart.TabIndex = 14;
-            this.lblFoodChart.Text = "Top món bán chạy hôm nay";
-            // 
-            // pnStaffChart
-            // 
-            this.pnStaffChart.BackColor = System.Drawing.Color.White;
-            this.pnStaffChart.Controls.Add(this.lblStaff2);
-            this.pnStaffChart.Controls.Add(this.pictureBox5);
-            this.pnStaffChart.Controls.Add(this.StaffChart);
-            this.pnStaffChart.Location = new System.Drawing.Point(770, 283);
-            this.pnStaffChart.Name = "pnStaffChart";
-            this.pnStaffChart.Size = new System.Drawing.Size(746, 306);
-            this.pnStaffChart.TabIndex = 2;
-            this.pnStaffChart.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.lblTable);
-            this.panel2.Controls.Add(this.lblTable2);
-            this.panel2.Controls.Add(this.TableChart);
-            this.panel2.Controls.Add(this.ipbTableChart);
-            this.panel2.Location = new System.Drawing.Point(770, 639);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(746, 306);
-            this.panel2.TabIndex = 2;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            this.pictureBox1.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.payment;
+            this.pictureBox1.Location = new System.Drawing.Point(193, 32);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(174, 159);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
             // 
             // lblRevenue
             // 
@@ -198,6 +129,27 @@
             this.lblRevenue2.Size = new System.Drawing.Size(366, 69);
             this.lblRevenue2.TabIndex = 3;
             this.lblRevenue2.Text = "DOANH THU";
+            // 
+            // pnBill
+            // 
+            this.pnBill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
+            this.pnBill.Controls.Add(this.pictureBox2);
+            this.pnBill.Controls.Add(this.lblTotalBill);
+            this.pnBill.Controls.Add(this.lblBill);
+            this.pnBill.Location = new System.Drawing.Point(391, 12);
+            this.pnBill.Name = "pnBill";
+            this.pnBill.Size = new System.Drawing.Size(370, 234);
+            this.pnBill.TabIndex = 0;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.bill;
+            this.pictureBox2.Location = new System.Drawing.Point(196, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(174, 188);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
             // 
             // lblTotalBill
             // 
@@ -225,29 +177,26 @@
             this.lblBill.Text = "HÓA ĐƠN";
             this.lblBill.Click += new System.EventHandler(this.lblBill_Click);
             // 
-            // lblTotalFood
+            // pnCategory
             // 
-            this.lblTotalFood.AutoSize = true;
-            this.lblTotalFood.Font = new System.Drawing.Font("Cambria", 28.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalFood.ForeColor = System.Drawing.Color.White;
-            this.lblTotalFood.Location = new System.Drawing.Point(39, 103);
-            this.lblTotalFood.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.lblTotalFood.Name = "lblTotalFood";
-            this.lblTotalFood.Size = new System.Drawing.Size(125, 88);
-            this.lblTotalFood.TabIndex = 4;
-            this.lblTotalFood.Text = "48";
+            this.pnCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(205)))), ((int)(((byte)(218)))));
+            this.pnCategory.Controls.Add(this.pictureBox4);
+            this.pnCategory.Controls.Add(this.lblTotalCategory);
+            this.pnCategory.Controls.Add(this.lblCategory);
+            this.pnCategory.Location = new System.Drawing.Point(1143, 12);
+            this.pnCategory.Name = "pnCategory";
+            this.pnCategory.Size = new System.Drawing.Size(370, 234);
+            this.pnCategory.TabIndex = 0;
             // 
-            // lblFood
+            // pictureBox4
             // 
-            this.lblFood.AutoSize = true;
-            this.lblFood.Font = new System.Drawing.Font("Cambria", 22.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFood.ForeColor = System.Drawing.Color.White;
-            this.lblFood.Location = new System.Drawing.Point(6, 23);
-            this.lblFood.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.lblFood.Name = "lblFood";
-            this.lblFood.Size = new System.Drawing.Size(252, 69);
-            this.lblFood.TabIndex = 3;
-            this.lblFood.Text = "MÓN ĂN";
+            this.pictureBox4.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.restaurant;
+            this.pictureBox4.Location = new System.Drawing.Point(196, 16);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(174, 172);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 5;
+            this.pictureBox4.TabStop = false;
             // 
             // lblTotalCategory
             // 
@@ -273,45 +222,105 @@
             this.lblCategory.TabIndex = 3;
             this.lblCategory.Text = "DANH MỤC";
             // 
+            // pnFood
+            // 
+            this.pnFood.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(156)))), ((int)(((byte)(18)))));
+            this.pnFood.Controls.Add(this.pictureBox3);
+            this.pnFood.Controls.Add(this.lblTotalFood);
+            this.pnFood.Controls.Add(this.lblFood);
+            this.pnFood.Location = new System.Drawing.Point(767, 12);
+            this.pnFood.Name = "pnFood";
+            this.pnFood.Size = new System.Drawing.Size(370, 234);
+            this.pnFood.TabIndex = 0;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.tray;
+            this.pictureBox3.Location = new System.Drawing.Point(196, 16);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(174, 172);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 5;
+            this.pictureBox3.TabStop = false;
+            // 
+            // lblTotalFood
+            // 
+            this.lblTotalFood.AutoSize = true;
+            this.lblTotalFood.Font = new System.Drawing.Font("Cambria", 28.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalFood.ForeColor = System.Drawing.Color.White;
+            this.lblTotalFood.Location = new System.Drawing.Point(39, 103);
+            this.lblTotalFood.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblTotalFood.Name = "lblTotalFood";
+            this.lblTotalFood.Size = new System.Drawing.Size(125, 88);
+            this.lblTotalFood.TabIndex = 4;
+            this.lblTotalFood.Text = "48";
+            // 
+            // lblFood
+            // 
+            this.lblFood.AutoSize = true;
+            this.lblFood.Font = new System.Drawing.Font("Cambria", 22.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFood.ForeColor = System.Drawing.Color.White;
+            this.lblFood.Location = new System.Drawing.Point(6, 23);
+            this.lblFood.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblFood.Name = "lblFood";
+            this.lblFood.Size = new System.Drawing.Size(252, 69);
+            this.lblFood.TabIndex = 3;
+            this.lblFood.Text = "MÓN ĂN";
+            // 
+            // pnFoodChart
+            // 
+            this.pnFoodChart.Controls.Add(this.FoodChart);
+            this.pnFoodChart.Controls.Add(this.lblFoodChart);
+            this.pnFoodChart.Location = new System.Drawing.Point(15, 283);
+            this.pnFoodChart.Name = "pnFoodChart";
+            this.pnFoodChart.Size = new System.Drawing.Size(731, 662);
+            this.pnFoodChart.TabIndex = 1;
+            // 
             // FoodChart
             // 
-            chartArea17.Name = "ChartArea";
-            this.FoodChart.ChartAreas.Add(chartArea17);
-            legend17.Name = "Legend1";
-            this.FoodChart.Legends.Add(legend17);
+            chartArea1.Name = "ChartArea";
+            this.FoodChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.FoodChart.Legends.Add(legend1);
             this.FoodChart.Location = new System.Drawing.Point(18, 68);
             this.FoodChart.Margin = new System.Windows.Forms.Padding(6);
             this.FoodChart.Name = "FoodChart";
-            series22.ChartArea = "ChartArea";
-            series22.IsVisibleInLegend = false;
-            series22.Legend = "Legend1";
-            series22.Name = "FoodName";
-            series23.ChartArea = "ChartArea";
-            series23.Legend = "Legend1";
-            series23.Name = "Số món ăn đã bán";
-            this.FoodChart.Series.Add(series22);
-            this.FoodChart.Series.Add(series23);
-            this.FoodChart.Size = new System.Drawing.Size(701, 594);
+            series1.ChartArea = "ChartArea";
+            series1.IsVisibleInLegend = false;
+            series1.Legend = "Legend1";
+            series1.Name = "FoodName";
+            series2.ChartArea = "ChartArea";
+            series2.Legend = "Legend1";
+            series2.Name = "Số món ăn đã bán";
+            this.FoodChart.Series.Add(series1);
+            this.FoodChart.Series.Add(series2);
+            this.FoodChart.Size = new System.Drawing.Size(701, 574);
             this.FoodChart.TabIndex = 15;
             this.FoodChart.Text = "chart1";
             // 
-            // StaffChart
+            // lblFoodChart
             // 
-            chartArea18.Name = "ChartArea";
-            this.StaffChart.ChartAreas.Add(chartArea18);
-            legend18.Name = "Legend1";
-            this.StaffChart.Legends.Add(legend18);
-            this.StaffChart.Location = new System.Drawing.Point(-3, 0);
-            this.StaffChart.Margin = new System.Windows.Forms.Padding(6);
-            this.StaffChart.Name = "StaffChart";
-            series24.ChartArea = "ChartArea";
-            series24.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series24.Legend = "Legend1";
-            series24.Name = "staff";
-            this.StaffChart.Series.Add(series24);
-            this.StaffChart.Size = new System.Drawing.Size(440, 306);
-            this.StaffChart.TabIndex = 7;
-            this.StaffChart.Text = "chart1";
+            this.lblFoodChart.AutoSize = true;
+            this.lblFoodChart.Font = new System.Drawing.Font("Cambria", 19.875F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFoodChart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.lblFoodChart.Location = new System.Drawing.Point(23, 0);
+            this.lblFoodChart.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblFoodChart.Name = "lblFoodChart";
+            this.lblFoodChart.Size = new System.Drawing.Size(684, 62);
+            this.lblFoodChart.TabIndex = 14;
+            this.lblFoodChart.Text = "Top món bán chạy hôm nay";
+            // 
+            // pnStaffChart
+            // 
+            this.pnStaffChart.BackColor = System.Drawing.Color.White;
+            this.pnStaffChart.Controls.Add(this.lblStaff2);
+            this.pnStaffChart.Controls.Add(this.pictureBox5);
+            this.pnStaffChart.Controls.Add(this.StaffChart);
+            this.pnStaffChart.Location = new System.Drawing.Point(770, 283);
+            this.pnStaffChart.Name = "pnStaffChart";
+            this.pnStaffChart.Size = new System.Drawing.Size(746, 306);
+            this.pnStaffChart.TabIndex = 2;
+            this.pnStaffChart.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // lblStaff2
             // 
@@ -326,29 +335,6 @@
             this.lblStaff2.TabIndex = 9;
             this.lblStaff2.Text = "NHÂN VIÊN";
             // 
-            // lblStaff
-            // 
-            this.lblStaff.AutoSize = true;
-            this.lblStaff.BackColor = System.Drawing.Color.White;
-            this.lblStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStaff.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lblStaff.Location = new System.Drawing.Point(1342, 551);
-            this.lblStaff.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.lblStaff.Name = "lblStaff";
-            this.lblStaff.Size = new System.Drawing.Size(132, 79);
-            this.lblStaff.TabIndex = 10;
-            this.lblStaff.Text = "3/5";
-            // 
-            // ipbTableChart
-            // 
-            this.ipbTableChart.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.restaurant__1_;
-            this.ipbTableChart.Location = new System.Drawing.Point(30, 32);
-            this.ipbTableChart.Name = "ipbTableChart";
-            this.ipbTableChart.Size = new System.Drawing.Size(274, 226);
-            this.ipbTableChart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ipbTableChart.TabIndex = 8;
-            this.ipbTableChart.TabStop = false;
-            // 
             // pictureBox5
             // 
             this.pictureBox5.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.user;
@@ -359,63 +345,48 @@
             this.pictureBox5.TabIndex = 8;
             this.pictureBox5.TabStop = false;
             // 
-            // pictureBox3
+            // StaffChart
             // 
-            this.pictureBox3.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.tray;
-            this.pictureBox3.Location = new System.Drawing.Point(196, 16);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(174, 172);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 5;
-            this.pictureBox3.TabStop = false;
+            chartArea2.Name = "ChartArea";
+            this.StaffChart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.StaffChart.Legends.Add(legend2);
+            this.StaffChart.Location = new System.Drawing.Point(-3, 0);
+            this.StaffChart.Margin = new System.Windows.Forms.Padding(6);
+            this.StaffChart.Name = "StaffChart";
+            series3.ChartArea = "ChartArea";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series3.Legend = "Legend1";
+            series3.Name = "staff";
+            this.StaffChart.Series.Add(series3);
+            this.StaffChart.Size = new System.Drawing.Size(440, 306);
+            this.StaffChart.TabIndex = 7;
+            this.StaffChart.Text = "chart1";
             // 
-            // pictureBox4
+            // panel2
             // 
-            this.pictureBox4.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.restaurant;
-            this.pictureBox4.Location = new System.Drawing.Point(196, 16);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(174, 172);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 5;
-            this.pictureBox4.TabStop = false;
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.lblTable);
+            this.panel2.Controls.Add(this.lblTable2);
+            this.panel2.Controls.Add(this.TableChart);
+            this.panel2.Controls.Add(this.ipbTableChart);
+            this.panel2.Location = new System.Drawing.Point(770, 639);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(746, 306);
+            this.panel2.TabIndex = 2;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // pictureBox2
+            // lblTable
             // 
-            this.pictureBox2.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.bill;
-            this.pictureBox2.Location = new System.Drawing.Point(196, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(174, 188);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.payment;
-            this.pictureBox1.Location = new System.Drawing.Point(193, 32);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(174, 159);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            // 
-            // TableChart
-            // 
-            chartArea16.Name = "ChartArea";
-            this.TableChart.ChartAreas.Add(chartArea16);
-            legend16.Name = "Legend1";
-            this.TableChart.Legends.Add(legend16);
-            this.TableChart.Location = new System.Drawing.Point(360, 0);
-            this.TableChart.Margin = new System.Windows.Forms.Padding(6);
-            this.TableChart.Name = "TableChart";
-            series21.ChartArea = "ChartArea";
-            series21.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series21.Legend = "Legend1";
-            series21.Name = "table";
-            this.TableChart.Series.Add(series21);
-            this.TableChart.Size = new System.Drawing.Size(386, 306);
-            this.TableChart.TabIndex = 11;
-            this.TableChart.Text = "chart1";
+            this.lblTable.AutoSize = true;
+            this.lblTable.Font = new System.Drawing.Font("Cambria", 25.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(87)))), ((int)(((byte)(119)))));
+            this.lblTable.Location = new System.Drawing.Point(105, 261);
+            this.lblTable.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblTable.Name = "lblTable";
+            this.lblTable.Size = new System.Drawing.Size(234, 81);
+            this.lblTable.TabIndex = 13;
+            this.lblTable.Text = "12/20";
             // 
             // lblTable2
             // 
@@ -430,17 +401,46 @@
             this.lblTable2.Text = "BÀN ĂN";
             this.lblTable2.Click += new System.EventHandler(this.lblTable2_Click);
             // 
-            // lblTable
+            // TableChart
             // 
-            this.lblTable.AutoSize = true;
-            this.lblTable.Font = new System.Drawing.Font("Cambria", 25.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(87)))), ((int)(((byte)(119)))));
-            this.lblTable.Location = new System.Drawing.Point(105, 261);
-            this.lblTable.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.lblTable.Name = "lblTable";
-            this.lblTable.Size = new System.Drawing.Size(234, 81);
-            this.lblTable.TabIndex = 13;
-            this.lblTable.Text = "12/20";
+            chartArea3.Name = "ChartArea";
+            this.TableChart.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.TableChart.Legends.Add(legend3);
+            this.TableChart.Location = new System.Drawing.Point(360, 0);
+            this.TableChart.Margin = new System.Windows.Forms.Padding(6);
+            this.TableChart.Name = "TableChart";
+            series4.ChartArea = "ChartArea";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series4.Legend = "Legend1";
+            series4.Name = "table";
+            this.TableChart.Series.Add(series4);
+            this.TableChart.Size = new System.Drawing.Size(386, 306);
+            this.TableChart.TabIndex = 11;
+            this.TableChart.Text = "chart1";
+            // 
+            // ipbTableChart
+            // 
+            this.ipbTableChart.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.restaurant__1_;
+            this.ipbTableChart.Location = new System.Drawing.Point(30, 32);
+            this.ipbTableChart.Name = "ipbTableChart";
+            this.ipbTableChart.Size = new System.Drawing.Size(274, 226);
+            this.ipbTableChart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ipbTableChart.TabIndex = 8;
+            this.ipbTableChart.TabStop = false;
+            // 
+            // lblStaff
+            // 
+            this.lblStaff.AutoSize = true;
+            this.lblStaff.BackColor = System.Drawing.Color.White;
+            this.lblStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStaff.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lblStaff.Location = new System.Drawing.Point(1342, 551);
+            this.lblStaff.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblStaff.Name = "lblStaff";
+            this.lblStaff.Size = new System.Drawing.Size(132, 79);
+            this.lblStaff.TabIndex = 10;
+            this.lblStaff.Text = "3/5";
             // 
             // frmAdmin
             // 
@@ -463,27 +463,27 @@
             this.Load += new System.EventHandler(this.frmAdmin_Load);
             this.pnRevenue.ResumeLayout(false);
             this.pnRevenue.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnBill.ResumeLayout(false);
             this.pnBill.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnCategory.ResumeLayout(false);
             this.pnCategory.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.pnFood.ResumeLayout(false);
             this.pnFood.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.pnFoodChart.ResumeLayout(false);
             this.pnFoodChart.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FoodChart)).EndInit();
             this.pnStaffChart.ResumeLayout(false);
             this.pnStaffChart.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StaffChart)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.FoodChart)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.StaffChart)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ipbTableChart)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TableChart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ipbTableChart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

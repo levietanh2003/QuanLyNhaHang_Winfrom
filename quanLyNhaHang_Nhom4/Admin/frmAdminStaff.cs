@@ -296,8 +296,22 @@ namespace quanLyNhaHang_Nhom4.Admin
                 fillComboboxPosition();
             }
         }
+        private void txtStaffID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //if (!char.IsDigit(e.KeyChar) || char.IsControl(e.KeyChar) )
+            //{
+            //    e.Handled = true;
+            //    msg.Show("Chỉ cho phép nhập số và không vượt quá 5 kí tự.", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Warning);
+            //}
+        }
+        private void txtStaffID_TextChanged(object sender, EventArgs e)
+        {
+            if (txtStaffID.Text.Length > 5)
+            {
+                txtStaffID.Text = txtStaffID.Text.Substring(0, 5);
+                msg.Show("Chỉ cho phép không vượt quá 5 kí tự.", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Warning);
+            }
+        }
         #endregion
-
-
     }
-}
+ }

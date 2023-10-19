@@ -62,7 +62,13 @@ namespace quanLyNhaHang_Nhom4.Manager
                 n = dgvMaterialList.Rows.Add();
                 dgvMaterialList.Rows[n].Cells[0].Value = item.idMaterial;
                 dgvMaterialList.Rows[n].Cells[1].Value = item.nameMaterial;
-                dgvMaterialList.Rows[n].Cells[2].Value = item.Unit.nameUnit;
+                //dgvMaterialList.Rows[n].Cells[2].Value = item.Unit.nameUnit;
+                string cellValue = (item.Unit != null && item.Unit.nameUnit != null)
+                    ? item.Unit.nameUnit
+                    : string.Empty;
+
+                dgvMaterialList.Rows[n].Cells[2].Value = cellValue;
+
             }
             dgvMaterialList.BorderStyle = BorderStyle.None;
             dgvMaterialList.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
@@ -121,7 +127,12 @@ namespace quanLyNhaHang_Nhom4.Manager
             {
                 txtMaterialID.Text = dgvMaterialList.Rows[selected].Cells[0].Value.ToString();
                 txtMaterialName.Text = dgvMaterialList.Rows[selected].Cells[1].Value.ToString();
-                cmbUnit.Text = dgvMaterialList.Rows[selected].Cells[2].Value.ToString();
+                //cmbUnit.Text = dgvMaterialList.Rows[selected].Cells[2].Value.ToString();
+                string cellValue = dgvMaterialList.Rows[selected].Cells[2].Value != null
+                    ? dgvMaterialList.Rows[selected].Cells[2].Value.ToString()
+                    : string.Empty;
+
+                cmbUnit.Text = cellValue;
             }
             catch
             {
@@ -329,7 +340,7 @@ namespace quanLyNhaHang_Nhom4.Manager
             try
             {
                 int idMaterial = Int32.Parse(txtMaterialID.Text);
-                if (idMaterial.ToString() == "")
+                if (txtMaterialID.Text == "")
                 {
                     msg.Show("Vui lòng chọn loại nguyên liệu cần xóa !", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Warning);
                 }
@@ -339,19 +350,17 @@ namespace quanLyNhaHang_Nhom4.Manager
                     {
                         try
                         {
-                            if (rm.USP_DeleteMaterial(idMaterial) > 0)
-                            {
-                                msg.Show("Xóa thành công", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Success);
-                                loadMaterialList();
-                            }
-                            else
-                            {
-                                msg.Show("Bạn không thể xóa nguyên liệu", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Error);
-                            }
+
+                            rm.USP_DeleteMaterial(idMaterial);
+                            //var deleteMaterial = (from x in rm.Materials where x.idMaterial  == idMaterial && x.idUnit == null select x).FirstOrDefault();
+                            rm.SaveChanges();
+                            loadMaterialList();
+                            msg.Show("Xóa thành công", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Success);
                         }
                         catch
                         {
                             msg.Show("Bạn không thể xóa nguyên liệu", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Error);
+                           
                         }
                     }
                 }
