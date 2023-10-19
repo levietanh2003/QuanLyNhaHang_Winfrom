@@ -334,11 +334,6 @@ namespace quanLyNhaHang_Nhom4.Manager
             this.pnlDesktop.Controls.Add((frmAdminStaff)frmAdminStaff);
             frmAdminStaff.Show();
         }
-
-
-
-        #endregion
-
         private void pnlDesktop_Paint(object sender, PaintEventArgs e)
         {
 
@@ -348,5 +343,13 @@ namespace quanLyNhaHang_Nhom4.Manager
         {
 
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            DateTime dateTimeNow = DateTime.Now;
+
+            lblClock.Text = dateTimeNow.ToString("dd/MM/yyyy - HH:mm:ss");
+        }
+        #endregion
     }
 }
