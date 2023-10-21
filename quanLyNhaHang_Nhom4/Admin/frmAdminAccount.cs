@@ -204,11 +204,8 @@ namespace quanLyNhaHang_Nhom4.Admin
                                 acc.typeAccount = typeAccount;
                                 acc.idStaff = idStaff;
                                 acc.userName = userName;
-                                if(contextDB.SaveChanges() > 0)
-                                {
-                                    msg.Show("Sửa thông tin khoản thành công", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Success);
-
-                                }
+                                contextDB.SaveChanges();
+                                msg.Show("Sửa thông tin khoản thành công", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Success);
                                 resetText();
                             }
                             catch
@@ -242,11 +239,11 @@ namespace quanLyNhaHang_Nhom4.Admin
                             // lay ra account tuong ung tren userName
                             Account acc = (from x in contextDB.Accounts where x.userName == userName select x).FirstOrDefault();
                             contextDB.Accounts.Remove(acc);
-                            if(contextDB.SaveChanges() > 0)
-                            {
-                                msg.Show("Xóa tài khoản thành công", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Success);
-                            }
-                        }catch
+                            contextDB.SaveChanges();
+                            msg.Show("Xóa tài khoản thành công", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Success);
+
+                        }
+                        catch
                         {
                             msg.Show("Đã xảy ra lỗi khi xóa tài khoản", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Error);
                         }
@@ -278,10 +275,9 @@ namespace quanLyNhaHang_Nhom4.Admin
                         Account acc = (from x in contextDB.Accounts where x.userName == userName select x).FirstOrDefault();
                         // tra password lai "1"
                         acc.passWord = "1";
-                        if (contextDB.SaveChanges() > 0)
-                        {
-                            msg.Show("Đặt lại mật khẩu thành công.\nMật khẩu mặc định của bạn là: 1", "THÔNG BÁO", msg.Buttons.Yes,msg.Icon.Success);
-                        }
+                        contextDB.SaveChanges();
+                        msg.Show("Đặt lại mật khẩu thành công.\nMật khẩu mặc định của bạn là: 1", "THÔNG BÁO", msg.Buttons.Yes,msg.Icon.Success);
+
                     }
                     catch
                     {

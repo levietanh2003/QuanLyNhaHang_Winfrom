@@ -299,6 +299,7 @@
             this.btn_print.TabIndex = 48;
             this.btn_print.Text = "Xuất Phiếu";
             this.btn_print.UseVisualStyleBackColor = true;
+            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
             // 
             // lbl_den
             // 

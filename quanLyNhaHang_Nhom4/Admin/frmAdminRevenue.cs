@@ -1,4 +1,5 @@
-﻿using quanLyNhaHang_Nhom4.Database;
+﻿using Microsoft.Office.Interop.Excel;
+using quanLyNhaHang_Nhom4.Database;
 using quanLyNhaHang_Nhom4.Manager;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using DataTable = System.Data.DataTable;
 
 namespace quanLyNhaHang_Nhom4.Admin
 {
@@ -126,10 +128,13 @@ namespace quanLyNhaHang_Nhom4.Admin
             int desiredFontSize = 12;
 
             // chinh font size cho toan bo dgv
-            dataGridView.DefaultCellStyle.Font = new Font("Cambria", desiredFontSize);
+            //dataGridView.DefaultCellStyle.Font = new Font("Cambria", desiredFontSize);
+            dataGridView.DefaultCellStyle.Font = new System.Drawing.Font("Cambria", desiredFontSize);
 
             // chinh frontSize cho ten cot
-            dataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Cambria", 15, FontStyle.Bold);
+            //dataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Cambria", 15, FontStyle.Bold);
+            dataGridView.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Cambria", 15, FontStyle.Bold);
+
             dataGridView.BorderStyle = BorderStyle.None;
             dataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
             dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
@@ -141,6 +146,171 @@ namespace quanLyNhaHang_Nhom4.Admin
             dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
             dataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+        }
+
+        // xuat file excel theo ngay thang yeu cau
+        void explorFile(System.Data.DataTable data, string sheetName, string title)
+        {
+            //Tạo các đối tượng Excel
+
+            Microsoft.Office.Interop.Excel.Application oExcel = new Microsoft.Office.Interop.Excel.Application();
+
+            Microsoft.Office.Interop.Excel.Workbooks oBooks;
+
+            Microsoft.Office.Interop.Excel.Sheets oSheets;
+
+            Microsoft.Office.Interop.Excel.Workbook oBook;
+
+            Microsoft.Office.Interop.Excel.Worksheet oSheet;
+
+            //Tạo mới một Excel WorkBook 
+
+            oExcel.Visible = true;
+
+            oExcel.DisplayAlerts = false;
+
+            oExcel.Application.SheetsInNewWorkbook = 1;
+
+            oBooks = oExcel.Workbooks;
+
+            oBook = (Microsoft.Office.Interop.Excel.Workbook)(oExcel.Workbooks.Add(Type.Missing));
+
+            oSheets = oBook.Worksheets;
+
+            oSheet = (Microsoft.Office.Interop.Excel.Worksheet)oSheets.get_Item(1);
+
+            oSheet.Name = sheetName;
+
+            // tao phan tieu de
+            Microsoft.Office.Interop.Excel.Range head = oSheet.get_Range("A1", "G1");
+
+            head.MergeCells = true;
+
+            head.Value2 = title;
+
+            head.Font.Bold = true;
+
+            head.Font.Name = "Times New Roman";
+
+            head.Font.Size = "20";
+
+            head.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+
+            // tao tieu de cot
+            Microsoft.Office.Interop.Excel.Range cl1 = oSheet.get_Range("A3", "A3");
+
+            cl1.Value2 = "Mã Hóa Đơn";
+
+            cl1.ColumnWidth = 12;
+
+            Microsoft.Office.Interop.Excel.Range cl2 = oSheet.get_Range("B3", "B3");
+
+            cl2.Value2 = "Tổng Tiền";
+
+            cl2.ColumnWidth = 25.0;
+
+            Microsoft.Office.Interop.Excel.Range cl3 = oSheet.get_Range("C3", "C3");
+
+            cl3.Value2 = "Giảm Giá";
+            cl3.ColumnWidth = 12.0;
+
+            Microsoft.Office.Interop.Excel.Range cl4 = oSheet.get_Range("D3", "D3");
+
+            cl4.Value2 = "Ngày Vào";
+
+            cl4.ColumnWidth = 10.5;
+
+            Microsoft.Office.Interop.Excel.Range cl5 = oSheet.get_Range("E3", "E3");
+
+            cl5.Value2 = "Ngày Ra";
+
+            cl5.ColumnWidth = 20.5;
+
+            Microsoft.Office.Interop.Excel.Range cl6 = oSheet.get_Range("F3", "F3");
+
+            cl6.Value2 = "NV Thanh Toán";
+
+            cl6.ColumnWidth = 18.5;
+
+            //Microsoft.Office.Interop.Excel.Range cl7 = oSheet.get_Range("G3", "G3");
+
+            //cl7.Value2 = "Tình trạng";
+
+            //cl7.ColumnWidth = 13.5;
+
+            Microsoft.Office.Interop.Excel.Range rowHead = oSheet.get_Range("A3", "G3");
+
+            rowHead.Font.Bold = true;
+
+            // ke vien
+            rowHead.Borders.LineStyle = Microsoft.Office.Interop.Excel.Constants.xlSolid;
+
+            // thiet lap mau nen
+            rowHead.Interior.ColorIndex = 6;
+            rowHead.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+
+            // tao mang theo dataTable
+            object[,] arr = new object[data.Rows.Count, data.Columns.Count];
+
+            //Chuyển dữ liệu từ DataTable vào mảng đối tượng
+            // chuyen di lieu dataTable vao mang doi tuong
+
+            for (int row = 0; row < data.Rows.Count; row++)
+            {
+                DataRow dataRow = data.Rows[row];
+
+                for (int col = 0; col < data.Columns.Count; col++)
+                {
+                    arr[row, col] = dataRow[col];
+                }
+            }
+            //foreach (DataGridViewRow row in dgvViewRevenue.Rows)
+            //{
+            //    if (!row.IsNewRow)
+            //    {
+            //        DataRow dataRow = data.NewRow();
+
+            //        // Lặp qua từng ô trong dòng và sao chép dữ liệu vào DataRow
+            //        // lap qua tung o trong dong va sao chep du lieu vao DataRow
+            //        for (int i = 0; i < dgvViewRevenue.Columns.Count; i++)
+            //        {
+            //            dataRow[i] = row.Cells[i].Value;
+            //        }
+
+            //        // Thêm DataRow vào DataTable
+            //        data.Rows.Add(dataRow);
+            //    }
+            //}
+
+            // thiet lap vung dien du lieu
+            int rowStart = 4;
+
+            int columnStart = 1;
+
+            int rowEnd = rowStart + data.Rows.Count - 2;
+
+            int columnEnd = data.Columns.Count;
+
+            // o bat dau dien du lieu
+            Microsoft.Office.Interop.Excel.Range c1 = (Microsoft.Office.Interop.Excel.Range)oSheet.Cells[rowStart, columnStart];
+            // o ket thuc dien du lieu
+            Microsoft.Office.Interop.Excel.Range c2 = (Microsoft.Office.Interop.Excel.Range)oSheet.Cells[rowEnd, columnEnd];
+            // lay ve vung dien du lieu
+            Microsoft.Office.Interop.Excel.Range range = oSheet.get_Range(c1, c2);
+            // dien du lieu vao vung da thiet lap
+            range.Value2 = arr;
+            // Kẻ viền
+
+            range.Borders.LineStyle = Microsoft.Office.Interop.Excel.Constants.xlSolid;
+
+            // Căn giữa cột mã nhân viên
+
+            //Microsoft.Office.Interop.Excel.Range c3 = (Microsoft.Office.Interop.Excel.Range)oSheet.Cells[rowEnd, columnStart];
+
+            //Microsoft.Office.Interop.Excel.Range c4 = oSheet.get_Range(c1, c3);
+
+            //Căn giữa cả bảng 
+            oSheet.get_Range(c1, c2).HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
         }
         #endregion
 
@@ -196,13 +366,44 @@ namespace quanLyNhaHang_Nhom4.Admin
             loadListBillByDate(dtpkFromDate.Value, dtpkToDate.Value);
             loadChart();
         }
-
-        #endregion
-
         private void dtpkToDate_ValueChanged(object sender, EventArgs e)
         {
             loadListBillByDate(dtpkFromDate.Value, dtpkToDate.Value);
             loadChart();
         }
+
+        private void btn_print_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new System.Data.DataTable();
+
+            DataColumn col1 = new DataColumn("Mã Hóa Đơn");
+            DataColumn col2 = new DataColumn("Tổng Tiền");
+            DataColumn col3 = new DataColumn("Giảm Giá");
+            DataColumn col4 = new DataColumn("Ngày Vào");
+            DataColumn col5 = new DataColumn("Ngày Ra");
+            DataColumn col6 = new DataColumn("NV Thanh Toán");
+
+            dt.Columns.Add(col1);
+            dt.Columns.Add(col2);
+            dt.Columns.Add(col3);
+            dt.Columns.Add(col4);
+            dt.Columns.Add(col5);
+            dt.Columns.Add(col6);
+
+            foreach (DataGridViewRow dgvRow in dgvViewRevenue.Rows)
+            {
+                DataRow dtRow = dt.NewRow();
+                dtRow[0] = dgvRow.Cells[0].Value;
+                dtRow[1] = dgvRow.Cells[1].Value;
+                dtRow[2] = dgvRow.Cells[2].Value;
+                dtRow[3] = dgvRow.Cells[3].Value;
+                dtRow[4] = dgvRow.Cells[4].Value;
+                dtRow[5] = dgvRow.Cells[5].Value;
+
+                dt.Rows.Add(dtRow);
+            }
+            explorFile(dt, "Danh sach", "BÁO CÁO DOANH THU");
+        }
+        #endregion
     }
 }
