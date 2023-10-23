@@ -63,6 +63,7 @@ namespace quanLyNhaHang_Nhom4.Admin
             FoodChart.ChartAreas["ChartArea"].AxisX.Title = "Tên món ăn";
             FoodChart.ChartAreas["ChartArea"].AxisX.Interval = 1;
             FoodChart.Series["Số món ăn đã bán"].IsValueShownAsLabel = true;
+            //  đặt khoảng cách giữa các nhãn trên trục X thành 1.
             FoodChart.ChartAreas["ChartArea"].AxisX.LabelStyle.Interval = 1;
 
             // load top mon an len dgvFoodRevenue
@@ -79,6 +80,7 @@ namespace quanLyNhaHang_Nhom4.Admin
             }
             setDataGridView(dgvFoodRevenue);
 
+            // Phương thức đặt độ rộng của các đường lưới chính trên trục X của biểu đồ thành 0. Nó cũng xóa bỏ các điểm dữ liệu hiện có từ tất cả các chuỗi trong biểu đồ.
             FoodChart.ChartAreas[0].AxisX.MajorGrid.LineWidth = 0;
             foreach (var series in FoodChart.Series)
             {
@@ -264,23 +266,6 @@ namespace quanLyNhaHang_Nhom4.Admin
                     arr[row, col] = dataRow[col];
                 }
             }
-            //foreach (DataGridViewRow row in dgvViewRevenue.Rows)
-            //{
-            //    if (!row.IsNewRow)
-            //    {
-            //        DataRow dataRow = data.NewRow();
-
-            //        // Lặp qua từng ô trong dòng và sao chép dữ liệu vào DataRow
-            //        // lap qua tung o trong dong va sao chep du lieu vao DataRow
-            //        for (int i = 0; i < dgvViewRevenue.Columns.Count; i++)
-            //        {
-            //            dataRow[i] = row.Cells[i].Value;
-            //        }
-
-            //        // Thêm DataRow vào DataTable
-            //        data.Rows.Add(dataRow);
-            //    }
-            //}
 
             // thiet lap vung dien du lieu
             int rowStart = 4;

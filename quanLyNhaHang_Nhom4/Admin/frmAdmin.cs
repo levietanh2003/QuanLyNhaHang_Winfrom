@@ -57,8 +57,13 @@ namespace quanLyNhaHang_Nhom4.Admin
             int totalStaff = (from s in rm.Staffs select s).ToList().Count();
             // dem so luong nhan vien da cham cong
             int totalStaffCheckIn = rm.USP_GetTotalAttendanceList().ToList().Count();
+            // đặt Palette của biểu đồ thành ChartColorPalette.None, sau đó đặt PaletteCustomColors thành một mảng các màu tùy chỉnh.
             StaffChart.Palette = ChartColorPalette.None;
             StaffChart.PaletteCustomColors = new Color[] { Color.FromArgb(255, 192, 72), Color.FromArgb(11, 232, 129), Color.Yellow };
+            /*
+            Điểm đầu tiên biểu thị số lượng nhân viên đã chấm công và được gán nhãn là "Đi làm". 
+            Điểm thứ hai biểu thị số lượng nhân viên vắng mặt (tổng số nhân viên trừ số lượng nhân viên đã chấm công) và được gán nhãn là "Vắng".
+            */
             StaffChart.Series["staff"].Points.AddXY("Đi làm", totalStaffCheckIn);
             StaffChart.Series["staff"].Points.AddXY("Vắng", totalStaff - totalStaffCheckIn);
             lblStaff.Text = totalStaffCheckIn.ToString() + "/" + totalStaff.ToString();
