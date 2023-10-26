@@ -264,13 +264,21 @@ namespace quanLyNhaHang_Nhom4.Admin
                 {
                     if (msg.Show("Bạn vẫn chưa tải hình món ăn lên.\n Bạn có chắc chắn sửa món?", "THÔNG BÁO", msg.Buttons.YesNo, msg.Icon.Question) == DialogResult.Yes)
                     {
-                        foodEdit.idFood = idFood;
-                        foodEdit.nameFood = name;
-                        foodEdit.price = price;
-                        foodEdit.imageFood = linkImage;
-                        contextDB.SaveChanges();
-                        msg.Show("Sửa thành công", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Success);
-                        loadListFood();
+                        try
+                        {
+                            foodEdit.idFood = idFood;
+                            foodEdit.nameFood = name;
+                            foodEdit.price = price;
+                            foodEdit.imageFood = linkImage;
+                            contextDB.SaveChanges();
+                            msg.Show("Sửa thành công", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Success);
+                            loadListFood();
+                        }
+                        catch
+                        {
+
+                        }
+
                     }
                 }
                 else

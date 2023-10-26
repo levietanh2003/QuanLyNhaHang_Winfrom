@@ -146,12 +146,16 @@ namespace quanLyNhaHang_Nhom4.Admin
                         {
                             try
                             {
-                                if (contextDB.USP_InsertAccount(userName, password, displayName, typeAccount, idStaff) > 0)
-                                {
-                                    LoadAccount();
-                                    msg.Show("Tạo tài khoản thành công", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Success);
-                                    resetText();
-                                }
+                                contextDB.USP_InsertAccount(userName, password, displayName, typeAccount, idStaff);
+                                LoadAccount();
+                                msg.Show("Tạo tài khoản thành công", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Success);
+                                resetText();
+                                //if (contextDB.USP_InsertAccount(userName, password, displayName, typeAccount, idStaff) > 0)
+                                //{
+                                //    LoadAccount();
+                                //    msg.Show("Tạo tài khoản thành công", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Success);
+                                //    resetText();
+                                //}
                             }
                             catch
                             {

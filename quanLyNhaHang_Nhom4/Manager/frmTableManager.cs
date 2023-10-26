@@ -352,6 +352,7 @@ namespace quanLyNhaHang_Nhom4.Manager
                     table.statusTable = "Trống";
                     contextDB.SaveChanges();
                     loadTable();
+                    // loi
                 }
             }
             else

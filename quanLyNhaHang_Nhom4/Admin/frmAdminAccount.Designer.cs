@@ -109,6 +109,11 @@
             this.nudTypeAccount.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudTypeAccount.Location = new System.Drawing.Point(274, 480);
             this.nudTypeAccount.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.nudTypeAccount.Maximum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nudTypeAccount.Name = "nudTypeAccount";
             this.nudTypeAccount.Size = new System.Drawing.Size(163, 36);
             this.nudTypeAccount.TabIndex = 24;
