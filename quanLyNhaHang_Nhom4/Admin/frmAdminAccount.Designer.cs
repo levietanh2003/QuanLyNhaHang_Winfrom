@@ -398,7 +398,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.toolStrip1.Size = new System.Drawing.Size(836, 43);
+            this.toolStrip1.Size = new System.Drawing.Size(888, 50);
             this.toolStrip1.TabIndex = 34;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -408,21 +408,21 @@
             this.toolStripButton1.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.Tatice_Cristal_Intense_Loupe_256;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(46, 37);
+            this.toolStripButton1.Size = new System.Drawing.Size(46, 44);
             this.toolStripButton1.Text = "toolStripButton1";
             // 
             // toolstripTim
             // 
-            this.toolstripTim.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.toolstripTim.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolstripTim.Name = "toolstripTim";
-            this.toolstripTim.Size = new System.Drawing.Size(263, 37);
+            this.toolstripTim.Size = new System.Drawing.Size(253, 44);
             this.toolstripTim.Text = "Tìm kiếm tài khoản";
             // 
             // txtFindAccountByName
             // 
             this.txtFindAccountByName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtFindAccountByName.Name = "txtFindAccountByName";
-            this.txtFindAccountByName.Size = new System.Drawing.Size(500, 43);
+            this.txtFindAccountByName.Size = new System.Drawing.Size(500, 50);
             this.txtFindAccountByName.TextChanged += new System.EventHandler(this.txtFindAccountByName_TextChanged);
             // 
             // frmAdminAccount

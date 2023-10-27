@@ -117,9 +117,6 @@ namespace quanLyNhaHang_Nhom4.Manager
         {
 
         }
-
-        #endregion
-
         private void lblSupplier_Click(object sender, EventArgs e)
         {
 
@@ -129,5 +126,8 @@ namespace quanLyNhaHang_Nhom4.Manager
         {
 
         }
+        #endregion
+
+
     }
 }

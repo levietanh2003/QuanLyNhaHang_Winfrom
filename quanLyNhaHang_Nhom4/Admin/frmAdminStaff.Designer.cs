@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdminStaff));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnEditPosition = new System.Windows.Forms.Button();
             this.cmbPosition = new System.Windows.Forms.ComboBox();
@@ -319,7 +320,7 @@
             // btnShowStaff
             // 
             this.btnShowStaff.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowStaff.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.bx_show_icon;
+            this.btnShowStaff.Image = ((System.Drawing.Image)(resources.GetObject("btnShowStaff.Image")));
             this.btnShowStaff.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnShowStaff.Location = new System.Drawing.Point(720, 37);
             this.btnShowStaff.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -335,7 +336,7 @@
             // btnDeleteStaff
             // 
             this.btnDeleteStaff.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteStaff.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.Close_2_icon;
+            this.btnDeleteStaff.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteStaff.Image")));
             this.btnDeleteStaff.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDeleteStaff.Location = new System.Drawing.Point(487, 37);
             this.btnDeleteStaff.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -349,7 +350,7 @@
             // btnEditStaff
             // 
             this.btnEditStaff.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditStaff.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.Pencil_icon;
+            this.btnEditStaff.Image = ((System.Drawing.Image)(resources.GetObject("btnEditStaff.Image")));
             this.btnEditStaff.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEditStaff.Location = new System.Drawing.Point(264, 37);
             this.btnEditStaff.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -363,7 +364,7 @@
             // btnAddStaff
             // 
             this.btnAddStaff.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddStaff.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.Actions_list_add_icon;
+            this.btnAddStaff.Image = ((System.Drawing.Image)(resources.GetObject("btnAddStaff.Image")));
             this.btnAddStaff.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddStaff.Location = new System.Drawing.Point(35, 37);
             this.btnAddStaff.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -494,14 +495,14 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 18);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.toolStrip1.Size = new System.Drawing.Size(841, 43);
+            this.toolStrip1.Size = new System.Drawing.Size(893, 50);
             this.toolStrip1.TabIndex = 15;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStripButton1
             // 
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.Tatice_Cristal_Intense_Loupe_256;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(46, 37);
@@ -509,10 +510,10 @@
             // 
             // toolstripTim
             // 
-            this.toolstripTim.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.toolstripTim.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolstripTim.Name = "toolstripTim";
-            this.toolstripTim.Size = new System.Drawing.Size(268, 37);
-            this.toolstripTim.Text = "Tìm kiếm danh mục";
+            this.toolstripTim.Size = new System.Drawing.Size(258, 44);
+            this.toolstripTim.Text = "Tìm kiếm nhân viên";
             // 
             // txtFindTableName
             // 

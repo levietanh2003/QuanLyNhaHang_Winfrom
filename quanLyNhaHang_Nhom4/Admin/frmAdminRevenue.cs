@@ -55,7 +55,7 @@ namespace quanLyNhaHang_Nhom4.Admin
             setDataGridView(dgvViewRevenue);
         }
 
-        // load bill len chart va dgvRevenue
+        // load bill len chart va dgvTopRevenue
         void loadChart()
         {
             
@@ -304,7 +304,7 @@ namespace quanLyNhaHang_Nhom4.Admin
         {
             DateTime today = DateTime.Now;
             dtpkFromDate.Value = DateTime.Parse("01/01/2023");
-            loadListAllBill();
+            dtpkToDate.Value = new DateTime(today.Year, today.Month, today.Day);
         }
         private void rbt_today_CheckedChanged(object sender, EventArgs e)
         {

@@ -155,7 +155,7 @@ namespace quanLyNhaHang_Nhom4.Manager
                     }
                     catch
                     {
-                        msg.Show("Đã có lỗi gì xảy ra khi thêm chức vụ.", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Error);
+                        msg.Show("Đã có lỗi gì xảy ra khi xoa chức vụ.", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Error);
 
                     }
                 }

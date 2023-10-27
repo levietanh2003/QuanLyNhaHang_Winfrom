@@ -166,14 +166,16 @@ namespace quanLyNhaHang_Nhom4.Manager
                 }
                 else
                 {
-                    ListViewItem lsvItem = new ListViewItem(material);
-                    lsvItem.SubItems.Add(number.ToString());
-                    lsvItem.SubItems.Add(price.ToString());
-                    lsvItem.SubItems.Add((number * price).ToString());
-                    lsvBillInfoOfWH.Items.Add(lsvItem);
-                    txtPrice.Text = "";
-                    txtNumer.Text = "";
-
+                    if(msg.Show("Bạn có chắc chắn thêm phiếu kho không?", "THÔNG BÁO",msg.Buttons.YesNo,msg.Icon.Question) == DialogResult.Yes)
+                    {
+                        ListViewItem lsvItem = new ListViewItem(material);
+                        lsvItem.SubItems.Add(number.ToString());
+                        lsvItem.SubItems.Add(price.ToString());
+                        lsvItem.SubItems.Add((number * price).ToString());
+                        lsvBillInfoOfWH.Items.Add(lsvItem);
+                        txtPrice.Text = "";
+                        txtNumer.Text = "";
+                    }
                 }
             }
             else
@@ -527,13 +529,13 @@ namespace quanLyNhaHang_Nhom4.Manager
        private void Sum()
         {
             int SLTim = 0;
-        foreach(ListViewItem item in lsvBillInfoOfWH.Items)
+            foreach(ListViewItem item in lsvBillInfoOfWH.Items)
             {
                 int amount = int.Parse(item.SubItems[3].Text);
                 SLTim += amount;
             }
 
-          txtTotalPrice.Text = SLTim.ToString();
+            txtTotalPrice.Text = SLTim.ToString();
         }
 
 

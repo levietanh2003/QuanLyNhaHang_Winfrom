@@ -146,16 +146,25 @@ namespace quanLyNhaHang_Nhom4.Admin
                 }
                 else
                 {
-                    try
+                    // kiem tra ngay nhap vao 
+                    if (dateOfBirth >= DateTime.Now)
                     {
-                        contextDB.USP_InsertStaff(idStaff, nameStaff, sexStaff, position.idPosition, dateOfBirth, identityCard, phoneNumber, address);
-                        msg.Show("Thêm thành công !", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Success);
-                        loadStaff();
+                        msg.Show("Ngày sinh nhân viên phải nhỏ hơn ngày hiện tại.", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Warning);
                     }
-                    catch
+                    else
                     {
-                        msg.Show("Đã xảy ra lỗi thi sửa, vui lòng kiểm tra lại !", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Error);
+                        try
+                        {
+                            contextDB.USP_InsertStaff(idStaff, nameStaff, sexStaff, position.idPosition, dateOfBirth, identityCard, phoneNumber, address);
+                            msg.Show("Thêm thành công !", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Success);
+                            loadStaff();
+                        }
+                        catch
+                        {
+                            msg.Show("Đã xảy ra lỗi thi sửa, vui lòng kiểm tra lại !", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Error);
+                        }
                     }
+ 
                 }
             }
         }
@@ -211,6 +220,7 @@ namespace quanLyNhaHang_Nhom4.Admin
             string phoneNumber = txtPhoneNumber.Text.Trim();
             string address = rtbAddress.Text.Trim();
 
+
             Staff staffEdit = (from x in contextDB.Staffs where x.idStaff == idStaff select x).FirstOrDefault();
             if (idStaff == "" || staffEdit == null)
             {
@@ -223,27 +233,37 @@ namespace quanLyNhaHang_Nhom4.Admin
             }
             else
             {
-                try
+                // kiem tra ngay sinh nhan vien hop le
+                if (dateOfBirth >= DateTime.Now)
                 {
-
-                    staffEdit.idStaff = idStaff;
-                    staffEdit.nameStaff = nameStaff;
-                    staffEdit.identityCard = identityCard;
-                    staffEdit.sex = sexStaff;
-                    staffEdit.phoneNumber = phoneNumber;
-                    staffEdit.phoneNumber = phoneNumber;
-                    staffEdit.idPosition = position.idPosition;
-                    staffEdit.dateOfBirth = dateOfBirth;
-                    staffEdit.address = address;
-                    if(contextDB.SaveChanges() > 0)
-                    {
-                        msg.Show("Sửa thành công !", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Success);
-                    }
-                    loadStaff();
-                }catch
-                {
-                    msg.Show("Đã xảy ra lỗi khi sửa, vui lòng kiểm tra lại !", "THÀNH CÔNG", msg.Buttons.No, msg.Icon.Error);
+                    msg.Show("Ngày sinh nhân viên phải nhỏ hơn ngày hiện tại.", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Warning);
                 }
+                else
+                {
+                    try
+                    {
+
+                        staffEdit.idStaff = idStaff;
+                        staffEdit.nameStaff = nameStaff;
+                        staffEdit.identityCard = identityCard;
+                        staffEdit.sex = sexStaff;
+                        staffEdit.phoneNumber = phoneNumber;
+                        staffEdit.phoneNumber = phoneNumber;
+                        staffEdit.idPosition = position.idPosition;
+                        staffEdit.dateOfBirth = dateOfBirth;
+                        staffEdit.address = address;
+                        if (contextDB.SaveChanges() > 0)
+                        {
+                            msg.Show("Sửa thành công !", "THÔNG BÁO", msg.Buttons.Yes, msg.Icon.Success);
+                        }
+                        loadStaff();
+                    }
+                    catch
+                    {
+                        msg.Show("Đã xảy ra lỗi khi sửa, vui lòng kiểm tra lại !", "THÀNH CÔNG", msg.Buttons.No, msg.Icon.Error);
+                    }
+                }
+
             }
         }
         #endregion

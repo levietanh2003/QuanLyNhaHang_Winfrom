@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdminTable));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolstripTim = new System.Windows.Forms.ToolStripLabel();
@@ -69,24 +70,24 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.toolStrip1.Size = new System.Drawing.Size(802, 43);
+            this.toolStrip1.Size = new System.Drawing.Size(855, 50);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStripButton1
             // 
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.Tatice_Cristal_Intense_Loupe_256;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(46, 37);
+            this.toolStripButton1.Size = new System.Drawing.Size(46, 44);
             this.toolStripButton1.Text = "toolStripButton1";
             // 
             // toolstripTim
             // 
-            this.toolstripTim.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.toolstripTim.Font = new System.Drawing.Font("Cambria", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolstripTim.Name = "toolstripTim";
-            this.toolstripTim.Size = new System.Drawing.Size(229, 37);
+            this.toolstripTim.Size = new System.Drawing.Size(220, 44);
             this.toolstripTim.Text = "Tìm kiếm bàn ăn";
             this.toolstripTim.Click += new System.EventHandler(this.toolStripLabel1_Click);
             // 
@@ -94,7 +95,7 @@
             // 
             this.txtFindTableName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtFindTableName.Name = "txtFindTableName";
-            this.txtFindTableName.Size = new System.Drawing.Size(500, 43);
+            this.txtFindTableName.Size = new System.Drawing.Size(500, 50);
             this.txtFindTableName.Click += new System.EventHandler(this.txtFindTableName_Click);
             this.txtFindTableName.TextChanged += new System.EventHandler(this.txtFindTableName_TextChanged);
             // 
@@ -159,7 +160,7 @@
             // btnShowTable
             // 
             this.btnShowTable.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowTable.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.bx_show_icon;
+            this.btnShowTable.Image = ((System.Drawing.Image)(resources.GetObject("btnShowTable.Image")));
             this.btnShowTable.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnShowTable.Location = new System.Drawing.Point(756, 37);
             this.btnShowTable.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -175,7 +176,7 @@
             // btnDeleteTable
             // 
             this.btnDeleteTable.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteTable.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.Close_2_icon;
+            this.btnDeleteTable.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteTable.Image")));
             this.btnDeleteTable.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDeleteTable.Location = new System.Drawing.Point(554, 37);
             this.btnDeleteTable.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -189,7 +190,7 @@
             // btnEditTable
             // 
             this.btnEditTable.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditTable.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.Pencil_icon;
+            this.btnEditTable.Image = ((System.Drawing.Image)(resources.GetObject("btnEditTable.Image")));
             this.btnEditTable.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEditTable.Location = new System.Drawing.Point(344, 37);
             this.btnEditTable.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -203,7 +204,7 @@
             // btnAddTable
             // 
             this.btnAddTable.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddTable.Image = global::quanLyNhaHang_Nhom4.Properties.Resources.Actions_list_add_icon;
+            this.btnAddTable.Image = ((System.Drawing.Image)(resources.GetObject("btnAddTable.Image")));
             this.btnAddTable.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddTable.Location = new System.Drawing.Point(133, 37);
             this.btnAddTable.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
