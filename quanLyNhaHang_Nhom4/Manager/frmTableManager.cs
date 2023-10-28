@@ -392,7 +392,7 @@ namespace quanLyNhaHang_Nhom4.Manager
                     }
                     catch
                     {
-                        msg.Show("Chua con mon nen khong the thanh toan!", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Warning);
+                        msg.Show("Chưa còn món nên không thể thanh toán!", "THÔNG BÁO", msg.Buttons.No, msg.Icon.Warning);
                     }
                 }
                 else
